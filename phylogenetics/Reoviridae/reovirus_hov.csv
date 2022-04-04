@@ -1,0 +1,14 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+DAZ85690.1,Aedes orbi-like virus,Orbivirus,Reoviridae,1280,partial,VP1,,Aedes aegypti,,
+QTW97832.1,Hubei reo-like virus 12,,,1461,partial,RNA-dependent RNA polymerase,China,Culicidae,,2018-08-22
+QRW41688.1,Lasigmu virus,,,1276,partial,RNA-dependent RNA polymerase,"USA: Alameda County, California",Ochlerotatus dorsalis,,2017-09-19
+QNS17458.1,Serbia reo-like virus 1,,Reoviridae,1331,partial,RNA-dependent RNA polymerase,Serbia,Culex pipiens,,2016-07-12
+QIJ70109.1,Hubei reo-like virus 14,,,1329,partial,RNA-dependent RNA polymerase,Australia,Calliphora augur,,2016-12-21
+AVM87459.1,Wenling scaldfish reovirus,,Reoviridae,1280,partial,RNA-dependent RNA polymerase,China,Arnoglossus,,
+ASU50444.1,Anopheles annulipes orbivirus,Orbivirus,Reoviridae,1424,partial,RNA-dependent RNA polymerase,Australia: Sydney,Anopheles annulipes,,2007
+ASU43982.1,Anopheles hinesorum orbivirus,Orbivirus,Reoviridae,1323,partial,RdRp,Australia: Cairns,Anopheles hinesorum,,2005
+AQU42768.1,Morris orbivirus,Orbivirus,Reoviridae,1328,partial,VP1,USA,Orgyia pseudotsugata,,2016-08-16
+APG79077.1,Hubei tetragnatha maxillosa virus 9,,,1183,partial,RNA-dependent RNA polymerase,China,Arthropoda,,2013
+APG79103.1,Hubei lepidoptera virus 5,,,1282,partial,RNA-dependent RNA polymerase,China,Lepidoptera,,2013
+APG79108.1,Hubei lepidoptera virus 4,,,1288,partial,RNA-dependent RNA polymerase,China,Lepidoptera,,2013
+APG79144.1,Hubei odonate virus 15,,,1316,partial,RNA-dependent RNA polymerase,China,Odonata,,2013

@@ -1,0 +1,22 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009342454.1,Wuhan house centipede virus 6,,,996,complete,RNA-dependent RNA polymerase,China,Diplopoda,,2013
+YP_009336491.1,Shuangao insect virus 10,,,866,complete,hypothetical protein,China,Hexapoda,,2013
+YP_009337377.1,Sanxia water strider virus 16,,,1019,complete,hypothetical protein,China,Atyidae,,2014
+YP_009337879.1,Hubei noda-like virus 9,,,1063,complete,RNA-dependent RNA polymerase,China,Neoconocephalus,,2013
+YP_009337881.1,Hubei noda-like virus 8,,,1161,complete,RNA-dependent RNA polymerase,China,Neoconocephalus,,2013
+YP_009337883.1,Hubei orthoptera virus 4,,,964,complete,RNA-dependent RNA polymerase,China,Orthoptera,,2013
+NP_620109.1,Pariacoto virus,Alphanodavirus,Nodaviridae,973,complete,protein A,Peru,,,
+UGO57497.1,Riboviria sp.,,,1039,partial,hypothetical protein,China,Tarsiger cyanurus,feces,2018
+QXV86523.1,Nodaviridae sp.,,Nodaviridae,942,partial,RNA-dependent RNA polymerase,China,Aves,feces,2019-07
+QZZ63401.1,Nelson wasp-associated virus 3,,,1020,partial,hypothetical protein,New Zealand,Vespula vulgaris,,
+QKN84407.1,Rice Noda-like virus,,Nodaviridae,986,complete,reverse transcriptase,"China: Zhejiang, Hangzhou, Fuyang",Oryza sativa,,2017-06-13
+QKW94219.1,PNG bee virus 14,,Nodaviridae,991,partial,non-structural polyprotein,Papua New Guinea,Apis mellifera,,2018-10
+QKI28966.1,Emilia sonchifolia noda-like virus,,Nodaviridae,952,complete,hypothetical protein 1,,Emilia sonchifolia,,
+AZU96332.1,Culannivirus DW-2019a,Culannivirus,Nodaviridae,946,partial,putative RNA-dependent RNA polymerase,,,,
+AYW01746.1,Mayapan virus,,,944,complete,putative RNA-dependent RNA polymerase,Mexico,Psorophora ferox,,2007
+APG76090.1,Hubei noda-like virus 10,,,916,partial,hypothetical protein,China,Arthropoda,,2013
+APG76216.1,Hubei noda-like virus 5,,,946,partial,hypothetical protein,China,Hexapoda,,2013
+APG76402.1,Hubei noda-like virus 6,,,939,partial,hypothetical protein,China,Tetragnatha maxillosa,,2013
+APG76528.1,Hubei noda-like virus 7,,,951,partial,hypothetical protein 1,China,Hexapoda,,2013
+AIO11151.1,Mosinovirus,,Nodaviridae,960,complete,protein A,Cote d'Ivoire,Culicidae,,2004
+ADF97523.1,Alphanodavirus HB-2007/CHN,Alphanodavirus,Nodaviridae,983,partial,RNA-dependent RNA polymerase,China,Helicoverpa zea,,2007-10

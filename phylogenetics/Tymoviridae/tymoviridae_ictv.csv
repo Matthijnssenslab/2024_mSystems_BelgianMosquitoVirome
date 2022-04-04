@@ -1,0 +1,30 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+AAW88343.1,Citrus sudden death-associated virus,Marafivirus,Tymoviridae,2188,complete,replicase-associated polyprotein,,,,
+AOX24075.1,Grapevine asteroid mosaic associated virus,Marafivirus,Tymoviridae,2158,complete,ORF1 polyprotein,USA,Vitis vinifera,,2010-11-17
+AWB13379.1,Alfalfa virus F,Marafivirus,Tymoviridae,2129,complete,polyprotein,France: Prades-le-Lez,Medicago sativa,,2015-04-15
+ACO06249.1,Grapevine Syrah virus 1,Marafivirus,Tymoviridae,2081,complete,putative 230 kDa polyprotein,USA,Vitis vinifera,,
+AQQ11758.1,Peach marafivirus D,Marafivirus,Tymoviridae,2066,complete,replicase polyprotein,South Korea,Prunus persica,,2015-05-06
+AAC57874.1,Oat blue dwarf virus,Marafivirus,Tymoviridae,2066,complete,replicase-associated polyprotein,,,,
+ACV53023.1,Blackberry virus S,Marafivirus,Tymoviridae,2035,partial,polyprotein,USA,Rubus canadensis,,
+AAK52838.2,Maize rayado fino virus,Marafivirus,Tymoviridae,2028,complete,polyprotein,,,,
+ACN94861.2,Olive latent virus 3,Marafivirus,Tymoviridae,2000,complete,replicase-associated polyprotein,Italy,,,2008-04-03
+CAB70969.1,Poinsettia mosaic virus,,Tymoviridae,1987,complete,replicase-associated protein,,,,
+CAC84400.1,Grapevine fleck virus,Maculavirus,Tymoviridae,1949,complete,replicase,Italy,,,
+CAA76071.1,Physalis mottle virus,Tymovirus,Tymoviridae,1932,partial,replicase protein,,,,
+CBH31039.1,Chiltepin yellow mosaic virus,Tymovirus,Tymoviridae,1881,complete,RNA-dependent RNA polymerase,Mexico:Tula,,plant leaf,2001
+BAA00532.1,Kennedya yellow mosaic virus,Tymovirus,Tymoviridae,1874,complete,unnamed protein product,,,,
+CAA30322.1,Turnip yellow mosaic virus,Tymovirus,Tymoviridae,1844,partial,unnamed protein product,,,,
+AAA43039.1,Eggplant mosaic virus,Tymovirus,Tymoviridae,1839,partial,replicase protein (putative); putative,,,,
+AAF09240.1,Chayote mosaic virus,Tymovirus,Tymoviridae,1835,complete,replication protein,,,,
+AGG15964.1,Andean potato latent virus,Tymovirus,Tymoviridae,1831,complete,viral replication protein,Colombia,Solanum phureja,,1966
+ABQ45359.1,Okra mosaic virus,Tymovirus,Tymoviridae,1816,complete,putative RNA-dependend RNA polymerase,Nigeria,,,
+AGG15961.1,Andean potato mild mosaic virus,Tymovirus,Tymoviridae,1810,complete,viral replication protein,Peru,Solanum tuberosum,,1977
+AGQ80925.1,Tomato blistering mosaic tymovirus,Tymovirus,Tymoviridae,1808,complete,putative polyprotein,Brazil,Solanum lycopersicum,,2010
+AAW88526.1,Plantago mottle virus,Tymovirus,Tymoviridae,1805,partial,polyprotein,,,,
+AAW88520.1,Scrophularia mottle virus,Tymovirus,Tymoviridae,1800,partial,polyprotein,,,,
+AAW88523.1,Nemesia ring necrosis virus,Tymovirus,Tymoviridae,1789,partial,polyprotein,,Nemesia fruticans,,
+AAA46796.1,Ononis yellow mosaic virus,Tymovirus,Tymoviridae,1776,complete,replicase protein (RP),,,,
+AAW88529.1,Anagyris vein yellowing virus,Tymovirus,Tymoviridae,1769,partial,polyprotein,,,,
+AAC80555.1,Erysimum latent virus,Tymovirus,Tymoviridae,1748,complete,replicase protein,,,,
+BAD35017.1,Bombyx mori latent virus,,Tymoviridae,1747,complete,RNA-dependent RNA polymerase,Japan,Bombyx mori,,
+AAW65470.1,Dulcamara mottle virus,Tymovirus,Tymoviridae,1742,complete,replicase,,,,

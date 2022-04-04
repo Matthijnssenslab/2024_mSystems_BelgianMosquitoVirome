@@ -1,0 +1,44 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,USA,Host,Isolation_Source,Collection_Date
+YP_009408178.1,Lake Sinai virus 1,Sinaivirus,Sinhaliviridae,622,complete,RNA-dependant RNA polymerase,Australia: South Australia,,Apis mellifera,,2014-08
+YP_009408181.1,Lake Sinai virus 2,Sinaivirus,Sinhaliviridae,622,complete,RNA-dependant RNA polymerase,Australia: Victoria and New South Wales,,Apis mellifera,,2014-08
+YP_009388488.1,Lake Sinai Virus SA1,Sinaivirus,Sinhaliviridae,660,complete,RNA-dependent RNA polymerase,South Africa,,Apis mellifera,,2013-03-03
+YP_009388491.1,Lake Sinai Virus SA2,Sinaivirus,Sinhaliviridae,625,complete,RNA-dependent RNA polymerase,South Africa,,Apis mellifera,,2013-03-03
+YP_009388495.1,Lake Sinai Virus NE,Sinaivirus,Sinhaliviridae,660,complete,RNA-dependent RNA polymerase,Netherlands,,Apis mellifera,,2014-07-10
+YP_009388502.1,Lake Sinai Virus TO,Sinaivirus,Sinhaliviridae,660,complete,RNA-dependent RNA polymerase,Tonga,,Apis mellifera,,2015-10-31
+YP_009175040.1,Le Blanc nodavirus,,Nodaviridae,942,complete,RNA-dependent RNA polymerase,France,,Caenorhabditis briggsae,,2008-08-18
+YP_009173859.1,Orsay virus,,Nodaviridae,937,complete,RNA dependent RNA polymerase,France,,Caenorhabditis elegans,,2008
+YP_009047239.1,Senegalese sole Iberian betanodavirus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,Spain,,Solea senegalensis,,2003-07-15
+YP_004221742.1,Santeuil nodavirus,,Nodaviridae,982,complete,RNA dependent RNA polymerase,France,,Caenorhabditis briggsae,,2007
+YP_004207810.1,Penaeus vannamei nodavirus,,Nodaviridae,1033,complete,RNA-dependent RNA polymerase,Belize,,Penaeus vannamei,,2005
+NP_919036.1,Macrobrachium rosenbergii nodavirus,,Nodaviridae,1045,complete,RNA-dependent RNA polymerase,,,Macrobrachium rosenbergii,,
+UHR49743.1,Hangzhou sepedon violaceus nodavirus 1,,Nodaviridae,1013,complete,RNA-dependent RNA polymerase,China,,Ochthera mantis,,2016-09-06
+UHR49758.1,Hangzhou sepedon violaceus nodavirus 1,,Nodaviridae,1013,complete,RNA-dependent RNA polymerase,China,,Sepedon violaceus,,2016-09-07
+UHR49769.1,Guiyang nodavirus 1,,Nodaviridae,998,complete,RNA-dependent RNA polymerase,China,,Pomacea canaliculata,,2016-08-12
+UHR49775.1,Guiyang nodavirus 1,,Nodaviridae,782,complete,RNA-dependent RNA polymerase,China,,Tetragnatha nitens,,2016-08-12
+UHK03063.1,Guiyang nodavirus 3,,Nodaviridae,690,complete,RNA-dependent RNA polymerase,China,,Tetragnatha nitens,,2016-08-12
+QUW04993.1,Lake Sinai virus 2,Sinaivirus,Sinhaliviridae,622,complete,RNA-dependent RNA polymerase,China,,Apis mellifera,,2016-04
+QQP17176.1,Covert mortality nodavirus,,Nodaviridae,1043,complete,RNA dependent RNA polymerase,China,,Penaeus vannamei,,2019
+QKW94177.1,Lake Sinai virus,Sinaivirus,Sinhaliviridae,614,complete,putative RNA-dependent RNA polymerase,Papua New Guinea,,Apis mellifera,,2014-05
+QKW94180.1,Lake Sinai virus,Sinaivirus,Sinhaliviridae,625,complete,putative RNA-dependent RNA polymerase,Papua New Guinea,,Apis mellifera,,2014-05
+QKW94188.1,Lake Sinai virus,Sinaivirus,Sinhaliviridae,622,complete,putative RNA-dependent RNA polymerase,Solomon Islands,,Apis mellifera,,2014-09
+QBS55246.1,Tetranychus urticae-associated nodavirus A,,Nodaviridae,1045,complete,RNA-dependent RNA polymerase,Portugal,,Tetranychus urticae,,2015-04-01
+QBS55247.1,Tetranychus urticae-associated nodavirus B,,Nodaviridae,768,complete,RNA-dependent RNA polymerase,Portugal,,Tetranychus urticae,,2015-04-01
+AXQ04818.1,Culex Daeseongdong-like virus,,Nodaviridae,1090,complete,putative RNA-dependent RNA polymerase,USA,,Culex,,2016-07-02
+AXQ04840.1,Culex mosquito virus 2,,Nodaviridae,2122,complete,RNA-dependent RNA polymerase,USA,,Culex,,2016-07-02
+AWC26951.1,Lake Sinai virus,Sinaivirus,Sinhaliviridae,622,complete,RNA-dependent RNA polymerase,Slovenia,,Apis mellifera carnica,,2010
+ASO75588.1,Betanodavirus sp.,Betanodavirus,Nodaviridae,981,complete,RNA-dependent RNA polymerase,Taiwan,,Epinephelus coioides,,2014-06
+ASO75591.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,981,complete,RNA-dependent RNA polymerase,Taiwan,,Epinephelinae,,2013-06
+ARO92011.2,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,,,Sparus aurata,,2016-03
+AKE78836.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,China,,Lateolabrax japonicus,,2014-07-10
+AIK23437.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,South Korea,,Hyporthodus septemfasciatus,,2008
+AGQ56677.1,Striped jack nervous necrosis virus,Betanodavirus,Nodaviridae,983,complete,RNA-dependent RNA polymerase,Italy,,Dicentrarchus labrax,,1996
+AET06935.2,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,Greece,,Sparus aurata,,2009-08
+AET06937.2,Striped jack nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,Greece,,Dicentrarchus labrax,,2009-08
+AET07003.2,Striped jack nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,Italy,,Dicentrarchus labrax,,2005-04
+ACN94262.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,RNA-dependent RNA polymerase,Tunisia,,Dicentrarchus labrax,,
+ACF36168.1,Barfin flounder nervous necrosis virus,Betanodavirus,Nodaviridae,981,complete,RNA-dependent RNA polymerase,Japan,,Verasper moseri,,
+ABR23188.1,Atlantic cod nodavirus,,Nodaviridae,981,complete,RNA-directed RNA polymerase,Norway: Hordaland county,,Gadus morhua,,
+ABR23190.1,Atlantic cod nodavirus,,Nodaviridae,981,complete,RNA-directed RNA polymerase,Norway: Hordaland county,,Gadus morhua,,
+ABR23192.1,Barfin flounder nervous necrosis virus,Betanodavirus,Nodaviridae,981,complete,RNA-directed RNA polymerase,Norway: Moere og Romsdal county,,Gadus morhua,,
+ABR23194.1,Atlantic cod nodavirus,,Nodaviridae,981,complete,RNA-directed RNA polymerase,Norway: Nordland county,,Gadus morhua,,
+AAO60068.1,Macrobrachium rosenbergii nodavirus,,Nodaviridae,1045,complete,RNA-dependent RNA polymerase,,,Macrobrachium rosenbergii,,

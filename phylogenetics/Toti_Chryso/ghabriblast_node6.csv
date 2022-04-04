@@ -1,0 +1,17 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009388609.1,Aedes alboannulatus toti-like virus 1,,,955,RdRp,Australia: South Guildford,Ochlerotatus camptorhynchus,,2015-08-19
+YP_009336493.1,Hubei toti-like virus 10,,,989,hypothetical protein 2,China,Culicidae,,2013
+YP_009336788.1,Hubei toti-like virus 9,,,1017,hypothetical protein,China,Odonata,,2013
+QRW41694.1,Gouley virus,,,918,RNA-dependent RNA polymerase,"USA: Coachella Valley, California",Culex tarsalis,,2017-11-07
+QRW41697.1,Mika virus,,,1018,RNA-dependent RNA polymerase,"USA: West Valley, California",Culex tarsalis,,2017-11-15
+QRW41701.1,Stinn virus,,,1018,RNA-dependent RNA polymerase,"USA: West Valley, California",Culex tarsalis,,2017-11-15
+QRW41776.1,Snelk virus,,,1018,RNA-dependent RNA polymerase,"USA: Alameda County, California",Culex tarsalis,,2017-08-25
+QRW42113.1,Tzifr virus,,,1018,RNA-dependent RNA polymerase,"USA: Alameda County, California",Culex erythrothorax,,2017-09-19
+QRW42117.1,Lotchka virus,,,1018,RNA-dependent RNA polymerase,"USA: Placer Valley, California",Culex erythrothorax,,2017-11-21
+QLJ83492.1,Fitzroy Crossing toti-like virus 2,,Totiviridae,759,RNA-dependent RNA polymerase,Australia,Culex annulirostris,,2018-04-06
+BBQ05098.1,Culex vishnui subgroup totivirus,,Totiviridae,982,RNA-dependent RNA polymerase,Japan,Culex vishnui,,2017
+QHA33710.1,Atrato virus,,Totiviridae,1087,RdRp,Colombia,Mansonia titillans,,2016-06
+QHA33714.1,Murri virus,,Totiviridae,1038,RdRp,Colombia,Coquillettidia venezuelensis,,2016-04
+QGA70954.1,Salja virus,Totivirus,Totiviridae,413,RNA-dependent RNA polymerase,Sweden,,,2011
+QEM39133.1,Aedes aegypti toti-like virus,,Totiviridae,926,RNA-dependent RNA polymerase,Guadeloupe,Aedes aegypti,,2017
+APG76025.1,Hubei toti-like virus 7,,,849,hypothetical protein,China,Diptera,,2013

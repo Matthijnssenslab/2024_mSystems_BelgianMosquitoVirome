@@ -1,0 +1,29 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+ARO50046.1,Apis bunyavirus 2,,Peribunyaviridae,2123,RNA-dependent RNA polymerase,South Africa,Apis mellifera,,2013-03-03
+YP_009666959.1,Seattle orthophasmavirus,Orthophasmavirus,Phasmaviridae,2017,RNA-dependent RNA polymerase,USA,Pasiphila rectangulata,,2016-05-11
+YP_009666981.1,Ganda orthophasmavirus,Orthophasmavirus,Phasmaviridae,2087,RNA-dependent RNA polymerase,Belgium,Osmia cornuta,,2015-04-13
+YP_009553313.1,Yongsan bunyavirus 1,,,2133,RNA-dependent RNA polymerase,South Korea: Yongsan,Aedes vexans nipponii,,2016-05-26
+YP_009362029.1,Kigluaik phantom orthophasmavirus,Orthophasmavirus,Phasmaviridae,2131,RNA-dependent RNA polymerase,USA,Chaoborus trivitattus,,2011-08-01
+YP_009329887.1,Odonate orthophasmavirus,Orthophasmavirus,Phasmaviridae,2079,RNA-dependent RNA polymerase,China,Odonata,,2013
+YP_009305130.1,Wuhan mosquito orthophasmavirus 1,Orthophasmavirus,Phasmaviridae,2095,RNA-dependent RNA polymerase,China,Culex tritaeniorhynchus,,2012
+YP_009305135.1,Wuhan mosquito orthophasmavirus 2,Orthophasmavirus,Phasmaviridae,2111,RNA-dependent RNA polymerase,China,Culex tritaeniorhynchus,,2012
+YP_009304995.1,Wuchang cockroach orthophasmavirus 1,Orthophasmavirus,Phasmaviridae,2121,RNA-dependent RNA polymerase,China,Blattella germanica,,2013
+QXV86663.1,Tibet bird virus 1,,,2090,RNA-dependent RNA polymerase,China,Aves,feces,2018-04
+QOI91411.1,Aedes phasmavirus,,Phasmaviridae,2155,RdRp,China: Wuhan,Aedes albopictus,,2018
+QMP82227.1,Coleopteran phasma-related virus OKIAV243,,Phasmaviridae,2102,RNA-dependent RNA polymerase,"Germany: Thuringia, Jena - Alt-Winzerla",Drilus concolor,,2011-05-14
+QMP82228.1,Blattodean phasma-related virus OKIAV239,,Phasmaviridae,2118,RNA-dependent RNA polymerase,Japan,Supella longipalpa,,2011-12-28
+QHA33845.1,Coredo virus,,Phasmaviridae,2098,RdRp,Colombia,Mansonia titillans,,2016-04
+QGA87322.1,Flen bunya-like virus,,,2145,RNA-dependent RNA polymerase,Sweden,Ochlerotatus cantans,,2017
+QDZ58984.1,Niukluk phantom orthophasmavirus,Orthophasmavirus,Phasmaviridae,2223,L protein,USA,,,
+ASA47399.1,Culex orthophasmavirus,Orthophasmavirus,Phasmaviridae,2111,RdRp,Australia: Siesta Park,Culex australicus,,2015-09-15
+YP_010086189.1,Anopheles orthophasmavirus,Orthophasmavirus,Phasmaviridae,2112,RNA-dependent RNA polymerase,Brazil,Anopheles triannulatus,,2015-07-01
+YP_009329871.1,Qingling orthophasmavirus,Orthophasmavirus,Phasmaviridae,2090,RNA-dependent RNA polymerase,China,Odonata,,2013
+APG79294.1,Hubei diptera virus 6,,,2092,RNA-dependent RNA polymerase,China,Diptera,,2013
+APG79296.1,Hubei diptera virus 7,,,2096,RNA-dependent RNA polymerase,China,Diptera,,2013
+QTW97786.1,Wuhan mosquito orthophasmavirus 1,Orthophasmavirus,Phasmaviridae,1963,RNA-dependent RNA polymerase,China,Culicidae,,2018-06-28
+QTW97787.1,Wuhan mosquito orthophasmavirus 2,Orthophasmavirus,Phasmaviridae,2110,RNA-dependent RNA polymerase,China,Culicidae,,2018-07-25
+QRW41769.1,Miglotas virus,,,2090,RNA-dependent RNA polymerase,"USA: West Valley, California",Culex erythrothorax,,2017-11-15
+QRW42040.1,Barstukas virus,,,2154,RNA-dependent RNA polymerase,"USA: West Valley, California",Aedes albopictus,,2017-10-24
+QIJ70043.1,Peralta bunya-like virus,,,2109,RNA-dependent RNA polymerase,Australia,Calliphora augur,,2016-12-21
+QID77675.1,Pink bollworm virus 2,,,2093,RNA-dependent RNA polymerase,Israel,Pectinophora gossypiella,,
+QGA70910.1,Anjon virus,,,2111,RNA-dependent RNA polymerase,Sweden,Culex,,2009

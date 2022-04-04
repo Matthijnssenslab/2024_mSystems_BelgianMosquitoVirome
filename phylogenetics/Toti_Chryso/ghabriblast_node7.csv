@@ -1,0 +1,14 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009259368.1,Sclerotinia nivalis victorivirus 1,Victorivirus,Totiviridae,833,RNA-dependent RNA polymerase,,Sclerotinia nivalis,,
+YP_009182167.1,Ustilaginoidea virens RNA virus 5,Victorivirus,Totiviridae,860,RNA-dependent RNA polymerase,China,Ustilaginoidea virens,,2012
+YP_009032633.1,Beauveria bassiana victorivirus NZL/1980,Victorivirus,Totiviridae,843,RNA-dependent RNA polymerase,New Zealand,Beauveria bassiana,,1980-01-01
+YP_008130308.1,Rosellinia necatrix victorivirus 1,Victorivirus,Totiviridae,842,putative RNA dependent RNA polymerase,Japan:Suzaka,Rosellinia necatrix,,
+NP_047558.1,Sphaeropsis sapinea RNA virus 1,Victorivirus,Totiviridae,838,RNA dependent RNA polymerase,,,,
+UBZ25890.1,Neofusicoccum parvum victorivirus 3,Victorivirus,Totiviridae,839,RNA-dependent RNA polymerase,Pakistan,Neofusicoccum parvum,,2018
+QTE76048.1,Neofusicoccum parvum victorivirus 1,Victorivirus,Totiviridae,839,RNA-dependent RNA polymerase,France,Neofusicoccum parvum,,2016
+QQP18682.1,Soybean thrips-associated totivirus 1,,Totiviridae,949,RNA-dependent RNA polymerase,USA,,,2018
+VFI65724.1,Umbelopsis ramanniana virus 2,,Totiviridae,777,RNA dependent RNA polymerase,,Umbelopsis ramanniana,,
+QBA82443.1,Botryosphaeria dothidea victorivirus 2,Victorivirus,Totiviridae,838,RdRp,China,Botryosphaeria dothidea,,2016
+AZT88643.1,Thelebolus microsporus totivirus 1,,Totiviridae,829,RNA-dependent RNA polymerase,USA,Thelebolus microsporus,,2017
+AZT88645.1,Tolypocladium ophioglossoides totivirus 1,,Totiviridae,831,RNA-dependent RNA polymerase,USA,Tolypocladium ophioglossoides,,2017
+AHH25153.1,Ustilaginoidea virens RNA virus 1,Victorivirus,Totiviridae,827,RNA-dependent RNA polymerase,China,Ustilaginoidea virens,flower,2009

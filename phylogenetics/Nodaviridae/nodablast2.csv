@@ -1,0 +1,15 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009337276.1,Hubei permutotetra-like virus 11,,,1092,complete,RdRp,China,Culicidae,,2013
+YP_009337318.1,Hubei permutotetra-like virus 6,,,1241,complete,RdRp,China,Coleoptera,,2013
+YP_009337364.1,Hubei permutotetra-like virus 7,,,1211,complete,RdRp,China,Odonata,,2013
+YP_009337742.1,Hubei permutotetra-like virus 5,,,1046,complete,RdRp,China,Scutigera coleoptrata,,2013
+YP_009182196.1,Daeseongdong virus 2,,,1090,complete,putative RNA-dependent RNA polymerase,South Korea: Daeseongdong,Culex pipiens,,2012-08-20
+QUS52855.1,Hypera postica associated permutotetravirus,,Permutotetraviridae,1120,partial,RNA-dependent RNA polymerase,France,Hypera postica,,2015-04-01
+QQD36920.1,Aedes permutotetra-like virus 1,,Permutotetraviridae,1338,partial,RNA-dependent RNA polymerase,Brazil,,Aedes aegypti,,2017-06
+QKK82931.1,Viola philippica permutotetra like virus,,Permutotetraviridae,924,partial,hypothetical protein 1,,,,
+QIJ25871.1,Smithfield permutotetra-like virus,,,1085,partial,hypothetical protein,Australia: Smithfield,Arthropoda,,2018-03-09
+QGL51734.1,Vespa velutina associated permutotetra-like virus 1,,Permutotetraviridae,1104,complete,nonstructural protein,,Vespa velutina nigrithorax,,
+QGL51736.1,Vespa velutina associated permutotetra-like virus 2,,Permutotetraviridae,1077,complete,nonstructural protein,,Vespa velutina nigrithorax,,
+AXQ04818.1,Culex Daeseongdong-like virus,,Nodaviridae,1090,complete,putative RNA-dependent RNA polymerase,USA,Culex,,2016-07-02
+AKH67351.1,Drosophila A virus,,,1075,partial,RNA-dependent RNA polymerase,Kenya: Thika,,Drosophila melanogaster,2009-02
+ACU32793.1,Drosophila melanogaster tetravirus SW-2009a,,Permutotetraviridae,986,partial,putative RNA-dependent RNA polymerase,USA,Drosophila melanogaster,,2009-02

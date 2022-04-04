@@ -1,0 +1,110 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009507905.1,Coffee ringspot virus,Dichorhavirus,Rhabdoviridae,1864,complete,RNA-dependent RNA polymerase,,,,
+YP_009666993.1,Clerodendrum chlorotic spot dichorhavirus,Dichorhavirus,Rhabdoviridae,1874,complete,RNA-dependent RNA polymerase,"Brazil: Piracicaba, Sao Paulo",Clerodendrum,plant leaf,2017
+YP_001294929.1,Orchid fleck dichorhavirus,Dichorhavirus,Rhabdoviridae,1877,complete,polymerase,Japan,,,
+YP_009976137.1,Citrus leprosis N dichorhavirus,Dichorhavirus,Rhabdoviridae,1879,complete,RNA-dependent RNA polymerase,Brazil: Ibiuna,Citrus sinensis,,2015-10
+YP_009336728.1,Orthopteran anphevirus,Anphevirus,Xinmoviridae,1926,complete,RNA-dependent RNA polymerase,China,Orthoptera,,2013
+YP_010229226.1,Rio Chico almendravirus,Almendravirus,Rhabdoviridae,1931,complete,RNA-dependent RNA polymerase,Panama,Culicidae,,2013
+YP_009337121.1,Odonate anphevirus,Anphevirus,Xinmoviridae,1997,complete,RNA-dependent RNA polymerase,China,Odonata,,2013
+YP_009302387.1,Xincheng anphevirus,Anphevirus,Xinmoviridae,2026,complete,RNA-dependent RNA polymerase,China,Anopheles sinensis,,2013
+YP_010229213.1,Coot Bay almendravirus,Almendravirus,Rhabdoviridae,2035,complete,RNA-dependent RNA polymerase,"USA: Everglades National Park,FL",Anopheles quadrimaculatus,,2013-07-25
+YP_009337182.1,Dipteran anphevirus,Anphevirus,Xinmoviridae,2039,complete,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_010229220.1,Balsa almendravirus,Almendravirus,Rhabdoviridae,2042,complete,RNA-dependent RNA polymerase,Colombia: Cordoba Province,Psorophora albigenu,,2013-06-15
+YP_009094424.1,Almpiwar sripuvirus,Sripuvirus,Rhabdoviridae,2051,complete,putative RNA-dependent RNA polymerase,Australia,Culex edwardsi,,
+YP_009177231.1,Barley yellow striate mosaic cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2056,complete,L protein,China,,,
+NP_597914.1,Northern cereal mosaic cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2058,complete,polymerase,,,,
+YP_009094394.1,Puerto Almendras almendravirus,Almendravirus,Rhabdoviridae,2059,complete,L protein,Peru,Ochlerotatus fulvus,,2009-02-22
+YP_009094383.1,Arboretum almendravirus,Almendravirus,Rhabdoviridae,2062,complete,L protein,Peru,Culicidae,,2009-03-25
+YP_009553369.1,Rice stripe mosaic cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2066,complete,L protein,China,Oryza sativa,,2015-10
+YP_002308376.1,Lettuce yellow mottle cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2068,complete,L protein,France: Valence,Lactuca sativa,,
+YP_425092.1,Lettuce necrotic yellows cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2068,complete,RNA-dependent RNA polymerase,Australia:Victoria,Allium sativum,,
+YP_009176985.1,Walkabout sunrhavirus,Sunrhavirus,Rhabdoviridae,2074,complete,RNA-dependent RNA polymerase,Australia,Culicoides austropalpalis,,1981
+YP_009301361.1,Wuhan 6 insect cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2079,complete,RNA-dependent RNA polymerase,China,Hyalopterus pruni,,2013
+YP_009352236.1,Tomato yellow mottle-associated cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2085,complete,L protein,China: Chongqing,Solanum lycopersicum,,2013-06-26
+YP_006576506.2,Persimmon cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2089,complete,RNA-dependent RNA polymerase,Japan:Hiroshima,Diospyros kaki,,
+YP_009513007.1,Jurona vesiculovirus,Vesiculovirus,Rhabdoviridae,2090,complete,polymerase,Brazil,Haemagogus,,1962
+YP_009094388.1,Perinet vesiculovirus,Vesiculovirus,Rhabdoviridae,2094,complete,polymerase,Madagascar,Culicidae,,2008-07-30
+YP_009505536.1,Piry vesiculovirus,Vesiculovirus,Rhabdoviridae,2095,complete,RNA-dependent RNA polymerase,"Brazil: Utinga Forest, Para State",Philander opossum,,1960-12-10
+YP_009094372.1,Almpiwar sripuvirus,Sripuvirus,Rhabdoviridae,2095,complete,RNA-dependent RNA polymerase L,Australia,Cryptoblepharus virgatus,,1966-03-21
+YP_009094178.1,Malpais Spring vesiculovirus,Vesiculovirus,Rhabdoviridae,2095,complete,RNA-dependent RNA-polymerase,USA,Ochlerotatus campestris,,1985-08-18
+YP_009362274.1,Chaco sripuvirus,Sripuvirus,Rhabdoviridae,2097,complete,polymerase,Brazil,Ameiva ameiva,,1962
+YP_009362110.1,Sena Madureira sripuvirus,Sripuvirus,Rhabdoviridae,2098,complete,polymerase,Brazil,Ameiva ameiva,,1976
+YP_009300875.1,Wuhan 5 insect cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2098,complete,RNA-dependent RNA polymerase,China,Hyalopterus pruni,,2013
+YP_009304980.1,Wuhan sigmavirus,Sigmavirus,Rhabdoviridae,2098,complete,RNA-dependent RNA polymerase,China,Musca domestica,,2013
+YP_009505541.1,Radi vesiculovirus,Vesiculovirus,Rhabdoviridae,2100,complete,polymerase,Italy,Phlebotomus perfiliewi,,1982
+YP_009094167.1,Xiburema arurhavirus,Arurhavirus,Rhabdoviridae,2100,complete,L protein,Brazil: Sena Madureira-AC,Sabethes intermedius,,1974
+YP_009094277.1,Yug Bogdanovac vesiculovirus,Vesiculovirus,Rhabdoviridae,2101,complete,RNA-dependent RNA polymerase,Serbia,,,
+YP_009362218.1,Sripur sripuvirus,Sripuvirus,Rhabdoviridae,2103,complete,polymerase,India,Sergentomyia,,1973
+YP_009505470.1,Mossuril hapavirus,Hapavirus,Rhabdoviridae,2104,complete,polymerase,Mozambique,Culex sitiens,,1959
+YP_009512997.1,Flanders hapavirus,Hapavirus,Rhabdoviridae,2104,complete,polymerase,USA,Culiseta melanura,,1961
+YP_009361959.1,Hart Park hapavirus,Hapavirus,Rhabdoviridae,2104,complete,polymerase,USA,Culex tarsalis,,1955
+YP_009361989.1,Kamese hapavirus,Hapavirus,Rhabdoviridae,2104,complete,polymerase,Uganda,Culex annulioris,,1967
+YP_009361970.1,Mosqueiro hapavirus,Hapavirus,Rhabdoviridae,2105,complete,polymerase,Brazil,Culex portesi,,1970
+YP_009300689.1,Wuhan 4 insect cytorhabdovirus,Cytorhabdovirus,Rhabdoviridae,2105,complete,RNA-dependent RNA polymerase,China,Hyalopterus pruni,,2013
+YP_003518294.1,Ngaingan hapavirus,Hapavirus,Rhabdoviridae,2105,complete,RNA-dependent RNA polymerase,,,,
+YP_009362209.1,Gray Lodge hapavirus,Hapavirus,Rhabdoviridae,2106,complete,polymerase,USA,Culex tarsalis,,1971
+YP_009336589.1,Zhejiang alphacrustrhavirus,Alphacrustrhavirus,Rhabdoviridae,2106,complete,RNA-dependent RNA polymerase,China,Crustacea,,2014
+YP_009362266.1,Klamath tupavirus,Tupavirus,Rhabdoviridae,2107,complete,polymerase,USA,Microtus montanus,,1962
+YP_009177651.1,Cocal vesiculovirus,Vesiculovirus,Rhabdoviridae,2108,complete,L polymerase protein,Trinidad and Tobago: Trinidad,,pooled mites,1961
+YP_009094101.1,Alagoas vesiculovirus,Vesiculovirus,Rhabdoviridae,2108,complete,L polymerase protein,Brazil,Equus asinus x Equus caballus,,1964
+YP_009505326.1,Indiana vesiculovirus,Vesiculovirus,Rhabdoviridae,2109,complete,L polymerase protein,USA: Colorado,Equus caballus,,
+YP_009505531.1,Carajas vesiculovirus,Vesiculovirus,Rhabdoviridae,2109,complete,polymerase,Brazil,Lutzomyia,,1983
+YP_009362086.1,Morreton vesiculovirus,Vesiculovirus,Rhabdoviridae,2109,complete,polymerase,Colombia,Lutzomyia,,1986
+YP_009362128.1,Manitoba hapavirus,Hapavirus,Rhabdoviridae,2109,complete,polymerase,Canada,Culex tarsalis,,1977
+YP_009362143.1,Landjia hapavirus,Hapavirus,Rhabdoviridae,2109,complete,polymerase,Central African Republic,Riparia paludicola,,1970
+YP_009047085.1,New Jersey vesiculovirus,Vesiculovirus,Rhabdoviridae,2109,complete,L polymerase protein,Honduras,Bos taurus,,1984
+YP_009362159.1,Barur ledantevirus,Ledantevirus,Rhabdoviridae,2111,complete,polymerase,India,Rattus rattus,,1962
+YP_009362003.1,Fukuoka ledantevirus,Ledantevirus,Rhabdoviridae,2111,complete,polymerase,Japan,Culicoides punctatus,,1982
+YP_009305122.1,Yongjia ledantevirus,Ledantevirus,Rhabdoviridae,2113,complete,RNA-dependent RNA polymerase,China,Haemaphysalis hystricis,,2012
+YP_009362194.1,Nkolbisson ledantevirus,Ledantevirus,Rhabdoviridae,2114,complete,polymerase,Cameroon,Eretmapodites leucopous,,1965
+YP_009176999.1,Santabarbara arurhavirus,Arurhavirus,Rhabdoviridae,2115,complete,L protein,Brazil: Para state,Psychodidae,,2010-09-23
+YP_009508535.1,Beatrice Hill tibrovirus,Tibrovirus,Rhabdoviridae,2116,complete,RNA-dependent RNA polymerase,Australia: Beatrice Hill,Culicoides peregrinus,brain,1976
+YP_009508527.1,Kanyawara ledantevirus,Ledantevirus,Rhabdoviridae,2117,complete,polymerase,Uganda,Dipseliopoda,,2010-02-02
+YP_009177215.1,Yata ephemerovirus,Ephemerovirus,Rhabdoviridae,2117,complete,polymerase,Central African Republic,Mansonia uniformis,,1969-09-01
+YP_009362228.1,Ord River hapavirus,Hapavirus,Rhabdoviridae,2118,complete,polymerase,Australia,Culex annulirostris,,1976
+YP_009361979.1,Parry Creek hapavirus,Hapavirus,Rhabdoviridae,2118,complete,polymerase,Australia,Culex annulirostris,,1973
+YP_002333280.1,Wongabel hapavirus,Hapavirus,Rhabdoviridae,2118,complete,RNA-dependent RNA polymerase,Australia,Culicoides austropalpalis,,
+YP_009362180.1,La Joya hapavirus,Hapavirus,Rhabdoviridae,2119,complete,polymerase,Panama,Culex dunni,,1958
+YP_007641376.1,Tibrogargan tibrovirus,Tibrovirus,Rhabdoviridae,2119,complete,RNA-dependent RNA polymerase L,Australia,Culicoides brevitarsis,,1976
+YP_009362251.1,Sweetwater Branch tibrovirus,Tibrovirus,Rhabdoviridae,2120,complete,polymerase,USA,Culicoides insignis,,1982
+YP_009337139.1,Hubei sigmavirus,Sigmavirus,Rhabdoviridae,2120,complete,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009362166.1,Itacaiunas curiovirus,Curiovirus,Rhabdoviridae,2121,complete,polymerase,Brazil,Culicoides,,1984
+YP_009336512.1,Wenling alphacrustrhavirus,Alphacrustrhavirus,Rhabdoviridae,2121,complete,RNA-dependent RNA polymerase,China,Crustacea,,2014
+YP_009362238.1,Iriri curiovirus,Curiovirus,Rhabdoviridae,2122,complete,polymerase,Brazil,Lutzomyia,,1982
+YP_009182186.1,Tongilchon ohlsrhavirus,Ohlsrhavirus,Rhabdoviridae,2122,complete,putative RNA-dependent RNA polymerase,South Korea: Warrior Base,Culex bitaeniorhynchus,,2012-08-27
+YP_009337295.1,Myga sigmavirus,Sigmavirus,Rhabdoviridae,2123,complete,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009305102.1,Wuhan ledantevirus,Ledantevirus,Rhabdoviridae,2123,complete,RNA-dependent RNA polymerase,China,Hippoboscidae,,2013
+YP_009512988.1,Curionopolis curiovirus,Curiovirus,Rhabdoviridae,2125,complete,polymerase,Brazil,Culicoides,,1985
+YP_009362200.1,Keuraliba ledantevirus,Ledantevirus,Rhabdoviridae,2126,complete,polymerase,Senegal,Gerbilliscus kempi,,1968
+YP_009361873.1,Le Dantec ledantevirus,Ledantevirus,Rhabdoviridae,2126,complete,polymerase,Senegal,Homo sapiens,,1965
+YP_009094412.1,Coastal Plains tibrovirus,Tibrovirus,Rhabdoviridae,2128,complete,RNA-dependent RNA polymerase L,Australia,Bos taurus,blood,1981
+YP_006202628.1,Kotonkan ephemerovirus,Ephemerovirus,Rhabdoviridae,2128,complete,L protein,Nigeria,Culicoides,,1967
+YP_009505503.1,Drosophila melanogaster sigmavirus,Sigmavirus,Rhabdoviridae,2129,complete,L protein,France,Drosophila melanogaster,,
+YP_009666516.1,Caligus caligrhavirus,Caligrhavirus,Rhabdoviridae,2130,complete,RNA dependent RNA polymerase,Chile,Caligus rogercresseyi,,2016-02-15
+YP_009094017.1,Island sawgrhavirus,Sawgrhavirus,Rhabdoviridae,2131,complete,polymerase,,Amblyomma americanum,,2013-04-15
+YP_009505491.1,Drosophila ananassae sigmavirus,Sigmavirus,Rhabdoviridae,2133,complete,RNA-dependent RNA polymerase,Kenya,Drosophila ananassae,,2010
+YP_009362189.1,Joinjakaka hapavirus,Hapavirus,Rhabdoviridae,2133,complete,polymerase,Papua New Guinea,Culicinae,,1966
+YP_009505497.1,Drosophila immigrans sigmavirus,Sigmavirus,Rhabdoviridae,2134,complete,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009362117.1,Marco hapavirus,Hapavirus,Rhabdoviridae,2134,complete,polymerase,Brazil,Ameiva ameiva,,1962
+YP_009304656.1,Domestica sigmavirus,Sigmavirus,Rhabdoviridae,2134,complete,RNA-dependent RNA polymerase,China,Musca domestica,,2013
+YP_009552115.1,Merida merhavirus,Merhavirus,Rhabdoviridae,2136,complete,RNA-dependent RNA polymerase,Mexico,Culex quinquefasciatus,,2007
+YP_009362154.1,Rochambeau curiovirus,Curiovirus,Rhabdoviridae,2137,complete,polymerase,French Guiana,Coquillettidia albicosta,,1973
+YP_006200965.1,Obodhiang ephemerovirus,Ephemerovirus,Rhabdoviridae,2138,complete,L protein,Sudan,Mansonia uniformis,,
+YP_009094403.1,Kimberley ephemerovirus,Ephemerovirus,Rhabdoviridae,2139,complete,L protein,Australia,Bos taurus,,1980-08-26
+YP_009505485.1,Drosophila affinis sigmavirus,Sigmavirus,Rhabdoviridae,2141,complete,RNA-dependent RNA polymerase,USA,Drosophila affinis,,2007
+YP_009094143.1,Moussa mousrhavirus,Mousrhavirus,Rhabdoviridae,2141,complete,RNA polymerase,Cote d'Ivoire,Culex decens,,2004
+YP_009177247.1,Adelaide River ephemerovirus,Ephemerovirus,Rhabdoviridae,2144,complete,polymerase,"Australia: Tortilla Flat Research Farm, Northern Territory",Bos taurus,,1981
+YP_009336837.1,Hubei alphapaprhavirus,Alphapaprhavirus,Rhabdoviridae,2145,complete,RNA-dependent RNA polymerase,China,Lepidoptera,,2013
+YP_009305107.1,Hippoboscid sigmavirus,Sigmavirus,Rhabdoviridae,2145,complete,RNA-dependent RNA polymerase,China,Hippoboscidae,,2013
+YP_009302018.1,Lousefly sigmavirus,Sigmavirus,Rhabdoviridae,2146,complete,RNA-dependent RNA polymerase,China,Hippoboscidae,,2013
+YP_008686601.1,Drosophila obscura sigmavirus,Sigmavirus,Rhabdoviridae,2146,complete,L protein,United Kingdom,Drosophila obscura,,2007
+YP_009344978.1,Xingshan alphanemrhavirus,Alphanemrhavirus,Rhabdoviridae,2169,complete,RNA-dependent RNA polymerase,China,Nematoda,,2014
+YP_009552805.1,Zahedan zarhavirus,Zarhavirus,Rhabdoviridae,2170,complete,RNA polymerase,Iran,Hyalomma anatolicum anatolicum,,2001
+YP_009300669.1,Shayang sigmavirus,Sigmavirus,Rhabdoviridae,2170,complete,RNA-dependent RNA polymerase,China,Musca domestica,,2012
+YP_009287864.1,Bole alpharicinrhavirus,Alpharicinrhavirus,Rhabdoviridae,2171,complete,RNA-dependent RNA polymerase,China,Hyalomma asiaticum,,2012
+YP_009344989.1,Xinzhou alphanemrhavirus,Alphanemrhavirus,Rhabdoviridae,2184,complete,RNA-dependent RNA polymerase,China,Nematoda,,2014
+YP_009666282.1,Drosophilid anphevirus,Anphevirus,Xinmoviridae,2185,complete,RNA-dependent RNA polymerase,France,Drosophila unispina,,2012
+YP_009305117.1,Wuhan alpharicinrhavirus,Alpharicinrhavirus,Rhabdoviridae,2191,complete,RNA-dependent RNA polymerase,China,Rhipicephalus microplus,,2012
+YP_009337815.1,Hubei betanemrhavirus,Betanemrhavirus,Rhabdoviridae,2217,complete,RNA-dependent RNA polymerase,China,Ascaris suum,,2014
+YP_009300674.1,Shayang alphadrosrhavirus,Alphadrosrhavirus,Rhabdoviridae,2231,complete,RNA-dependent RNA polymerase,China,Chrysomya megacephala,,2012
+YP_009304985.1,Hubei alphadrosrhavirus,Alphadrosrhavirus,Rhabdoviridae,2233,complete,RNA-dependent RNA polymerase,China,Musca domestica,,2013

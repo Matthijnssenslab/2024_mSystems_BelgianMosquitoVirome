@@ -1,0 +1,17 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009552019.1,Culex-associated Tombus-like virus,,Tombusviridae,559,complete,hypothetical protein,USA,,,2016-07-02
+YP_009337113.1,Hubei tombus-like virus 28,,,534,complete,RNA-dependent RNA polymerase,China,Tetragnatha maxillosa,,2013
+YP_009337165.1,Hubei tombus-like virus 27,,,470,complete,hypothetical protein 2,China,Tetragnatha maxillosa,,2013
+UDL14007.1,Xiangshan tombus-like virus,,Tombusviridae,509,partial,RNA dependent RNA polymerase,China: Beijing,,,2020
+QZZ63335.1,Nelson wasp-associated virus 2,,,532,partial,hypothetical protein,New Zealand,Vespula vulgaris,,
+QZZ63380.1,Leuven Tombus-like virus 2,,Tombusviridae,567,partial,hypothetical protein,Belgium,,,
+QTJ63588.1,Hymenopteran tombus-related virus,,Tombusviridae,535,partial,RNA-dependent RNA polymerase,France: Var Frejus,,,2011-07-13
+QTJ63595.1,Zygentoman tombus-related virus,,Tombusviridae,529,partial,RNA-dependent RNA polymerase,Austria: Vienna,,,2011
+QTJ63602.1,Raphidiopteran tombus-related virus,,Tombusviridae,484,partial,RNA-dependent RNA polymerase,Austria: Lab culture with samples originating from Greece Parnassos,,,2012-05-20
+QTJ63605.1,Coleopteran tombus-related virus,,Tombusviridae,462,partial,RNA-dependent RNA polymerase,"USA: Florida, Gainesville",,,2013-10-01
+QTJ63704.1,Dipteran tombus-related virus,,Tombusviridae,465,partial,RNA-dependent RNA polymerase,South Africa: Mpumalanga,,,2014-03-24
+QED21532.1,Cushing virus,,Tombusviridae,513,partial,hypothetical protein 1,Australia,,,2017
+AZS32325.1,Hypsignathus monstrosus tombus-like virus 1,,Tombusviridae,458,partial,hypothetical protein 1,Republic of the Congo,,,2015-02-25
+APG76298.1,Shangao tombus-like virus 1,,,546,partial,hypothetical protein 2,China,Hexapoda,,2013
+ANG56339.1,Diaphorina citri associated C virus,,,512,complete,putative RNA-dependent RNA polymerase,,Diaphorina citri,,2015
+AMO03231.1,Tartou virus,,,466,partial,hypothetical protein 1,France,Scaptodrosophila deflexa,,2012

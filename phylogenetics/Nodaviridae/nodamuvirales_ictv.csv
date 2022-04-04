@@ -1,0 +1,20 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+AEQ39075.1,Flock House virus,Alphanodavirus,Nodaviridae,998,partial,protein A,France,Drosophila melanogaster,,2010
+AEH26189.1,Lake Sinai virus 2,Sinaivirus,Sinhaliviridae,622,partial,RNA-dependant RNA polymerase,USA,Apis mellifera,,2009-08-05
+AEH26193.1,Lake Sinai virus 1,Sinaivirus,Sinhaliviridae,672,partial,RNA-dependant RNA polymerase,USA,Apis mellifera,,2009-08-05
+ACU32794.1,Flock House virus,Alphanodavirus,Nodaviridae,998,complete,protein A,USA,Drosophila melanogaster,,2009-02
+ABY87293.1,Tiger puffer nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,protein A,Japan,,,
+ACX71271.1,Senegalese sole Iberian betanodavirus,Betanodavirus,Nodaviridae,982,partial,RNA-dependent RNA polymerase,Spain,Solea senegalensis,,2003-07-15
+ACN58225.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,complete,protein A,South Korea,Paralichthys olivaceus,,
+ACF36168.1,Barfin flounder nervous necrosis virus,Betanodavirus,Nodaviridae,981,complete,RNA-dependent RNA polymerase,Japan,Verasper moseri,,
+ABR23192.1,Barfin flounder nervous necrosis virus,Betanodavirus,Nodaviridae,981,complete,RNA-directed RNA polymerase,Norway: Moere og Romsdal county,Gadus morhua,,
+ABS29339.1,Flock House virus,Alphanodavirus,Nodaviridae,998,partial,protein A,Japan,Trichoplusia ni,,
+AAU85148.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,partial,RNA-dependent RNA polymerase,China,Epinephelus lanceolatus,,
+AAQ90061.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,partial,protein A,,,,
+BAB64329.1,Striped jack nervous necrosis virus,Betanodavirus,Nodaviridae,983,partial,protein A,,,,
+AAK21877.1,Redspotted grouper nervous necrosis virus,Betanodavirus,Nodaviridae,982,partial,protein A,,Epinephelus tauvina,,
+AAK15751.1,Boolarra virus,Alphanodavirus,Nodaviridae,998,partial,protein A,Australia,Oncopera intricoides,,
+CAC17792.1,Barfin flounder nervous necrosis virus,Betanodavirus,Nodaviridae,981,partial,putative RNA-dependent RNA polymerase,"Norway:Austevoll, Hordaland",Hippoglossus hippoglossus,,
+AAF97860.1,Nodamura virus,Alphanodavirus,Nodaviridae,1043,partial,RNA dependent RNA polymerase protein A,,,,
+AAF71691.1,Pariacoto virus,Alphanodavirus,Nodaviridae,973,partial,protein A,Peru,,,
+CAA54399.1,Flock House virus,Alphanodavirus,Nodaviridae,998,partial,protein A,,,,

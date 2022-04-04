@@ -1,0 +1,36 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009507718.1,Orungo virus,Orbivirus,Reoviridae,1302,complete,VP1,Uganda,Homo sapiens,,1959-09
+YP_009158878.1,Chenuda virus,Orbivirus,Reoviridae,1285,complete,RNA-dependent RNA polymerase,Egypt,,,1954
+YP_009158901.1,Chobar Gorge virus,Orbivirus,Reoviridae,1284,complete,RNA-dependent RNA polymerase,Nepal,Ornithodoros,,1970
+YP_009047258.1,Umatilla virus,Orbivirus,Reoviridae,1299,complete,RNA-dependent RNA polymerase,USA,Aves,pooled insects,1969-07
+YP_003896058.1,Great Island virus,Orbivirus,Reoviridae,1285,complete,RNA-dependent RNA polymerase,Canada,,,
+YP_002925132.1,Stretch Lagoon orbivirus,Orbivirus,Reoviridae,1299,complete,VP1,Australia,Culex annulirostris,,2002
+UBT83574.1,Middle Point orbivirus,Orbivirus,Reoviridae,1315,partial,VP1,"Australia: Beatrice Hill, NT",Bos taurus,,2006-12-07
+UBB38843.1,Wongorr virus,Orbivirus,Reoviridae,1294,partial,VP1,Australia: New South Wales,Culex annulirostris,pooled insects,1974
+BCL59280.1,Yunnan orbivirus,Orbivirus,Reoviridae,1315,partial,VP1,"Japan:Okinawa, Ishigaki island",Bos taurus,,2018-11-02
+BCL59290.1,Guangxi orbivirus,Orbivirus,Reoviridae,1316,partial,VP1,"Japan:Okinawa, Kuroshima island",Bos taurus,,2014-11-18
+QWF36631.1,Mudumu virus,Orbivirus,Reoviridae,1320,partial,RNA-dependent RNA polymerase,Namibia,Culicoides,,2018
+QWE80471.1,Corriparta virus,Orbivirus,Reoviridae,1287,complete,RNA-dependent RNA polymerase,Namibia,Culex,,2018
+QVU40006.1,Amate virus,,,1294,partial,VP1,Mexico,Trichobius,,2018-01-17
+BBE08033.1,Sathuvachari virus,Orbivirus,Reoviridae,1325,partial,VP1,"Japan:Okinawa, Ishigaki",Bos taurus,,2005-10-19
+QRW41814.1,Lobuck virus,,,1314,partial,VP1,"USA: Alameda County, California",Ochlerotatus dorsalis,,2017-09-19
+QNH88362.1,Peruvian horse sickness virus,Orbivirus,Reoviridae,1311,partial,VP1,Brazil,Equus caballus,brain,2018-04-26
+BCB92306.1,Yonaguni orbivirus,Orbivirus,Reoviridae,1311,partial,VP1,"Japan:Okinawa, Yonaguni island",Bos taurus,,2015-11-10
+QNS17459.1,Serbia reo-like virus 2,,Reoviridae,1298,partial,RNA-dependent RNA polymerase,Serbia,Cimex lectularius,,2016-09-10
+AYM94291.1,Great Island virus,Orbivirus,Reoviridae,1285,complete,RNA-dependent RNA polymerase,"Russia:, Altai region",Ixodes persulcatus,,1973
+QCU80060.1,Palyam virus,Orbivirus,Reoviridae,1295,partial,VP1,Central African Republic,Amblyomma variegatum,,1989-06-27
+QCQ85356.1,CHeRI orbivirus 2-2,Orbivirus,Reoviridae,1311,partial,VP1,USA,Odocoileus virginianus,,2018-09-18
+QBL15251.1,Chobar Gorge virus,Orbivirus,Reoviridae,1284,partial,VP1,Uganda,Rousettus aegyptiacus,"spleen, abdominal cavity",2013-01-31
+QBL15263.1,Chobar Gorge virus,Orbivirus,Reoviridae,1284,partial,VP1,Guinea,Nycteris,"brain, liver, abdominal cavity, spleen, abdominal cavity",1978-09-22
+AZJ37597.1,Skunk River virus,Orbivirus,Reoviridae,1314,partial,VP1,USA,Ochlerotatus trivittatus,,2007
+AXF35757.1,Kammavanpettai virus,Orbivirus,Reoviridae,1298,partial,RNA-dependent RNA polymerase,"India: Kammavanpet village, Tamil Nadu state",Sturnia pagodarum,,1963
+ATW68806.1,Okhotskiy virus,Orbivirus,Reoviridae,1279,partial,RNA-dependent RNA polymerase,Russia: Murmansk district,Ixodes uriae,,1972
+ATW68818.1,Baku virus,Orbivirus,Reoviridae,1285,partial,RNA-dependent RNA polymerase,Uzbekistan: Parkent,Ornithodoros coniceps,,1972-11-30
+AYA60488.1,Mobuck virus,Orbivirus,Reoviridae,1328,partial,VP1,USA,Odocoileus virginianus,,2017-09-06
+AVO64731.1,Big Cypress virus,,,1297,partial,VP1,USA,Psorophora columbiae,,2014-07-07
+AVO64741.1,Ninarumi virus,,Reoviridae,1310,partial,VP1,Peru,Ochlerotatus fulvus,,2009-02-22
+ANH10670.1,Parry's Lagoon virus,Orbivirus,Reoviridae,1290,partial,VP1,Australia,Culex annulirostris,,2010
+BAP18631.1,Umatilla virus,Orbivirus,Reoviridae,1299,partial,RNA-dependent RNA polymerase,Japan,Culex sasai,,2011-10
+AHM93463.1,Great Island virus,Orbivirus,Reoviridae,1284,partial,polymerase,Ukraine,Ixodes ricinus,,2008-06-09
+AGE32260.1,Sathuvachari virus,Orbivirus,Reoviridae,1321,complete,VP1,India,Botrytis,,1963
+AGE32270.1,Orbivirus JKT-8132,Orbivirus,Reoviridae,1097,partial,VP1,"Indonesia: Tag-tag, Bali",Culex vishnui,,1980

@@ -1,0 +1,7 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009305414.1,Winged bean alphaendornavirus 1,Alphaendornavirus,Endornaviridae,4785,complete,polyprotein,,Psophocarpus tetragonolobus,plant seed,
+QPT54841.1,Capsicum frutescens endornavirus 1,,Endornaviridae,4869,complete,polyprotein,USA,Capsicum frutescens,plant leaf,2015-11-25
+YP_009165596.1,Hot pepper alphaendornavirus,Alphaendornavirus,Endornaviridae,4884,complete,polyprotein,South Korea,Capsicum frutescens,,2011-06-11
+QHB50297.1,Bell pepper alphaendornavirus,Alphaendornavirus,Endornaviridae,4884,partial,polyprotein,Slovakia,Piperaceae,,
+YP_009506353.1,Phaseolus vulgaris alphaendornavirus 2,Alphaendornavirus,Endornaviridae,4920,complete,polyprotein,Brazil,Phaseolus vulgaris,plant leaf,2014-10-01
+BBN67127.1,Fagopyrum esculentum endornavirus 1,,Endornaviridae,5190,complete,polyprotein,Japan,Fagopyrum esculentum,,2017-09-14

@@ -1,0 +1,216 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=114;
+	taxlabels
+	'AJT39589.1_PArp-RdRp_partial_/dsRNA_virus_environmental_sample/'
+	'AMQ11131.1_RNA-dependent_RNA_polymerase_/Beauveria_bassiana_victorivirus_1/'
+	'AND83002.1_RNA-dependent_RNA_polymerase_/Sclerotinia_sclerotiorum_double-stranded_RNA_virus_3/'
+	'APG76025.1_hypothetical_protein_partial_/Hubei_toti-like_virus_7/'
+	'APG76028.1_hypothetical_protein_/Hubei_chryso-like_virus_2/'
+	'AZT88643.1_RNA-dependent_RNA_polymerase_/Thelebolus_microsporus_totivirus_1/'
+	'AZT88645.1_RNA-dependent_RNA_polymerase_/Tolypocladium_ophioglossoides_totivirus_1/'
+	'BBQ05098.1_RNA-dependent_RNA_polymerase_/Culex_vishnui_subgroup_totivirus/'
+	'BBV14774.1_RNA_dependent_RNA_polymerase_/Barley_aphid_RNA_virus_8/'
+	'NP_043465.1_/Leishmania_RNA_virus_2/Leishmania_major/'
+	'NP_047558.1_RNA_dependent_RNA_polymerase_/Sphaeropsis_sapinea_RNA_virus_1/'
+	'NP_619653.1_/Leishmania_RNA_virus_1/Leishmania_braziliensis_guyanensis/'
+	'NP_624323.2_/Trichomonas_vaginalis_virus_2/Trichomonas_vaginalis/'
+	'QBA82443.1_RdRp_/Botryosphaeria_dothidea_victorivirus_2/'
+	'QDF82045.1_RNA-dependent_RNA_polymerase_/Sclerotinia_sclerotiorum_botybirnavirus_3/'
+	'QDH91165.1_RNA-dependent_RNA_polymerase_partial_/Totiviridae_sp./'
+	'QDH91420.1_RNA-dependent_RNA_polymerase_/Totiviridae_sp./'
+	'QEM39133.1_RNA-dependent_RNA_polymerase_/Aedes_aegypti_toti-like_virus/'
+	'QGY93970.1_RNA_dependent_RNA_polymerase_/Plasmopara_viticola_lesion_associated_dsRNA_virus_1/'
+	'QHA33836.1_RdRp_/Salado_virus/'
+	'QIP68006.1_RNA-dependent_RNA_polymerase_/Bremia_lactucae_associated_dsRNA_virus_1/'
+	'QJQ28884.1_RNA-dependent_RNA_polymerase_/Botrytis_porri_botybirnavirus_1/'
+	'QLJ83488.1_RNA-dependent_RNA_polymerase_/Broome_chryso-like_virus_1/'
+	'QLJ83492.1_RNA-dependent_RNA_polymerase_partial_/Fitzroy_Crossing_toti-like_virus_2/'
+	'QQP18682.1_RNA-dependent_RNA_polymerase_partial_/Soybean_thrips-associated_totivirus_1/'
+	'QRD99892.1_RNA-dependent_RNA_polymerase_/Soufli_chryso-like_virus/'
+	'QRD99893.1_RNA-dependent_RNA_polymerase_/Xanthi_chryso-like_virus/'
+	'QRD99909.1_RNA-dependent_RNA_polymerase_/Evros_chryso-like_virus/'
+	'QRW41694.1_RNA-dependent_RNA_polymerase_/Gouley_virus/'
+	'QRW41701.1_RNA-dependent_RNA_polymerase_/Stinn_virus/'
+	'QRW41776.1_RNA-dependent_RNA_polymerase_/Snelk_virus/'
+	'QRW42113.1_RNA-dependent_RNA_polymerase_/Tzifr_virus/'
+	'QRW42117.1_RNA-dependent_RNA_polymerase_/Lotchka_virus/'
+	'QRW42729.1_RNA-dependent_RNA_polymerase_/Hubei_chryso-like_virus_1/'
+	'QRW42852.1_RNA-dependent_RNA_polymerase_/Keturi_virus/'
+	'QTE76048.1_RNA-dependent_RNA_polymerase_/Neofusicoccum_parvum_victorivirus_1/'
+	'QTW97792.1_RNA-dependent_RNA_polymerase_/Chrysoviridae_sp./'
+	'UBZ25890.1_RNA-dependent_RNA_polymerase_/Neofusicoccum_parvum_victorivirus_3/'
+	'VFI65724.1_RNA_dependent_RNA_polymerase_partial_/Umbelopsis_ramanniana_virus_2/'
+	'YP_001531163.1_/Amasya_cherry_disease_associated_chrysovirus/Fungi/'
+	'YP_001649206.1_/Magnaporthe_oryzae_virus_2/Pyricularia_oryzae/'
+	'YP_003288763.1_/Rosellinia_necatrix_megabirnavirus_1/Rosellinia_necatrix/'
+	'YP_003289293.1_/Drosophila_melanogaster_totivirus_SW-2009a/Drosophila_melanogaster/2009-02'
+	'YP_003541123.1_/Phlebiopsis_gigantea_mycovirus_dsRNA_1/Phlebiopsis_gigantea/'
+	'YP_003858286.1_/Magnaporthe_oryzae_chrysovirus_1/Pyricularia_oryzae/2002-04-12'
+	'YP_003934934.1_/Armigeres_subalbatus_virus_SaX06-AK20/Armigeres_subalbatus/2006'
+	'YP_004089630.1_/Tolypocladium_cylindrosporum_virus_1/Tolypocladium_cylindrosporum/'
+	'YP_005097975.1_/Rosellinia_necatrix_quadrivirus_1/Rosellinia_necatrix/1997'
+	'YP_005454251.1_/Tianjin_totivirus/Chiroptera/2007'
+	'YP_007697651.1_/Xanthophyllomyces_dendrorhous_virus_L1A/Phaffia_rhodozyma/'
+	'YP_007761589.1_/Ustilaginoidea_virens_RNA_virus_1/Ustilaginoidea_virens/2011'
+	'YP_008130308.1_putative_RNA_dependent_RNA_polymerase_/Rosellinia_necatrix_victorivirus_1/'
+	'YP_008914864.1_/Magnaporthe_oryzae_chrysovirus_1/Pyricularia_oryzae/2002-04-12'
+	'YP_009004156.1_/Ustilaginoidea_virens_RNA_virus_3/Ustilaginoidea_virens/2009'
+	'YP_009030005.1_/Leishmania_aethiopica_RNA_virus/Leishmania_aethiopica/'
+	'YP_009032633.1_RNA-dependent_RNA_polymerase_/Beauveria_bassiana_victorivirus_NZL/1980/'
+	'YP_009072433.1_/Botryosphaeria_dothidea_victorivirus_1/Botryosphaeria_dothidea/2013-04'
+	'YP_009072448.1_/Leptopilina_boulardi_Toti-like_virus/Leptopilina_boulardi/'
+	'YP_009094185.1_/Ustilaginoidea_virens_RNA_virus_L/Ustilaginoidea_virens/2012-10'
+	'YP_009143307.1_/Magnaporthe_oryzae_virus_3/Pyricularia_oryzae/2011-09-01'
+	'YP_009143313.1_/Camponotus_yamaokai_virus/Camponotus_yamaokai/2013-11-06'
+	'YP_009143529.1_/Sclerotinia_sclerotiorum_megabirnavirus_1/Sclerotinia_sclerotiorum/2010-05-01'
+	'YP_009158913.1_/Fusarium_oxysporum_chrysovirus_2/Fusarium_oxysporum_f._sp._dianthi/2008'
+	'YP_009162330.1_/Trichomonas_vaginalis_virus_1/Trichomonas_vaginalis/1999-06'
+	'YP_009182167.1_/Ustilaginoidea_virens_RNA_virus_5/Ustilaginoidea_virens/2012'
+	'YP_009182174.1_/Red_clover_powdery_mildew-associated_totivirus_1/Erysiphe_trifoliorum/2013'
+	'YP_009182176.1_/Red_clover_powdery_mildew-associated_totivirus_2/Erysiphe_trifoliorum/2013'
+	'YP_009182181.1_/Red_clover_powdery_mildew-associated_totivirus_3/Erysiphe_trifoliorum/2013'
+	'YP_009182188.1_/Red_clover_powdery_mildew-associated_totivirus_5/Erysiphe_trifoliorum/2013'
+	'YP_009182190.1_/Red_clover_powdery_mildew-associated_totivirus_6/Erysiphe_trifoliorum/2013'
+	'YP_009182195.1_/Red_clover_powdery_mildew-associated_totivirus_7/Erysiphe_trifoliorum/2013'
+	'YP_009212848.1_/Penicillium_aurantiogriseum_totivirus_1/Penicillium_aurantiogriseum/2014'
+	'YP_009225665.1_/Panax_notoginseng_virus_A/Panax_notoginseng/2014-10-20'
+	'YP_009227124.1_/Rosellinia_necatrix_megabirnavirus_2-W8/Rosellinia_necatrix/'
+	'YP_009249475.1_/Penicillium_digitatum_virus_1/Penicillium_digitatum/2015-04-12'
+	'YP_009254736.1_/Nigrospora_oryzae_victorivirus_1/Nigrospora_oryzae/2015'
+	'YP_009256209.1_/Golden_shiner_totivirus/Notemigonus_crysoleucas/2014'
+	'YP_009259368.1_/Sclerotinia_nivalis_victorivirus_1/Sclerotinia_nivalis/'
+	'YP_009259486.1_/Maize-associated_totivirus_2/Zea_mays/2015-05-18'
+	'YP_009272905.1_/Fusarium_poae_victorivirus_1/Fusarium_poae/'
+	'YP_009336493.1_hypothetical_protein_2_/Hubei_toti-like_virus_10/'
+	'YP_009336788.1_hypothetical_protein_/Hubei_toti-like_virus_9/'
+	'YP_009337840.1_/Isaria_javanica_chrysovirus/Cordyceps_javanica/2015-09-24'
+	'YP_009353026.1_/Botryosphaeria_dothidea_chrysovirus/Botryosphaeria_dothidea/2007-09-01'
+	'YP_009388609.1_RdRp_/Aedes_alboannulatus_toti-like_virus_1/'
+	'YP_009388611.1_RdRp_/Aedes_camptorhynchus_toti-like_virus_1/'
+	'YP_009448194.1_/Maize-associated_totivirus_3/Zea_mays/2014-08-09'
+	'YP_009507831.1_/Scheffersomyces_segobiensis_virus_L/Scheffersomyces_segobiensis/2012-06'
+	'YP_009507835.1_/Xanthophyllomyces_dendrorhous_virus_L1B/Phaffia_rhodozyma/'
+	'YP_009507836.1_/Trichomonas_vaginalis_virus_4/Trichomonas_vaginalis/2009-11'
+	'YP_009507942.1_/Cryphonectria_nitschkei_chrysovirus_1/Cryphonectria_nitschkei/2001'
+	'YP_009507948.1_/Verticillium_dahliae_chrysovirus_1/Verticillium_dahliae/2010-02'
+	'YP_009508249.1_/Aspergillus_foetidus_slow_virus_1/Aspergillus_foetidus/'
+	'YP_009551629.1_/Colletotrichum_fructicola_chrysovirus_1/Colletotrichum_fructicola/'
+	'YP_009551684.1_/Eimeria_stiedai_RNA_virus_1/Eimeria_stiedai/2012-09-09'
+	'YP_009551937.1_/Panax_notoginseng_virus_A/Panax_notoginseng/2014-10-20'
+	'YP_009552275.1_/Pythium_polare_RNA_virus_1/Pythium_polare/'
+	'YP_009552778.1_/Fusarium_asiaticum_victorivirus_1/Fusarium_asiaticum/2016-04'
+	'YP_009552822.1_/Culex_tritaeniorhynchus_totivirus/Culex_tritaeniorhynchus/2010-05-01'
+	'YP_009553287.1_/Alternaria_alternata_chrysovirus/Alternaria_alternata/1998-09-15'
+	'YP_009553478.1_/Alternaria_arborescens_victorivirus_1/Alternaria_arborescens/'
+	'YP_009667008.1_/Macrophomina_phaseolina_chrysovirus/Macrophomina_phaseolina/2013-06-01'
+	'YP_010085115.1_/Fusarium_graminearum_chrysovirus/Fusarium_graminearum/1998'
+	'YP_010088028.1_/Aspergillus_thermomutatus_chrysovirus_1/Aspergillus_thermomutatus/2012-07-10'
+	'YP_010088049.1_/Coniothyrium_diplodiella_chrysovirus_1/Coniella_diplodiella/2017'
+	'YP_010088052.1_/Neofusicoccum_parvum_chrysovirus_1/Neofusicoccum_parvum/2017'
+	'YP_010088084.1_/Chrysothrix_chrysovirus_1/Penicillium_citreosulfuratum/2014'
+	'YP_044807.1_/Gremmeniella_abietina_RNA_virus_L2/Gremmeniella_abietina/'
+	'YP_392482.1_/Penicillium_chrysogenum_virus/Penicillium_chrysogenum/'
+	'lcl_ORF1_NODE_11_length_2924_cov_321.855638_MEMO011_124_2613'
+	'lcl_ORF1_NODE_13_length_3516_cov_325.585345_NEMO33_80_3436'
+	'lcl_ORF1_NODE_5_length_7137_cov_1217.239660_MEMO011_6765_88'
+	'lcl_ORF1_NODE_7_length_2988_cov_95.118516_NEMO36_2786_300'
+	'lcl_ORF2_NODE_6_length_4360_cov_7.139622_MEMO143_3561_496'
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('YP_010085115.1_/Fusarium_graminearum_chrysovirus/Fusarium_graminearum/1998':0.137175,((('YP_010088028.1_/Aspergillus_thermomutatus_chrysovirus_1/Aspergillus_thermomutatus/2012-07-10':0.218003,(('YP_009551629.1_/Colletotrichum_fructicola_chrysovirus_1/Colletotrichum_fructicola/':0.379611,'YP_009553287.1_/Alternaria_alternata_chrysovirus/Alternaria_alternata/1998-09-15':0.302846)[&boot=79]:0.095417,'YP_009353026.1_/Botryosphaeria_dothidea_chrysovirus/Botryosphaeria_dothidea/2007-09-01':0.209598)[&boot=77]:0.052144)[&boot=98]:0.11379,(((((('YP_010088084.1_/Chrysothrix_chrysovirus_1/Penicillium_citreosulfuratum/2014':0.20654,'YP_009337840.1_/Isaria_javanica_chrysovirus/Cordyceps_javanica/2015-09-24':0.191664)[&boot=99]:0.068587,'YP_392482.1_/Penicillium_chrysogenum_virus/Penicillium_chrysogenum/':0.186113)[&boot=100]:0.096679,('YP_009667008.1_/Macrophomina_phaseolina_chrysovirus/Macrophomina_phaseolina/2013-06-01':0.233847,('YP_009507942.1_/Cryphonectria_nitschkei_chrysovirus_1/Cryphonectria_nitschkei/2001':0.195499,'YP_009507948.1_/Verticillium_dahliae_chrysovirus_1/Verticillium_dahliae/2010-02':0.187223)[&boot=100]:0.199016)[&boot=95]:0.047153)[&boot=100]:0.34121,'YP_001531163.1_/Amasya_cherry_disease_associated_chrysovirus/Fungi/':0.484006)[&boot=100]:0.495373,(((((('QTW97792.1_RNA-dependent_RNA_polymerase_/Chrysoviridae_sp./':0.002623,'QRW42729.1_RNA-dependent_RNA_polymerase_/Hubei_chryso-like_virus_1/':0.002401)[&boot=100]:0.025157,((('lcl_ORF1_NODE_13_length_3516_cov_325.585345_NEMO33_80_3436':1.0E-6,'QRD99893.1_RNA-dependent_RNA_polymerase_/Xanthi_chryso-like_virus/':0.005032)[&boot=98]:4.0E-6,'QLJ83488.1_RNA-dependent_RNA_polymerase_/Broome_chryso-like_virus_1/':0.041507)[&boot=38]:0.003275,'QRD99892.1_RNA-dependent_RNA_polymerase_/Soufli_chryso-like_virus/':0.004357)[&boot=98]:0.021572)[&boot=100]:0.048537,'QRD99909.1_RNA-dependent_RNA_polymerase_/Evros_chryso-like_virus/':0.246374)[&boot=100]:0.088131,('QRW42852.1_RNA-dependent_RNA_polymerase_/Keturi_virus/':0.097956,'QHA33836.1_RdRp_/Salado_virus/':0.16813)[&boot=98]:0.055285)[&boot=100]:0.139842,'APG76028.1_hypothetical_protein_/Hubei_chryso-like_virus_2/':0.251913)[&boot=100]:0.208755,'BBV14774.1_RNA_dependent_RNA_polymerase_/Barley_aphid_RNA_virus_8/':0.618702)[&boot=100]:0.731167)[&boot=91]:0.138414,((((((('YP_009551684.1_/Eimeria_stiedai_RNA_virus_1/Eimeria_stiedai/2012-09-09':0.87045,(((((((('YP_009552778.1_/Fusarium_asiaticum_victorivirus_1/Fusarium_asiaticum/2016-04':0.076272,'YP_008130308.1_putative_RNA_dependent_RNA_polymerase_/Rosellinia_necatrix_victorivirus_1/':0.141162)[&boot=100]:0.239224,('YP_009072433.1_/Botryosphaeria_dothidea_victorivirus_1/Botryosphaeria_dothidea/2013-04':0.46558,'YP_004089630.1_/Tolypocladium_cylindrosporum_virus_1/Tolypocladium_cylindrosporum/':0.409092)[&boot=75]:0.0833)[&boot=90]:0.093025,(('YP_009508249.1_/Aspergillus_foetidus_slow_virus_1/Aspergillus_foetidus/':0.274266,'YP_009094185.1_/Ustilaginoidea_virens_RNA_virus_L/Ustilaginoidea_virens/2012-10':0.364439)[&boot=98]:0.098429,('YP_009259368.1_/Sclerotinia_nivalis_victorivirus_1/Sclerotinia_nivalis/':0.272964,'QDH91165.1_RNA-dependent_RNA_polymerase_partial_/Totiviridae_sp./':0.249302)[&boot=100]:0.163146)[&boot=77]:0.062988)[&boot=74]:0.034939,(((('UBZ25890.1_RNA-dependent_RNA_polymerase_/Neofusicoccum_parvum_victorivirus_3/':0.116431,'QTE76048.1_RNA-dependent_RNA_polymerase_/Neofusicoccum_parvum_victorivirus_1/':0.178814)[&boot=100]:0.109541,'NP_047558.1_RNA_dependent_RNA_polymerase_/Sphaeropsis_sapinea_RNA_virus_1/':0.25125)[&boot=74]:0.032961,'QBA82443.1_RdRp_/Botryosphaeria_dothidea_victorivirus_2/':0.234623)[&boot=100]:0.216331,('YP_009032633.1_RNA-dependent_RNA_polymerase_/Beauveria_bassiana_victorivirus_NZL/1980/':0.094244,'AMQ11131.1_RNA-dependent_RNA_polymerase_/Beauveria_bassiana_victorivirus_1/':0.113846)[&boot=100]:0.259623)[&boot=92]:0.066534)[&boot=100]:0.27789,((('YP_009182167.1_/Ustilaginoidea_virens_RNA_virus_5/Ustilaginoidea_virens/2012':0.428825,'QDH91420.1_RNA-dependent_RNA_polymerase_/Totiviridae_sp./':0.567879)[&boot=90]:0.137497,(('lcl_ORF1_NODE_7_length_2988_cov_95.118516_NEMO36_2786_300':0.129542,'lcl_ORF1_NODE_11_length_2924_cov_321.855638_MEMO011_124_2613':0.140272)[&boot=100]:0.219665,('AZT88643.1_RNA-dependent_RNA_polymerase_/Thelebolus_microsporus_totivirus_1/':0.303606,'AZT88645.1_RNA-dependent_RNA_polymerase_/Tolypocladium_ophioglossoides_totivirus_1/':0.557368)[&boot=56]:0.069781)[&boot=62]:0.053708)[&boot=83]:0.0517,('QQP18682.1_RNA-dependent_RNA_polymerase_partial_/Soybean_thrips-associated_totivirus_1/':0.553195,'VFI65724.1_RNA_dependent_RNA_polymerase_partial_/Umbelopsis_ramanniana_virus_2/':0.370394)[&boot=67]:0.052496)[&boot=74]:0.059485)[&boot=99]:0.140435,'YP_007761589.1_/Ustilaginoidea_virens_RNA_virus_1/Ustilaginoidea_virens/2011':0.826336)[&boot=63]:0.050448,(('YP_009553478.1_/Alternaria_arborescens_victorivirus_1/Alternaria_arborescens/':0.384493,(((('YP_009249475.1_/Penicillium_digitatum_virus_1/Penicillium_digitatum/2015-04-12':0.120064,'YP_009212848.1_/Penicillium_aurantiogriseum_totivirus_1/Penicillium_aurantiogriseum/2014':0.096706)[&boot=100]:0.141551,'YP_009143307.1_/Magnaporthe_oryzae_virus_3/Pyricularia_oryzae/2011-09-01':0.286445)[&boot=100]:0.102968,'YP_044807.1_/Gremmeniella_abietina_RNA_virus_L2/Gremmeniella_abietina/':0.270221)[&boot=100]:0.082458,'YP_001649206.1_/Magnaporthe_oryzae_virus_2/Pyricularia_oryzae/':0.340223)[&boot=100]:0.110118)[&boot=99]:0.058041,('YP_009272905.1_/Fusarium_poae_victorivirus_1/Fusarium_poae/':0.290594,('YP_009254736.1_/Nigrospora_oryzae_victorivirus_1/Nigrospora_oryzae/2015':0.37625,'YP_009004156.1_/Ustilaginoidea_virens_RNA_virus_3/Ustilaginoidea_virens/2009':0.275384)[&boot=100]:0.10453)[&boot=100]:0.130017)[&boot=100]:0.246227)[&boot=99]:0.154515,(('NP_043465.1_/Leishmania_RNA_virus_2/Leishmania_major/':0.124901,'YP_009030005.1_/Leishmania_aethiopica_RNA_virus/Leishmania_aethiopica/':0.19339)[&boot=100]:0.458241,'NP_619653.1_/Leishmania_RNA_virus_1/Leishmania_braziliensis_guyanensis/':0.41702)[&boot=100]:0.487487)[&boot=94]:0.132909)[&boot=100,!hilight={36,0.49500635159999895,#0f8299}]:0.415942,(('YP_009507836.1_/Trichomonas_vaginalis_virus_4/Trichomonas_vaginalis/2009-11':0.412556,'NP_624323.2_/Trichomonas_vaginalis_virus_2/Trichomonas_vaginalis/':0.399531)[&boot=100]:0.479524,'YP_009162330.1_/Trichomonas_vaginalis_virus_1/Trichomonas_vaginalis/1999-06':0.921894)[&boot=100,!hilight={3,0.9163473862,#54990f}]:0.505748)[&boot=100]:0.439854,(((((('YP_009551937.1_/Panax_notoginseng_virus_A/Panax_notoginseng/2014-10-20':0.08293,'YP_009225665.1_/Panax_notoginseng_virus_A/Panax_notoginseng/2014-10-20':0.093748)[&boot=100]:0.258476,('YP_009448194.1_/Maize-associated_totivirus_3/Zea_mays/2014-08-09':0.011784,'YP_009259486.1_/Maize-associated_totivirus_2/Zea_mays/2015-05-18':0.019147)[&boot=100]:0.254075)[&boot=100]:0.084064,'YP_009182174.1_/Red_clover_powdery_mildew-associated_totivirus_1/Erysiphe_trifoliorum/2013':0.508652)[&boot=100]:0.417993,((('YP_009507835.1_/Xanthophyllomyces_dendrorhous_virus_L1B/Phaffia_rhodozyma/':0.325509,'YP_007697651.1_/Xanthophyllomyces_dendrorhous_virus_L1A/Phaffia_rhodozyma/':0.272802)[&boot=99]:0.09065,'YP_009182181.1_/Red_clover_powdery_mildew-associated_totivirus_3/Erysiphe_trifoliorum/2013':0.431742)[&boot=100]:0.331427,('YP_009182188.1_/Red_clover_powdery_mildew-associated_totivirus_5/Erysiphe_trifoliorum/2013':0.537925,('YP_009182190.1_/Red_clover_powdery_mildew-associated_totivirus_6/Erysiphe_trifoliorum/2013':0.557315,'YP_009182195.1_/Red_clover_powdery_mildew-associated_totivirus_7/Erysiphe_trifoliorum/2013':0.73222)[&boot=99]:0.108374)[&boot=100]:0.289999)[&boot=84]:0.073945)[&boot=94]:0.213927,('YP_009507831.1_/Scheffersomyces_segobiensis_virus_L/Scheffersomyces_segobiensis/2012-06':0.662598,'YP_009182176.1_/Red_clover_powdery_mildew-associated_totivirus_2/Erysiphe_trifoliorum/2013':0.803347)[&boot=99]:0.147542)[&boot=83]:0.212501,'YP_005097975.1_/Rosellinia_necatrix_quadrivirus_1/Rosellinia_necatrix/1997':1.490224)[&boot=100,!hilight={14,0.17495293150000002,#fc990f}]:0.977924)[&boot=83]:0.281227,((('YP_009552275.1_/Pythium_polare_RNA_virus_1/Pythium_polare/':2.420595,'YP_009072448.1_/Leptopilina_boulardi_Toti-like_virus/Leptopilina_boulardi/':2.461133)[&boot=86]:0.403758,((('YP_009552822.1_/Culex_tritaeniorhynchus_totivirus/Culex_tritaeniorhynchus/2010-05-01':0.197342,('YP_005454251.1_/Tianjin_totivirus/Chiroptera/2007':0.170169,'YP_003289293.1_/Drosophila_melanogaster_totivirus_SW-2009a/Drosophila_melanogaster/2009-02':0.150856)[&boot=99]:0.074623)[&boot=100]:0.173635,'YP_003934934.1_/Armigeres_subalbatus_virus_SaX06-AK20/Armigeres_subalbatus/2006':0.472179)[&boot=99]:0.199049,'YP_009256209.1_/Golden_shiner_totivirus/Notemigonus_crysoleucas/2014':0.768147)[&boot=100]:1.677919)[&boot=68]:0.155026,'YP_009143313.1_/Camponotus_yamaokai_virus/Camponotus_yamaokai/2013-11-06':2.390135)[&boot=100]:0.956453)[&boot=84]:0.143184,(((('lcl_ORF2_NODE_6_length_4360_cov_7.139622_MEMO143_3561_496':0.185011,'BBQ05098.1_RNA-dependent_RNA_polymerase_/Culex_vishnui_subgroup_totivirus/':0.149003)[&boot=99]:0.037796,(('QRW41776.1_RNA-dependent_RNA_polymerase_/Snelk_virus/':0.006971,'QRW41701.1_RNA-dependent_RNA_polymerase_/Stinn_virus/':0.010751)[&boot=100]:0.067582,'QRW42113.1_RNA-dependent_RNA_polymerase_/Tzifr_virus/':0.158994)[&boot=100]:0.162238)[&boot=100]:0.218209,(('YP_009336493.1_hypothetical_protein_2_/Hubei_toti-like_virus_10/':0.300379,('AJT39589.1_PArp-RdRp_partial_/dsRNA_virus_environmental_sample/':0.010444,'QEM39133.1_RNA-dependent_RNA_polymerase_/Aedes_aegypti_toti-like_virus/':3.0E-6)[&boot=100]:0.351255)[&boot=86]:0.038507,(('YP_009388609.1_RdRp_/Aedes_alboannulatus_toti-like_virus_1/':3.0E-6,'YP_009388611.1_RdRp_/Aedes_camptorhynchus_toti-like_virus_1/':0.005053)[&boot=100]:0.459832,('APG76025.1_hypothetical_protein_partial_/Hubei_toti-like_virus_7/':0.6416,'YP_009336788.1_hypothetical_protein_/Hubei_toti-like_virus_9/':0.626204)[&boot=100]:0.202253)[&boot=64]:0.063636)[&boot=73]:0.073951)[&boot=75]:0.124377,(('QRW42117.1_RNA-dependent_RNA_polymerase_/Lotchka_virus/':0.068711,'QRW41694.1_RNA-dependent_RNA_polymerase_/Gouley_virus/':0.099273)[&boot=100]:0.151529,'QLJ83492.1_RNA-dependent_RNA_polymerase_partial_/Fitzroy_Crossing_toti-like_virus_2/':0.238845)[&boot=100]:0.153183)[&boot=100,!hilight={15,0.7394340422000001,#99600f}]:1.076636)[&boot=77]:0.135356,(('lcl_ORF1_NODE_5_length_7137_cov_1217.239660_MEMO011_6765_88':0.781647,('AND83002.1_RNA-dependent_RNA_polymerase_/Sclerotinia_sclerotiorum_double-stranded_RNA_virus_3/':0.579803,('QIP68006.1_RNA-dependent_RNA_polymerase_/Bremia_lactucae_associated_dsRNA_virus_1/':0.180718,'QGY93970.1_RNA_dependent_RNA_polymerase_/Plasmopara_viticola_lesion_associated_dsRNA_virus_1/':0.30467)[&boot=100]:0.89731)[&boot=100]:0.321445)[&boot=100]:0.38362,('QJQ28884.1_RNA-dependent_RNA_polymerase_/Botrytis_porri_botybirnavirus_1/':3.0E-6,'QDF82045.1_RNA-dependent_RNA_polymerase_/Sclerotinia_sclerotiorum_botybirnavirus_3/':0.015243)[&boot=100]:1.510169)[&boot=92,!hilight={6,0.5595330577999995,#ffea0f}]:0.319952)[&boot=86]:0.142259,((('YP_009227124.1_/Rosellinia_necatrix_megabirnavirus_2-W8/Rosellinia_necatrix/':0.165749,'YP_009143529.1_/Sclerotinia_sclerotiorum_megabirnavirus_1/Sclerotinia_sclerotiorum/2010-05-01':0.26389)[&boot=100]:0.193304,'YP_003288763.1_/Rosellinia_necatrix_megabirnavirus_1/Rosellinia_necatrix/':0.191692)[&boot=100]:1.029099,'YP_003541123.1_/Phlebiopsis_gigantea_mycovirus_dsRNA_1/Phlebiopsis_gigantea/':1.273017)[&boot=100,!hilight={4,0.0,#990ff4}]:1.157977)[&boot=100,!hilight={28,0.11977832269999933,#990f26}]:0.534065)[&boot=100]:1.091399)[&boot=99]:0.109268,('YP_010088049.1_/Coniothyrium_diplodiella_chrysovirus_1/Coniella_diplodiella/2017':0.348069,('YP_010088052.1_/Neofusicoccum_parvum_chrysovirus_1/Neofusicoccum_parvum/2017':0.267806,('YP_008914864.1_/Magnaporthe_oryzae_chrysovirus_1/Pyricularia_oryzae/2002-04-12':0.029517,'YP_003858286.1_/Magnaporthe_oryzae_chrysovirus_1/Pyricularia_oryzae/2002-04-12':0.018248)[&boot=100]:0.186156)[&boot=100]:0.467446)[&boot=97]:0.054508)[&boot=100]:0.575504,'YP_009158913.1_/Fusarium_oxysporum_chrysovirus_2/Fusarium_oxysporum_f._sp._dianthi/2008':0.174363);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=true;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="boot";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="boot";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=6;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=false;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

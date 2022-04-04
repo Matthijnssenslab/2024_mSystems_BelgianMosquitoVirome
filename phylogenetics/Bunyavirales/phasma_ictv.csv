@@ -1,0 +1,18 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+QPB73987.1,Neuropteran feravirus,Feravirus,Phasmaviridae,2241,RdRp,"Austria: Lower Austria, Krems-Land Duernstein",Peyerimhoffina gracilis,,2012-06-19
+QMP82345.1,Coleopteran orthophasmavirus,Orthophasmavirus,Phasmaviridae,2153,RNA-dependent RNA polymerase,"Germany: Thuringia, Jena - Jena Forest",Harmonia axyridis,,2011-08-25
+QMP82378.1,Hemipteran feravirus,Feravirus,Phasmaviridae,2263,RNA-dependent RNA polymerase,"Germany: North Rhine-Westphalia, Rhein-Sieg-Kreis Donrath Agger",Acanthosoma haemorrhoidale,,2011-05-17
+QDZ58984.1,Niukluk phantom orthophasmavirus,Orthophasmavirus,Phasmaviridae,2223,L protein,USA,,,
+ASA47278.1,Culex orthophasmavirus,Orthophasmavirus,Phasmaviridae,2111,RdRp,Australia: Point Douro,Culex globocoxitus,,2015-09-07
+APT68154.1,Ganda orthophasmavirus,Orthophasmavirus,Phasmaviridae,2087,RNA-dependent RNA polymerase,Belgium,Osmia cornuta,,2015-04-13
+AKN56871.1,Jonchet jonvirus,Jonvirus,Phasmaviridae,2256,RNA-dependent RNA polymerase,Cote d'Ivoire,,,2004
+AKN56888.1,Ferak feravirus,Feravirus,Phasmaviridae,2271,RNA-dependent RNA polymerase,Cote d'Ivoire,Culex decens,,2004
+AJG39245.1,Sanxia sawastrivirus,Sawastrivirus,Phasmaviridae,2344,RNA-dependent RNA polymerase,China,Gerridae,,2012
+AJG39258.1,Wuchang cockroach orthophasmavirus 1,Orthophasmavirus,Phasmaviridae,2121,RNA-dependent RNA polymerase,China,Blattella germanica,,2013
+AJG39262.1,Insect wuhivirus,Wuhivirus,Phasmaviridae,2369,RNA-dependent RNA polymerase,China,Hyalopterus pruni,,2013
+AJG39267.1,Wuhan mosquito orthophasmavirus 1,Orthophasmavirus,Phasmaviridae,2095,RNA-dependent RNA polymerase,China,Culex tritaeniorhynchus,,2012
+AJG39268.1,Wuhan mosquito orthophasmavirus 2,Orthophasmavirus,Phasmaviridae,2111,RNA-dependent RNA polymerase,China,Culex tritaeniorhynchus,,2012
+AIA24559.1,Kigluaik phantom orthophasmavirus,Orthophasmavirus,Phasmaviridae,2131,RNA-dependent RNA polymerase,USA,Chaoborus trivitattus,,2011-08-01
+QBK47217.1,Anopheles orthophasmavirus,Orthophasmavirus,Phasmaviridae,2112,RNA-dependent RNA polymerase,Brazil,Anopheles triannulatus,,2015-07-01
+APG79264.1,Odonate orthophasmavirus,Orthophasmavirus,Phasmaviridae,2079,RNA-dependent RNA polymerase,China,Odonata,,2013
+APG79275.1,Qingling orthophasmavirus,Orthophasmavirus,Phasmaviridae,2090,RNA-dependent RNA polymerase,China,Odonata,,2013

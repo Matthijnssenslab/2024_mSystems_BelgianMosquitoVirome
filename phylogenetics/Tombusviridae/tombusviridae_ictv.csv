@@ -1,0 +1,40 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+CAB38331.1,Carnation mottle virus,Alphacarmovirus,Tombusviridae,763,partial,RNA-dependent RNA polymerase,,,,
+ALF95240.1,Potato necrosis virus,Alphanecrovirus,Tombusviridae,724,complete,RNA-dependent RNA polymerase,United Kingdom,Solanum tuberosum,,2005
+AAU93817.1,Olive mild mosaic virus,Alphanecrovirus,Tombusviridae,724,complete,RNA-dependent RNA polymerase,Portugal,Olea europaea,,
+CAA59977.1,Olive latent virus 1,Alphanecrovirus,Tombusviridae,723,complete,RNA dependent RNA polymerase,,,,
+AAA86434.2,Tobacco necrosis virus A,Alphanecrovirus,Tombusviridae,724,partial,RNA-dependent RNA polymerase,,,,
+AXP98766.1,Elderberry aureusvirus 1,Aureusvirus,Tombusviridae,759,complete,RNA-dependent RNA polymerase,Czech Republic: Central Moravia,Sambucus nigra,plant leaf,2015-09-13
+AHA53610.1,Yam spherical virus,Aureusvirus,Tombusviridae,738,complete,RNA dependent RNA polymerase,Nigeria,Dioscorea cayenensis subsp. rotundata,,1998
+CAB81767.1,Hibiscus chlorotic ringspot virus,Betacarmovirus,Tombusviridae,735,partial,RNA-dependent RNA polymerase,,,,
+AAB02540.2,Red clover necrotic mosaic virus,Dianthovirus,Tombusviridae,767,partial,88 kDa protein,,,,
+AAA20212.2,Carnation ringspot virus,Dianthovirus,Tombusviridae,769,partial,RNA dependent RNA polymerase,,,,
+AVX32313.1,Red clover associated virus,Luteovirus,Tombusviridae,366,complete,polymerase P1,Czech Republic,Trifolium pratense,,2016
+ATY36301.1,Apple-associated luteovirus,Luteovirus,Tombusviridae,423,complete,RNA dependent RNA polymerase P1,China,Malus domestica,,2016-05-25
+APA23015.1,Cherry associated luteovirus,Luteovirus,Tombusviridae,364,complete,polymerase P1,Czech Republic,Prunus avium,,2014
+ALX72761.1,Nectarine stem pitting associated virus,Luteovirus,Tombusviridae,328,complete,RNA dependent RNA polymerase P1,USA,Prunus persica,,
+AGN54054.1,Barley yellow dwarf virus kerIII,Luteovirus,Tombusviridae,326,partial,RNA-dependent RNA polymerase P1,France: Kerguelen Islands Chionis,Poa cookii,,2009
+AGN54059.1,Barley yellow dwarf virus kerII,Luteovirus,Tombusviridae,339,complete,RNA-dependent RNA polymerase P1,France: Kerguelen Islands TC13,Poa cookii,,2009
+ABV89766.1,Rose spring dwarf-associated virus,Luteovirus,Tombusviridae,374,complete,RNA-dependent RNA polymerase P1,USA,Rosa,,
+AAL66233.1,Bean leafroll virus,Luteovirus,Tombusviridae,368,complete,RNA-dependent RNA polymerase P1,,,,
+AAF26424.1,Barley yellow dwarf virus PAS,Luteovirus,Tombusviridae,340,complete,RNA-dependent RNA polymerase P1,,,,
+AGO96554.1,Thin paspalum asymptomatic virus,Panicovirus,Tombusviridae,947,complete,RNA-dependent RNA polymerase,"USA: Tallgrass Prairie Preserve, Oklahoma",Paspalum setaceum,,2005-06-16
+AAC97551.1,Panicum mosaic virus,Panicovirus,Tombusviridae,992,complete,RNA-dependent RNA polymerase,,,,
+AXN91183.1,Jasmine mosaic-associated virus 2,Pelarspovirus,Tombusviridae,245,complete,RNA-dependent RNA polymerase,USA,Jasminum multiflorum,,2012-01
+AXN91184.1,Jasmine mosaic-associated virus 2,Pelarspovirus,Tombusviridae,769,complete,RNA-dependent RNA polymerase,USA,Jasminum multiflorum,,2012-01
+AQS23738.1,Jasmine virus H,Pelarspovirus,Tombusviridae,766,complete,RNA-dependent RNA polymerase,China: Fujian,Jasminum sambac,,2015-10-16
+AGF70694.1,Rosa rugosa leaf distortion virus,Pelarspovirus,Tombusviridae,761,complete,RNA-dependent RNA polymerase,USA: Minnesota,Rosa rugosa,,2009-06
+AGC82911.1,Eggplant mottled crinkle virus,Tombusvirus,Tombusviridae,818,complete,RNA polymerase,Israel,Solanum melongena,,2009
+AGC82912.1,Eggplant mottled crinkle virus,Tombusvirus,Tombusviridae,296,complete,RNA polymerase,Israel,Solanum melongena,,2009
+CAM98052.1,Eggplant mottled crinkle virus,Tombusvirus,Tombusviridae,817,partial,RNA-dependent RNA polymerase,,Zantedeschia jucunda,,
+AAY98780.1,Eggplant mottled crinkle virus,Tombusvirus,Tombusviridae,296,complete,RNA-dependent RNA polymerase,Taiwan,Eustoma grandiflorum,,
+AAY98781.1,Eggplant mottled crinkle virus,Tombusvirus,Tombusviridae,817,complete,RNA-dependent RNA polymerase,Taiwan,Eustoma grandiflorum,,
+AAO33940.1,Cucumber Bulgarian latent virus,Tombusvirus,Tombusviridae,790,partial,RNA polymerase,,,,
+AMR60139.1,Ixeridium yellow mottle virus 2,Umbravirus,Tombusviridae,872,complete,RNA-dependent RNA polymerase,South Korea,Ixeridium dentatum,,2013-06-20
+AIU44175.3,Opium poppy mosaic virus,Umbravirus,Tombusviridae,865,complete,RNA-dependent RNA polymerase,New Zealand,Papaver somniferum,,
+AIL27641.1,Ethiopian tobacco bushy top virus,Umbravirus,Tombusviridae,845,complete,RNA-dependent RNA polymerase,Ethiopia,Nicotiana benthamiana,,2009
+ACJ03580.2,Carrot mottle virus,Umbravirus,Tombusviridae,870,complete,RNA-dependent RNA polymerase,Germany,Daucus carota,,2005
+AAN62863.2,Tobacco bushy top virus,Umbravirus,Tombusviridae,865,complete,RNA-dependent RNA polymerase,China,,,
+AAG02571.1,Tobacco mottle virus,Umbravirus,Tombusviridae,361,partial,RNA-dependent RNA polymerase,,,,
+AAB81639.2,Carrot mottle mimic virus,Umbravirus,Tombusviridae,882,complete,RNA-dependent RNA polymerase,,,,
+CTQ57207.1,Groundnut rosette virus,Umbravirus,Tombusviridae,839,complete,RNA polymerase,,,,

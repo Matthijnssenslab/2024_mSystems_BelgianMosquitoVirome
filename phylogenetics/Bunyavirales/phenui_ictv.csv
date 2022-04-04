@@ -1,0 +1,46 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_009666941.1,Guertu bandavirus,Bandavirus,Phenuiviridae,2084,RNA-dependent RNA polymerase,China,Dermacentor nuttalli,,2013-05
+YP_009141013.1,Bhanja bandavirus,Bandavirus,Phenuiviridae,2082,RNA-dependent RNA polymerase,Nigeria,Rhipicephalus decoloratus,,1968
+YP_008719916.1,Razdan bandavirus,Bandavirus,Phenuiviridae,2082,RNA-dependent RNA polymerase,Armenia,,,
+YP_008003507.1,Lone Star bandavirus,Bandavirus,Phenuiviridae,2085,RNA-dependent RNA polymerase,USA: Kentucky,Amblyomma americanum,,1967-06-20
+YP_009329894.1,Dipteran beidivirus,Beidivirus,Phenuiviridae,2161,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009664615.1,Cumuto goukovirus,Goukovirus,Phenuiviridae,2071,RNA-dependent RNA polymerase,Trinidad and Tobago,Culex portesi,,2009
+YP_009664621.1,Gouleako goukovirus,Goukovirus,Phenuiviridae,2071,RNA-dependent RNA polymerase,Cote d'Ivoire,Culex,,2004
+YP_009305143.1,Yichang insect goukovirus,Goukovirus,Phenuiviridae,2089,RNA-dependent RNA polymerase,China,Aulacorthum magnoliae,,2013
+YP_009305136.1,Horsefly horwuvirus,Horwuvirus,Phenuiviridae,3117,RNA-dependent RNA polymerase,China,Tabanidae,,2013
+YP_009330281.1,Dipteran hudivirus,Hudivirus,Phenuiviridae,2238,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009330283.1,Lepidopteran hudovirus,Hudovirus,Phenuiviridae,2400,RNA-dependent RNA polymerase,China,Lepidoptera,,2013
+YP_009667028.1,Laurel Lake laulavirus,Laulavirus,Phenuiviridae,2384,RNA-dependent RNA-polymerase,USA,Ixodes scapularis,,2016
+YP_009666266.1,Mothra mobuvirus,Mobuvirus,Phenuiviridae,2252,RNA-dependent RNA polymerase,USA,Cydia pomonella,,2016-05-11
+YP_009505327.1,Badu phasivirus,Phasivirus,Phenuiviridae,2221,RNA-dependent RNA polymerase,Australia,Culex,,2003-03
+YP_009505332.1,Phasi Charoen-like phasivirus,Phasivirus,Phenuiviridae,2217,RNA-dependent RNA polymerase,Brazil,Aedes aegypti,,2012
+YP_009330277.1,Dipteran phasivirus,Phasivirus,Phenuiviridae,2256,RNA-dependent RNA polymerase,China,Diptera,,2013
+YP_009305140.1,Wutai mosquito phasivirus,Phasivirus,Phenuiviridae,2185,RNA-dependent RNA polymerase,China,Culex quinquefasciatus,,2012
+YP_009305000.1,Fly phasivirus,Phasivirus,Phenuiviridae,2192,RNA-dependent RNA polymerase,China,Atherigona orientalis,,2013
+YP_009665190.1,Frijoles phlebovirus,Phlebovirus,Phenuiviridae,257,RNA-dependent RNA polymerase,Panama,,,
+YP_009666332.1,Mukawa phlebovirus,Phlebovirus,Phenuiviridae,2098,RNA-dependent RNA polymerase,"Japan: Hokkaido, Mukawa",Ixodes persulcatus,,2013-05
+YP_009512941.1,Punta Toro phlebovirus,Phlebovirus,Phenuiviridae,2085,L protein,Panama,Homo sapiens,,1972
+YP_009346010.1,Munguba phlebovirus,Phlebovirus,Phenuiviridae,2090,polymerase,,,,
+YP_009346019.1,Anhanga phlebovirus,Phlebovirus,Phenuiviridae,2096,RNA-dependent RNA polymerase,Brazil,Choloepus didactylus,,1962-10-01
+YP_009346026.1,Urucuri phlebovirus,Phlebovirus,Phenuiviridae,2120,RNA-dependent RNA polymerase,Brazil,Proechimys guyannensis,,1966-04-19
+YP_009346030.1,Ambe phlebovirus,Phlebovirus,Phenuiviridae,2087,RNA-dependent RNA polymerase,Brazil,Phlebotominae,,1982-01-14
+YP_009346035.1,Tapara phlebovirus,Phlebovirus,Phenuiviridae,2089,RNA-dependent RNA polymerase,Brazil,Phlebotominae,,1983-02-04
+YP_009293590.1,Huangpi Tick Virus 2,Uukuvirus,Phenuiviridae,2121,RNA-dependent RNA polymerase,China,Haemaphysalis,,2013
+YP_009246413.1,Zerdali phlebovirus,Phlebovirus,Phenuiviridae,2095,polymerase,Turkey,Phlebotomus,,
+YP_009246447.1,Toros phlebovirus,Phlebovirus,Phenuiviridae,2090,polymerase,Turkey,Phlebotomus,,
+YP_009227127.1,Adana phlebovirus,Phlebovirus,Phenuiviridae,2096,RNA-dependent RNA polymerase,Turkey,Phlebotomus,,2012
+YP_006504091.1,SFTS phlebovirus,Bandavirus,Phenuiviridae,2084,RNA polymerase,China,Homo sapiens,blood,2010-05-18
+YP_004414703.1,Aguacate phlebovirus,Phlebovirus,Phenuiviridae,2085,polymerase,,Lutzomyia,,
+YP_004382743.1,Sicilian phlebovirus,Phlebovirus,Phenuiviridae,2090,polymerase,Turkey,Homo sapiens,blood,2008-08
+YP_004347993.1,Candiru phlebovirus,Phlebovirus,Phenuiviridae,2088,L protein,Brazil,Homo sapiens,,1967
+YP_003848704.1,Rift Valley fever phlebovirus,Phlebovirus,Phenuiviridae,2092,polymerase,Egypt: Sharqiya,,blood,1977
+YP_089669.1,Naples phlebovirus,Phlebovirus,Phenuiviridae,2095,RNA-dependant RNA polymerase,,,,
+YP_009666272.1,Pidgey pidchovirus,Pidchovirus,Phenuiviridae,2267,RNA-dependent RNA polymerase,USA,Choristoneura rosaceana,,2016-08-16
+YP_009449440.1,Rice hoja blanca tenuivirus,Tenuivirus,Phenuiviridae,2918,RNA-dependent RNA polymerase,Colombia,Oryza sativa,,2017
+NP_058528.1,Rice grassy stunt tenuivirus,Tenuivirus,Phenuiviridae,2925,RNA polymerase,,,,
+NP_620522.1,Rice stripe tenuivirus,Tenuivirus,Phenuiviridae,2919,RNA Polymerase,,,,
+YP_009551639.1,Kaisodi uukuvirus,Uukuvirus,Phenuiviridae,2121,RNA-dependent RNA polymerase,India:Karnataka,Haemaphysalis spinigera,,1957
+YP_009449450.1,Kabuto mountain uukuvirus,Uukuvirus,Phenuiviridae,2107,RNA-dependent RNA polymerase,Japan: Hyogo,Haemaphysalis flava,,2009
+NP_941973.1,Uukuniemi uukuvirus,Uukuvirus,Phenuiviridae,2103,RNA polymerase,,,,
+YP_009304989.1,Shrimp wenrivirus,Wenrivirus,Phenuiviridae,2051,RNA-dependent RNA polymerase,China,Penaeus monodon,,2013
+QHA33858.1,Narangue mobuvirus,Mobuvirus,Phenuiviridae,2411,RdRp,Colombia,Mansonia titillans,,2016-04

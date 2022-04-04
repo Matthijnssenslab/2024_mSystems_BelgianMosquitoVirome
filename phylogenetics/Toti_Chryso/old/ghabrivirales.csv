@@ -1,0 +1,70 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_010085115.1,Fusarium graminearum chrysovirus,Betachrysovirus,Chrysoviridae,1137,complete,RNA-dependent RNA polymerase,South Korea,Fusarium graminearum,,1998
+YP_010088028.1,Aspergillus thermomutatus chrysovirus 1,Betachrysovirus,Chrysoviridae,1114,complete,RNA-dependent RNA polymerase,New Zealand,Aspergillus thermomutatus,,2012-07-10
+YP_010088049.1,Coniothyrium diplodiella chrysovirus 1,Betachrysovirus,Chrysoviridae,1125,complete,RNA-dependent RNA polymerase,Italy,Coniella diplodiella,,2017
+YP_010088052.1,Neofusicoccum parvum chrysovirus 1,Betachrysovirus,Chrysoviridae,1116,complete,RNA-dependent RNA polymerase,Italy,Neofusicoccum parvum,,2017
+YP_010088084.1,Chrysothrix chrysovirus 1,Alphachrysovirus,Chrysoviridae,1089,complete,RNA-dependent RNA polymerase,Czech Republic,Penicillium citreosulfuratum,,2014
+YP_009667008.1,Macrophomina phaseolina chrysovirus,Alphachrysovirus,Chrysoviridae,1105,complete,RNA-dependent RNA polymerase,USA,Macrophomina phaseolina,,2013-06-01
+YP_009551629.1,Colletotrichum fructicola chrysovirus 1,Betachrysovirus,Chrysoviridae,1132,complete,putative RNA-dependent RNA polymerase,China,Colletotrichum fructicola,,
+YP_009551684.1,Eimeria stiedai RNA virus 1,,Totiviridae,1100,complete,RNA-dependent RNA polymerase,China,Eimeria stiedai,,2012-09-09
+YP_009551937.1,Panax notoginseng virus A,,Totiviridae,738,complete,putative RNA-dependent RNA polymerase,"China: Shilin, Yunnan",Panax notoginseng,,2014-10-20
+YP_009552275.1,Pythium polare RNA virus 1,,Totiviridae,759,complete,RNA-dependent RNA polymerase,Norway,Pythium polare,,
+YP_009552778.1,Fusarium asiaticum victorivirus 1,Victorivirus,Totiviridae,842,complete,RNA-dependent RNA polymerase,China,Fusarium asiaticum,,2016-04
+YP_009552822.1,Culex tritaeniorhynchus totivirus,,Totiviridae,792,complete,RNA-dependent RNA polymerase,China,Culex tritaeniorhynchus,,2010-05-01
+YP_009553287.1,Alternaria alternata chrysovirus,Betachrysovirus,Chrysoviridae,1117,complete,RNA-dependent RNA polymerase,Japan:Aichi,Alternaria alternata,,1998-09-15
+YP_009553478.1,Alternaria arborescens victorivirus 1,Victorivirus,Totiviridae,829,complete,putative RNA-dependent RNA polymerase,USA,Alternaria arborescens,,
+YP_009507831.1,Scheffersomyces segobiensis virus L,Totivirus,Totiviridae,857,complete,RNA-dependent RNA polymerase,USA,Scheffersomyces segobiensis,,2012-06
+YP_009507835.1,Xanthophyllomyces dendrorhous virus L1B,Totivirus,Totiviridae,820,complete,RNA-dependent RNA polymerase,,Phaffia rhodozyma,,
+YP_009507836.1,Trichomonas vaginalis virus 4,Trichomonasvirus,Totiviridae,1481,complete,RNA-dependent RNA polymerase,USA,Trichomonas vaginalis,,2009-11
+YP_009507942.1,Cryphonectria nitschkei chrysovirus 1,Alphachrysovirus,Chrysoviridae,962,complete,RNA-dependent RNA polymerase,,Cryphonectria nitschkei,,2001
+YP_009507948.1,Verticillium dahliae chrysovirus 1,Alphachrysovirus,Chrysoviridae,1108,complete,RNA-dependent RNA polymerase,China,Verticillium dahliae,,2010-02
+YP_009508249.1,Aspergillus foetidus slow virus 1,Victorivirus,Totiviridae,839,complete,RNA dependent RNA polymerase,,Aspergillus foetidus,,
+YP_009448194.1,Maize-associated totivirus 3,,Totiviridae,834,complete,RNA-dependent RNA polymerase,Ethiopia,Zea mays,plant leaf,2014-08-09
+YP_009353026.1,Botryosphaeria dothidea chrysovirus,Betachrysovirus,Chrysoviridae,1077,complete,putative RNA-dependent RNA polymerase,China,Botryosphaeria dothidea,,2007-09-01
+YP_009337840.1,Isaria javanica chrysovirus,Alphachrysovirus,Chrysoviridae,1117,complete,RNA-dependent RNA polymerase,Czech Republic,Cordyceps javanica,,2015-09-24
+YP_009272905.1,Fusarium poae victorivirus 1,Victorivirus,Totiviridae,827,complete,RNA-dependent RNA polymerase,Japan,Fusarium poae,,
+YP_009259368.1,Sclerotinia nivalis victorivirus 1,Victorivirus,Totiviridae,833,complete,RNA-dependent RNA polymerase,,Sclerotinia nivalis,,
+YP_009259486.1,Maize-associated totivirus 2,,Totiviridae,834,complete,putative RNA-dependent RNA polymerase,Ecuador,Zea mays,,2015-05-18
+YP_009256209.1,Golden shiner totivirus,,Totiviridae,737,complete,RNA-dependent RNA polymerase,USA,Notemigonus crysoleucas,"kidney, spleen",2014
+YP_009254736.1,Nigrospora oryzae victorivirus 1,Victorivirus,Totiviridae,827,complete,RNA-dependent RNA polymerase,China,Nigrospora oryzae,,2015
+YP_009249475.1,Penicillium digitatum virus 1,,Totiviridae,825,complete,RNA-dependent RNA polymerase,China,Penicillium digitatum,,2015-04-12
+YP_009225665.1,Panax notoginseng virus A,,Totiviridae,822,complete,putative RNA-dependent RNA polymerase,"China: Shilin, Yunnan",Panax notoginseng,,2014-10-20
+YP_009227124.1,Rosellinia necatrix megabirnavirus 2-W8,Megabirnavirus,Megabirnaviridae,1108,complete,RNA-dependent RNA polymerase,Japan,Rosellinia necatrix,,
+YP_009212848.1,Penicillium aurantiogriseum totivirus 1,,Totiviridae,825,complete,RNA dependent RNA polymerase,Italy,Penicillium aurantiogriseum,,2014
+YP_009182167.1,Ustilaginoidea virens RNA virus 5,Victorivirus,Totiviridae,860,complete,RNA-dependent RNA polymerase,China,Ustilaginoidea virens,,2012
+YP_009182174.1,Red clover powdery mildew-associated totivirus 1,,Totiviridae,801,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009182176.1,Red clover powdery mildew-associated totivirus 2,,Totiviridae,776,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009182181.1,Red clover powdery mildew-associated totivirus 3,,Totiviridae,799,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009182188.1,Red clover powdery mildew-associated totivirus 5,,Totiviridae,831,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009182190.1,Red clover powdery mildew-associated totivirus 6,,Totiviridae,801,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009182195.1,Red clover powdery mildew-associated totivirus 7,,Totiviridae,808,complete,RNA dependent RNA polymerase,Japan: Okayama,Erysiphe trifoliorum,,2013
+YP_009162330.1,Trichomonas vaginalis virus 1,Trichomonasvirus,Totiviridae,1430,complete,RNA-dependent RNA polymerase,USA,Trichomonas vaginalis,,1999-06
+YP_009158913.1,Fusarium oxysporum chrysovirus 2,Betachrysovirus,Chrysoviridae,1139,complete,RNA-dependent RNA polymerase,Spain,Fusarium oxysporum f. sp. dianthi,,2008
+YP_009143529.1,Sclerotinia sclerotiorum megabirnavirus 1,Megabirnavirus,Megabirnaviridae,1117,complete,RNA-dependent RNA polymerase,China,Sclerotinia sclerotiorum,,2010-05-01
+YP_009143307.1,Magnaporthe oryzae virus 3,Victorivirus,Totiviridae,825,complete,putative RNA-dependent RNA polymerase,China,Pyricularia oryzae,,2011-09-01
+YP_009143313.1,Camponotus yamaokai virus,,Totiviridae,659,complete,RNA-dependent RNA polymerase,"Japan: Tokyo, Hachioji",Camponotus yamaokai,,2013-11-06
+YP_009094185.1,Ustilaginoidea virens RNA virus L,Victorivirus,Totiviridae,827,complete,RNA directed RNA polymerase,China: Guangxi,Ustilaginoidea virens,flower,2012-10
+YP_009094186.1,Ustilaginoidea virens RNA virus M,Victorivirus,Totiviridae,502,complete,RNA directed RNA polymerase,China: Guangxi,Ustilaginoidea virens,flower,2012-10
+YP_009072433.1,Botryosphaeria dothidea victorivirus 1,Victorivirus,Totiviridae,840,complete,RNA-dependent RNA polymerase,China,Botryosphaeria dothidea,plant stem,2013-04
+YP_009072448.1,Leptopilina boulardi Toti-like virus,,Totiviridae,791,complete,RNA-dependent RNA polymerase,Italy,Leptopilina boulardi,,
+YP_009032633.1,Beauveria bassiana victorivirus NZL/1980,Victorivirus,Totiviridae,843,complete,RNA-dependent RNA polymerase,New Zealand,Beauveria bassiana,,1980-01-01
+YP_009030005.1,Leishmania aethiopica RNA virus,Leishmaniavirus,Totiviridae,899,complete,RNA-dependent RNA polymerase,,Leishmania aethiopica,,
+YP_009004156.1,Ustilaginoidea virens RNA virus 3,Victorivirus,Totiviridae,829,complete,RNA-dependent RNA polymerase,China,Ustilaginoidea virens,flower,2009
+YP_008914864.1,Magnaporthe oryzae chrysovirus 1,Chrysovirus,Chrysoviridae,1127,complete,RNA dependent RNA polymerase,Viet Nam,Pyricularia oryzae,,2002-04-12
+YP_007761589.1,Ustilaginoidea virens RNA virus 1,Victorivirus,Totiviridae,823,complete,putative RNA-dependent RNA polymerase,China,Ustilaginoidea virens,,2011
+YP_007697651.1,Xanthophyllomyces dendrorhous virus L1A,Totivirus,Totiviridae,761,complete,RNA-dependent RNA polymerase,,Phaffia rhodozyma,,
+YP_005454251.1,Tianjin totivirus,,Totiviridae,738,complete,RNA-dependent RNA polymerase,China,Chiroptera,feces,2007
+YP_005097975.1,Rosellinia necatrix quadrivirus 1,Quadrivirus,Quadriviridae,1310,complete,RNA dependent RNA polymerase,Japan: Saga,Rosellinia necatrix,,1997
+YP_004089630.1,Tolypocladium cylindrosporum virus 1,Victorivirus,Totiviridae,840,complete,RNA dependent RNA polymerase,Spain:Castilla y Leon,Tolypocladium cylindrosporum,,
+YP_003934934.1,Armigeres subalbatus virus SaX06-AK20,,Totiviridae,761,complete,RNA-dependent RNA polymerase,China: Shaanxi province,Armigeres subalbatus,,2006
+YP_003858286.1,Magnaporthe oryzae chrysovirus 1,Chrysovirus,Chrysoviridae,1127,complete,RNA dependent RNA polymerase,Viet Nam,Pyricularia oryzae,,2002-04-12
+YP_003541123.1,Phlebiopsis gigantea mycovirus dsRNA 1,,Totiviridae,1414,complete,putative RNA-dependent RNA polymerase,"United Kingdom:Norfolk, Thetford Forest",Phlebiopsis gigantea,,
+YP_003289293.1,Drosophila melanogaster totivirus SW-2009a,,Totiviridae,621,complete,RNA-dependent RNA polymerase,USA,Drosophila melanogaster,,2009-02
+YP_003288763.1,Rosellinia necatrix megabirnavirus 1,Megabirnavirus,Megabirnaviridae,1111,complete,RNA-dependent RNA polymerase,"Japan: Ibaraki, Tsukuba",Rosellinia necatrix,,
+YP_001649206.1,Magnaporthe oryzae virus 2,Victorivirus,Totiviridae,830,complete,RNA-dependent RNA polymerase,,Pyricularia oryzae,,
+YP_001531163.1,Amasya cherry disease associated chrysovirus,Alphachrysovirus,Chrysoviridae,1087,complete,putative RNA-dependent RNA polymerase,Turkey,Fungi,,
+YP_392482.1,Penicillium chrysogenum virus,Alphachrysovirus,Chrysoviridae,1117,complete,RNA-dependent RNA polymerase,,Penicillium chrysogenum,,
+YP_044807.1,Gremmeniella abietina RNA virus L2,Totivirus,Totiviridae,825,complete,putative RNA-dependent RNA polymerase,Finland,Gremmeniella abietina,,
+NP_624323.2,Trichomonas vaginalis virus 2,Trichomonasvirus,Totiviridae,1436,complete,RNA-dependent RNA polymerase,,Trichomonas vaginalis,,
+NP_043465.1,Leishmania RNA virus 2,Leishmaniavirus,Totiviridae,777,complete,RNA-dependent RNA polymerase,,Leishmania major,,
+NP_619653.1,Leishmania RNA virus 1,Leishmaniavirus,Totiviridae,878,complete,RNA-dependent RNA polymerase,,Leishmania braziliensis guyanensis,,

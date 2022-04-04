@@ -1,0 +1,25 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+APG77904.1,Hubei earwig virus 1,,,758,partial,polymerase PB1,China,Myriapoda,,2013
+QRD99912.1,Aedes detritus orthomyxo-like virus,,Orthomyxoviridae,760,partial,PB1 polymerase,Greece:Thrace,Ochlerotatus detritus,,2019
+AQU42764.1,Whidbey virus,,Orthomyxoviridae,761,partial,PB1,USA,Ochlerotatus dorsalis,,2016
+AJG39095.1,Wuhan Mosquito Virus 7,Quaranjavirus,Orthomyxoviridae,766,partial,PB1,China,Anopheles sinensis,,2013
+QRD99916.1,Culex modestus orthomyxo-like virus,,Orthomyxoviridae,770,partial,PB1 polymerase,Greece:Thrace,Culex modestus,,2019
+QGA87318.1,Culex orthomyxo-like virus,,Orthomyxoviridae,770,partial,polymerase PB1,Sweden,Culex torrentium,,2017
+AJG39086.1,Sanxia Water Strider Virus 3,Quaranjavirus,Orthomyxoviridae,780,partial,PB1,China,Gerridae,,2013
+AJG39089.1,Wuhan Louse Fly Virus 3,Quaranjavirus,Orthomyxoviridae,782,partial,PB1,China,Hippoboscoidea,,2013
+AJG39090.1,Wuhan Louse Fly Virus 4,Quaranjavirus,Orthomyxoviridae,782,partial,PB1,China,Hippoboscoidea,,2013
+QEM39320.1,Guadeloupe mosquito quaranja-like virus 3,Quaranjavirus,Orthomyxoviridae,783,partial,PB1,Guadeloupe,Aedes sp.,,2017
+AJG39088.1,Shuangao Insect Virus 4,Quaranjavirus,Orthomyxoviridae,784,partial,PB1,China,Diptera,,2013
+QGA70921.1,Wuhan Mosquito Virus 4,Quaranjavirus,Orthomyxoviridae,785,partial,RNA-dependent RNA polymerase,Sweden,Culex,,2011
+DAZ85673.1,Aedes orthomyxo-like virus 2,,Orthomyxoviridae,786,partial,RNA-dependent RNA polymerase basic 1,,Aedes albopictus,,
+QRW42591.1,Guadeloupe mosquito quaranja-like virus 1,Quaranjavirus,Orthomyxoviridae,786,partial,polymerase PB1,"USA: San Diego County, California",Aedes aegypti,,2017-11-28
+QTW97779.1,Wuhan Mosquito Virus 5,Quaranjavirus,Orthomyxoviridae,787,partial,PB1,China,Culicidae,,2018-08-22
+QRW42655.1,Usinis virus,,,787,partial,polymerase PB1,"USA: West Valley, California",Aedes albopictus,,2017-08-29
+ASA47420.1,Aedes alboannulatus orthomyxo-like virus,,,787,complete,PB1,Australia: South Guildford,Aedes alboannulatus,,2015-08-19
+AJG39084.1,Jingshan Fly Virus 1,Quaranjavirus,Orthomyxoviridae,787,partial,PB1,China,Atherigona orientalis,,2013
+QIJ70032.1,Splett orthomyxo-like virus,,Orthomyxoviridae,789,partial,PB1,Australia,Calliphora augur,,2017-02-03
+QRW42568.1,Astopletus virus,,,793,partial,polymerase PB1,"USA: Alameda County, California",Culex tarsalis,,2017-08-03
+AJG39091.1,Wuhan Mosquito Virus 3,Quaranjavirus,Orthomyxoviridae,796,partial,PB1,China,Culex tritaeniorhynchus,,2013
+QRW42447.1,Wuhan Mosquito Virus 6,Quaranjavirus,Orthomyxoviridae,799,partial,polymerase PB1,"USA: West Valley, California",Culex tarsalis,,2017-11-15
+QRD99919.1,Culex pipiens orthomyxo-like virus,,Orthomyxoviridae,799,partial,PB1 polymerase,Greece:Thrace,Culex pipiens,,2019
+QED21504.1,Lestrade virus,,Orthomyxoviridae,803,partial,PB1,Australia,Pygiopsylla,,2017

@@ -1,0 +1,41 @@
+Accession,Species,Genus,Family,Length,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+AAU85375.1,Solenopsis invicta virus 1,Aparavirus,Dicistroviridae,1396,nonstructural polyprotein,USA,Solenopsis invicta,,
+AAF72337.1,Black queen cell virus,Triatovirus,Dicistroviridae,1655,nonstructural polyprotein,,Apis mellifera,,
+AAC58807.1,Drosophila C virus,,Dicistroviridae,1759,replicase polyprotein,,,,
+AAF80998.1,Cricket paralysis virus,,Dicistroviridae,1771,nonstructural polyprotein,,,,
+BAA32553.1,Himetobi P virus,Triatovirus,Dicistroviridae,1777,nonstructural protein precursor,,Laodelphax striatellus,,
+ABC55703.1,Homalodisca coagulata virus 1,Triatovirus,Dicistroviridae,1795,nonstructural protein precursor,,Homalodisca vitripennis,,
+AAF00472.1,Triatoma virus,Triatovirus,Dicistroviridae,1795,nonstructural protein precursor,,Triatoma infestans,,
+BAA21898.1,Plautia stali intestine virus,Triatovirus,Dicistroviridae,1811,nonstructural polyprotein,,Plautia stali,,
+AAV64179.2,Israeli acute paralysis virus,Aparavirus,Dicistroviridae,1900,polymerase polyprotein,,,,
+AAG13118.1,Acute bee paralysis virus,Aparavirus,Dicistroviridae,1906,replicase polyprotein,,Apis mellifera,,
+AAP32283.1,Kashmir bee virus,Aparavirus,Dicistroviridae,1933,non-structural polyprotein,USA: Pennsylvania,,,
+AAC95509.1,Rhopalosiphum padi virus,Cripavirus,Dicistroviridae,1998,nonstructural polyprotein,,,,
+AAN61470.1,Aphid lethal paralysis virus,Cripavirus,Dicistroviridae,2035,nonstructural polyprotein,,,,
+AAK72220.1,Taura syndrome virus,Aparavirus,Dicistroviridae,2107,non-structural polyprotein,,Penaeus vannamei,,
+ASK12212.1,Lasius niger virus 1,Sopolycivirus,Polycipiviridae,2145,RNA-dependent RNA polymerase,United Kingdom,Lasius niger,,
+ASK12217.1,Solenopsis invicta virus 2,Sopolycivirus,Polycipiviridae,2153,RNA-dependent RNA polymerase,USA,Solenopsis invicta,,
+ADR72923.1,Mud crab virus,Aparavirus,Dicistroviridae,2179,non-structural polyprotein,China: Guangdong,Scylla serrata,,2004
+APG77984.1,Hubei hupolycivirus,Hupolycivirus,Polycipiviridae,2208,hypothetical protein 3,China,Odonata,,2013
+APG77437.1,Hubei chipolycivirus,Chipolycivirus,Polycipiviridae,2257,hypothetical protein 3,China,Araneae,,2013
+ASK12200.1,Lasius neglectus virus 1,Sopolycivirus,Polycipiviridae,2268,RNA-dependent RNA polymerase,United Kingdom,Lasius neglectus,,
+ASK12206.1,Myrmica scabrinodis virus 1,Sopolycivirus,Polycipiviridae,2285,RNA-dependent RNA polymerase,United Kingdom,Myrmica scabrinodis,,
+ASK12194.1,Solenopsis invicta virus 4,Sopolycivirus,Polycipiviridae,2297,RNA-dependent RNA polymerase,USA,Solenopsis invicta,,
+APG77945.1,Shuangao insect virus 8,Sopolycivirus,Polycipiviridae,2317,hypothetical protein 4,China,Hexapoda,,2013
+ACO37271.1,Solenopsis invicta virus 3,Invictavirus,Solinviviridae,2580,putative nonstructural polyprotein,USA,Solenopsis invicta,,2007-07-10
+AAD20260.1,Sacbrood virus,Iflavirus,Iflaviridae,2858,polyprotein,,,,
+AAP51418.2,Varroa destructor virus 1,Iflavirus,Iflaviridae,2893,polyprotein,Netherlands: Wageningen,Varroa destructor,pooled mites,
+CAD34006.2,Deformed wing virus,Iflavirus,Iflaviridae,2893,polyprotein,Italy,Apis mellifera,,
+ABS84820.1,Slow bee paralysis virus,Iflavirus,Iflaviridae,2964,polyprotein,United Kingdom,,,1986
+AIF75200.1,Lymantria dispar iflavirus 1,Iflavirus,Iflaviridae,2980,polyprotein,USA,,,2011-11-17
+ABP57198.1,Brevicoryne brassicae virus,Iflavirus,Iflaviridae,2983,polyprotein,United Kingdom: Warwick,Brevicoryne brassicae,,
+"AEL30247.1,Lygus lineolaris virus 1,Iflavirus,Iflaviridae,2986,polypeptide,""USA: Washington County, Mississippi"",Lygus lineolaris,,2008-09"
+AAL06289.1,Perina nuda virus,Iflavirus,Iflaviridae,2986,polyprotein,,,,
+AAQ64627.1,Ectropis obliqua virus,Iflavirus,Iflaviridae,2987,polyprotein,,Ectropis obliqua,,
+AIM39350.1,Dinocampus coccinellae paralysis virus,Iflavirus,Iflaviridae,3006,polyprotein,Canada: Quebec,Dinocampus coccinellae,larva,2009
+AFQ98017.1,Spodoptera exigua iflavirus 2,Iflavirus,Iflaviridae,3010,polyprotein,South Korea,Spodoptera exigua,,2010-06-17
+AHI87751.1,Antheraea pernyi iflavirus,Iflavirus,Iflaviridae,3036,polyprotein,China,Antheraea pernyi,pupa,
+BAA25371.1,Infectious flacherie virus,Iflavirus,Iflaviridae,3085,polyprotein,,,,
+BAN19725.1,Nilaparvata lugens honeydew virus 1,Iflavirus,Iflaviridae,3175,polyprotein,Japan,Nilaparvata lugens,,
+AET36829.1,Spodoptera exigua iflavirus 1,Iflavirus,Iflaviridae,3222,polyprotein,,Spodoptera exigua,,
+ANQ44728.1,Nylanderia fulva virus 1,Nyfulvavirus,Solinviviridae,3614,polyprotein,USA,Nylanderia fulva,,2011-04-01

@@ -1,0 +1,10 @@
+Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
+YP_145804.1,Salmon isavirus,Isavirus,Orthomyxoviridae,708,complete,putative PB1 protein,Canada,,,
+YP_145794.1,Thogoto thogotovirus,Thogotovirus,Orthomyxoviridae,710,complete,PB1 protein,,,,
+YP_009352882.1,Dhori thogotovirus,Thogotovirus,Orthomyxoviridae,716,complete,polymerase subunit PB1,,,,
+NP_056657.1,Influenza B virus,Betainfluenzavirus,Orthomyxoviridae,752,complete,polymerase PB1,,,,
+YP_009449556.1,Influenza D virus,Deltainfluenzavirus,Orthomyxoviridae,753,complete,polymerase PB1,USA,Sus scrofa,,2011-03-21
+YP_089653.1,Influenza C virus,Gammainfluenzavirus,Orthomyxoviridae,754,complete,polymerase 1,,,,
+NP_040985.1,Influenza A virus,Alphainfluenzavirus,Orthomyxoviridae,757,complete,polymerase PB1,Puerto Rico,,,1934
+YP_009665204.1,Johnston Atoll quaranjavirus,Quaranjavirus,Orthomyxoviridae,777,complete,polymerase PB1,New Zealand: South Pacific,Ixodoidea,,
+YP_009508043.1,Quaranfil quaranjavirus,Quaranjavirus,Orthomyxoviridae,777,complete,polymerase PB1,Afghanistan,Argas reflexus,,1968-09
