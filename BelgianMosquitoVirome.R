@@ -151,7 +151,7 @@ p
 #+ eval=FALSE,echo=FALSE
 ggarrange(NULL, ggarrange(NULL, p+theme(legend.position = "none"), ncol = 1, labels = c("B", "C")), ncol=2, 
           labels = c("A", NULL), widths = c(.6,.4))
-ggsave("figures/figure1.pdf", dpi=300, width = 6.875)
+ggsave("figures/figure1.pdf", dpi=300)
 
 # library(grImport)
 # PostScriptTrace("figures/species_assignment_clustermap.pdf", charpath = F)
