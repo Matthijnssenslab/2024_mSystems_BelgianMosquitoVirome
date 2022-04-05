@@ -1,0 +1,24 @@
+#Mac stuff:
+.DS_Store
+*/.DS_Store
+
+#Notebook temps
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*.ipynb
+.Rproj.user/
+.Rhistory
+
+#Large files
+*/*.fasta*
+*/*.fastq*
+*/*.fa*
+*/*.fq*
+*/*.bt*
+*.fa*
+*/*.m8
+*/*.magnitudes*
+*.drawio
+
+#exclude phylogenetics folder
+phylogenetics/alignments_and_phylogenies
+phylogenetics/treefamilies.xlsx
