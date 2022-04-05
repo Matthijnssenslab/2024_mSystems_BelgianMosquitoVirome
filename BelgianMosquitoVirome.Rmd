@@ -189,7 +189,7 @@ p
 ```{r eval=FALSE,echo=FALSE}
 ggarrange(NULL, ggarrange(NULL, p+theme(legend.position = "none"), ncol = 1, labels = c("B", "C")), ncol=2, 
           labels = c("A", NULL), widths = c(.6,.4))
-ggsave("figures/figure1.pdf", dpi=300, width = 6.875)
+ggsave("figures/figure1.pdf", dpi=300)
 
 # library(grImport)
 # PostScriptTrace("figures/species_assignment_clustermap.pdf", charpath = F)
@@ -745,8 +745,8 @@ qPCR <- read_csv("data/BMV-RT-qPCR-analysis.csv", col_names = T)
 
 ```{r }
 qPCR <- qPCR %>%  
-  mutate(Quantity = case_when(str_detect(Sample, "MEMO") ~ qPCR$"Quantity Mean" * 120,
-                              str_detect(Sample, "NEMO") ~ qPCR$"Quantity Mean" * 300))
+  mutate(Quantity = case_when(str_detect(Sample, "MEMO") ~ qPCR$"Quantity Mean" * 40,
+                              str_detect(Sample, "NEMO") ~ qPCR$"Quantity Mean" * 100))
 ```
 ```{r echo=FALSE}
 datatable(qPCR)

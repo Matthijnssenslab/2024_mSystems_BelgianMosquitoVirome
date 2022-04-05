@@ -592,8 +592,8 @@ qPCR <- read_csv("data/BMV-RT-qPCR-analysis.csv", col_names = T)
 
 #' **Recalculate quantity based on mosquito dilutions:**
 qPCR <- qPCR %>%  
-  mutate(Quantity = case_when(str_detect(Sample, "MEMO") ~ qPCR$"Quantity Mean" * 120,
-                              str_detect(Sample, "NEMO") ~ qPCR$"Quantity Mean" * 300))
+  mutate(Quantity = case_when(str_detect(Sample, "MEMO") ~ qPCR$"Quantity Mean" * 40,
+                              str_detect(Sample, "NEMO") ~ qPCR$"Quantity Mean" * 100))
 #+ echo=FALSE
 datatable(qPCR)
 
