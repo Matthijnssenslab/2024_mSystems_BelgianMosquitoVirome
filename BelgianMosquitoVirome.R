@@ -39,6 +39,22 @@ print(pckgs)
 
 #' ***
 #' # Eukaryotic virome analysis
+#' ## General sequencing info
+seqnum_raw <- read.delim("data/sequencing-info.tsv", sep="\t", header=T)
+seqnum_raw_summarized <- seqnum_raw %>% group_by(sample) %>% 
+  summarise(sumseqs = sum(num_seqs))
+
+
+seqnum <- read.delim("data/sequencing-info-hostout.tsv", sep="\t", header=T)
+seqnum_summarized <-seqnum %>% group_by(sample) %>% 
+  summarise(sumseqs_nonhost = sum(num_seqs))
+
+seqnum_final <- merge(seqnum_raw_summarized, seqnum_summarized)
+seqnum_final <- seqnum_final %>% 
+  mutate(proportion_nonhost=sumseqs_nonhost/sumseqs*100)
+
+datatable(seqnum_final)
+
 #' ## Prepare the data
 #' ### Load the OTU table, taxonomy file and metadata into R
 OTU <- read.table("data/abundance-table.txt", header=TRUE, row.names=1, sep="\t", dec=".")
@@ -135,6 +151,17 @@ vcount %>%
 df <- merge(meta, vcount, by=0) %>% 
   group_by(viral_count, SKA_Subspecies) %>% 
   count()
+
+#remove
+vdf<-df %>% 
+  filter(viral_count>0) %>% 
+  group_by(SKA_Subspecies) %>% 
+  mutate(count=sum(n)) %>% 
+  select(!viral_count & !n) %>% 
+  distinct() %>% 
+  left_join(df[df$viral_count==0,2:3]) %>% 
+  replace_na(list(n=0)) %>% 
+  mutate(total=count+n, freq=(count/(total))*100)
 
 p <- ggplot(df, aes(x=viral_count, y=n, label=n, fill=SKA_Subspecies))+
   geom_col()+
@@ -318,6 +345,7 @@ rowanno <- as.data.frame(returnAppropriateObj(blastx_mean, log=F, norm=F))
 colnames(rowanno)[1] <- "blastx"
 #+ echo=FALSE
 datatable(rowanno)
+table(rowanno$blastx>75)
 
 #' **Create color function for BLASTx values:**
 col_fun=colorRamp2(c(0,100), c("white","deepskyblue4"))
@@ -387,14 +415,27 @@ v.ord <- ordinate(BMV_final, method = "PCoA")
 pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
   scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
-  #stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"))+
+  stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
                             label.theme = element_text(size=10, face="italic")))
 pcoa
-ggsave("figures/PCoA-eukaryotic-virome.pdf", pcoa, dpi=300)
-?ggsave
+
+#' Permanova test
+metadata_vegan <- as(sample_data(BMV_final), "data.frame")
+perm <- adonis(distance(BMV_final, method="bray") ~ SKA_Subspecies*Municipality,
+               data = metadata_vegan)
+perm
+pval<-perm$aov.tab$`Pr(>F)`[1]
+Rsq <- perm$aov.tab$R2[1]
+
+pcoa+
+  ggplot2::annotate(geom="text",x=-.9, y=c(.57,.52,.48), size=c(4,3.5,3.5),hjust=0, label =c("PERMANOVA test", 
+                                                                          as.expression(bquote(italic(R^2) ~ "=" ~ .(round(Rsq, 2)))), 
+                                                                          as.expression(bquote(italic(p) ~ "=" ~ .(pval)))))
+ggsave("figures/PCoA-eukaryotic-virome.pdf", dpi=300)
+
 #' ### NMDS full dataset
 v.ord <- ordinate(BMV_final, method = "NMDS", k=2)
 nmds <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
@@ -420,13 +461,24 @@ v.ord <- ordinate(BMV_no_singletons, method = "NMDS", k=2)
 nmds_ns <- plot_ordination(BMV_no_singletons, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
   scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
-  #stat_ellipse(type = "t", linetype = 2, aes_string(color="SKA_Subspecies"))+
+  stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"))+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
                             label.theme = element_text(size=10, face="italic")))
 nmds_ns
 ggsave("figures/NMDS-eukaryotic-virome-no-singletons.pdf", nmds_ns, dpi=300)
+
+v.ord <- ordinate(BMV_no_singletons, method = "PCoA")
+pcoa_ns <- plot_ordination(BMV_no_singletons, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
+  scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
+  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+  stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())+
+  guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
+                            label.theme = element_text(size=10, face="italic")))
+pcoa_ns
 
 ord.legend <- cowplot::get_legend(pcoa)
 alpha.legend <- cowplot::get_legend(alpha)
@@ -786,7 +838,7 @@ bunya_tree@phylo$tip.label <- gsub(bunya_tree@phylo$tip.label, pattern = "lcl OR
 p <- plot_phylotree(bunya_tree, col=col, shape=shape, cladedf = bunyacladedf, 
                     labels=c(famvec, "Belgian mosquitoes"),
                plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  geom_nodepoint(aes(subset= node %in% bunyacladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% bunyacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,6)
 
@@ -836,7 +888,7 @@ endorna_tree@phylo$tip.label <- gsub(endorna_tree@phylo$tip.label, pattern = "lc
 
 p <- plot_phylotree(endorna_tree, col=col, shape=shape, cladedf = endornacladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
-  geom_nodepoint(aes(subset= node %in% endornacladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% endornacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,4)
 
@@ -887,7 +939,7 @@ ghabri_tree@phylo$tip.label <- gsub(ghabri_tree@phylo$tip.label, pattern = "lcl 
 
 p <- plot_phylotree(ghabri_tree, col=col, shape=shape, cladedf = ghabricladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  geom_nodepoint(aes(subset= node %in% ghabricladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% ghabricladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,4)
 ghabriplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
@@ -935,7 +987,7 @@ noda_tree@phylo$tip.label <- gsub(noda_tree@phylo$tip.label, pattern = "lcl ORF[
 
 p <- plot_phylotree(noda_tree, col=col, shape=shape, cladedf = nodacladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  geom_nodepoint(aes(subset= node %in% nodacladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% nodacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,4)
 
@@ -985,7 +1037,7 @@ orthomyxo_tree@phylo$tip.label <- gsub(orthomyxo_tree@phylo$tip.label, pattern =
 
 p <- plot_phylotree(orthomyxo_tree, col=col, shape=shape, cladedf = orthocladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
-  geom_nodepoint(aes(subset= node %in% orthocladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% orthocladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,4.5)
 
@@ -1033,7 +1085,7 @@ picorna_tree@phylo$tip.label <- gsub(picorna_tree@phylo$tip.label, pattern = "lc
 
 p <- plot_phylotree(picorna_tree, col=col, shape=shape, cladedf = picornacladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  geom_nodepoint(aes(subset= node %in% picornacladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% picornacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,4)
 
@@ -1093,7 +1145,7 @@ reo_tree@phylo$tip.label <- gsub(reo_tree@phylo$tip.label, pattern = " pasted", 
 #+echo=TRUE
 p <- plot_phylotree(reo_tree, col=col, shape=shape, cladedf = reocladedf, labels=c(famvec, "Belgian mosquitoes"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
-  geom_nodepoint(aes(subset = node %in% reocladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset = node %in% reocladedf$node), size=1, shape=18)+
   scale_y_reverse()+
   xlim(-.05,7)
 reoplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
@@ -1142,10 +1194,12 @@ tombus_tree@phylo$tip.label <- gsub(tombus_tree@phylo$tip.label, pattern = "lcl 
 
 
 p <- plot_phylotree(tombus_tree, col=col, shape=shape, cladedf = tombuscladedf,
-                    labels=c(famvec, "Belgian mosquitoes"), 
+                    labels=c(famvec, "Belgian mosquitoes"),
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F,
                     group="Genus")+
-  geom_nodepoint(aes(subset= node %in% tombuscladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(subset= node %in% tombuscladedf$node), size=1, shape=18)+
+  #geom_nodepoint(aes(fill=as.numeric(label), subset = !is.na(as.numeric(label))), shape=23, color="transparent", size=1)+
+  #scale_fill_gradientn(colours = c("red2","orange","gold1","forestgreen")) +
   scale_y_reverse()+
   xlim(-.05,3.5)
 tombusplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
@@ -1154,6 +1208,7 @@ tombusplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)
 tombusplot
 
 ggsave(filename = here(phylo_path, "Tombusviridae/tombusviridae.pdf"), tombusplot, dpi=1200, width=6.875)
+#ggsave(filename = here(phylo_path, "Tombusviridae/tombusviridae_meeting.pdf"), tombusplot+theme(legend.position="left"), dpi=300, width=5.6, height=3.5)
 
 tombusplot_minimal <- plot_minimal_phylotree(tombus_tree, align=T)+
   scale_y_reverse()+
@@ -1213,7 +1268,7 @@ negevplot_minimal <- plot_minimal_phylotree(negev_tree, align=T)+
   xlim(-.05,5)
 negevplot_minimal
 
-ggsave(filename = here(phylo_path, "Negevirus/negeviruses_minimal.pdf"), tombusplot_minimal, dpi=1200, width=6.875)
+ggsave(filename = here(phylo_path, "Negevirus/negeviruses_minimal.pdf"), negevplot_minimal, dpi=1200, width=6.875)
 
 
 #' ## Combine phylogenetic trees
@@ -1306,7 +1361,7 @@ wMel$supergroup <- "wMel"
 
 wolb <- rbind(wMel, wPip, phageWO)
 
-wolb <- wolb %>% 
+wolb %<>% 
   plyr::mutate(supergroup=str_replace(string=supergroup, pattern = "NODE_12_length_11674_cov_94.907217_MEMO129", replacement = "phageWO2")) %>% 
   plyr::mutate(supergroup=str_replace(string=supergroup, pattern = "NODE_1_length_31159_cov_25.624799_MEMO050", replacement = "phageWO1"))
 wolb$numreads[wolb$coverage<5] <- 0
@@ -1332,6 +1387,31 @@ wviolin <- pivot_wider(wolb, id_cols = "Sample", names_from = "supergroup", valu
 wviolin
 ggsave("figures/wolbachia_readcount.pdf", dpi=300)
 
+#remove
+prevalencep<-ggarrange(p+theme(legend.position="none"),
+wviolin+theme(legend.position = "top")+xlab("Mosquito species"), common.legend = T, align = 'hv')
+prevalencep
+ggsave("figures/prevalence.pdf", prevalencep, dpi=300, width=8.4, height = 5.25)
+
+#remove
+wolb2<-pivot_wider(wolb, id_cols = "Sample", names_from = "supergroup", values_from = "numreads")
+wolb3<-left_join(wolb2, meta, by="Sample")
+d1<-wolb3 %>% 
+  group_by(SKA_Subspecies) %>% 
+  count()
+
+d2<-wolb3 %>% 
+  group_by(SKA_Subspecies) %>%
+  filter(wPip>0) %>% 
+  count()
+
+wdf<-left_join(d1, d2, by="SKA_Subspecies") %>% 
+  replace_na(list(n.x=0,n.y=0)) %>% 
+  mutate(wolbachia_freq=(n.y/n.x*100))
+
+View(left_join(vdf, wdf) %>% 
+  #select(SKA_Subspecies,total,freq,wolbachia_freq) %>% 
+  rename(viral_freq=freq))
 
 #' barplot
 wb <-  pivot_wider(wolb, id_cols = "Sample", names_from = "supergroup", values_from = "numreads") %>% 

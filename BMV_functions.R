@@ -145,8 +145,10 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
   {
   p <- ggtree(tree, ladderize = ladderize, size=branchwidth)+
     geom_tippoint(aes(color=!!as.name(group), shape=!!as.name(group)), size=1)+
-    geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) > 70), 
+    geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) < 90), 
                  size=anno.size, hjust=-.01) +
+    #geom_nodepoint(aes(fill=as.numeric(label), subset = !is.na(as.numeric(label))), 
+    #               shape=23, color="transparent", size=anno.size-.5)+
     scale_color_manual(values = col, 
                        #name="NCBI classification",
                        name="",
@@ -157,8 +159,10 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
                        labels=toexpr(labels, 
                                      plain=plainlabels))
   if (!is.null(cladedf)) {
-    p <- p + geom_cladelab(data=cladedf, mapping=aes(node=node, label=id), color="black",
-                           fontface="italic", fontsize=2, barsize=.25, align=align, offset=.1)
+    p <- p + 
+      geom_cladelab(data=cladedf, mapping=aes(node=node, label=id), color="black",
+                           fontface="italic", fontsize=2, barsize=.25, align=align, offset=.1)#+
+      #geom_nodepoint(aes(subset= node %in% cladedf$node), size=1, shape=18)
   }
    p + geom_treescale(linesize=branchwidth, width = scalewidth, fontsize = 2)+
     geom_rootedge(.05, size=branchwidth)+
@@ -176,7 +180,7 @@ plot_minimal_phylotree <- function(tree, branchwidth=.25, scalewidth=0.5,
   ggtree(tree, ladderize = ladderize, size=branchwidth)+
     geom_tiplab(aes(subset=Family!="NODE"), size=anno.size, align = align, linesize = 0.25)+
     geom_tiplab(aes(subset=Family=="NODE"), color='red', size=anno.size, align=align, linesize = 0.25)+
-    geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) > 70), 
+    geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) < 90), 
                  size=anno.size, hjust=-.01) +
     geom_treescale(linesize=branchwidth, width=scalewidth, fontsize=2)+
     geom_rootedge(.05, size=branchwidth)+
