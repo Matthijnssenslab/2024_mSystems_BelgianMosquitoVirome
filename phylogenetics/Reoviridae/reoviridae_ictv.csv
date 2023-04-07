@@ -1,35 +1,35 @@
 Accession,Species,Genus,Family,Length,Nuc_Completeness,Protein,Geo_Location,Host,Isolation_Source,Collection_Date
-AXG65493.1,Kundal coltivirus,Coltivirus,Reoviridae,1433,complete,RNA-dependent RNA polymerase,"India: Kundal village, Ahmedabad state",,,2013
-ATG88075.1,Tai Forest coltivirus,Coltivirus,Reoviridae,1433,partial,RNA-directed RNA polymerase,Cote d'Ivoire,Chaerephon aloysiisabaudiae,blood,2009
-BBA54735.1,Tarumizu coltivirus,Coltivirus,Reoviridae,1433,partial,RNA-dependent RNA polymerase,Japan: Tottori,,,2013-10-12
-AKP24073.1,Wad Medani virus,Orbivirus,Reoviridae,1303,partial,RNA-dependent RNA polymerase,Sudan,Rhipicephalus,,1952
-AKP24085.1,Chenuda virus,Orbivirus,Reoviridae,1285,partial,RNA-dependent RNA polymerase,Egypt,,,1954
-AKP24097.1,Chobar Gorge virus,Orbivirus,Reoviridae,1284,partial,RNA-dependent RNA polymerase,Nepal,Ornithodoros,,1970
-AKC01920.1,Eriocheir sinensis reovirus,Cardoreovirus,Reoviridae,1403,partial,VP1,China: Jiangsu,Eriocheir sinensis,,2012-09
-AIT55713.1,Warrego virus,Orbivirus,Reoviridae,1308,complete,VP1,Australia,,,1969
-AHJ14791.1,Cypovirus 2,Cypovirus,Reoviridae,1225,complete,VP1,United Kingdom,,,
-AFX73376.1,Lebombo virus,Orbivirus,Reoviridae,1298,partial,VP1,South Africa,Homo sapiens,,1956-01
-AFX73387.1,Orungo virus,Orbivirus,Reoviridae,1302,partial,VP1,Uganda,Homo sapiens,,1959-09
-AGY34642.1,Changuinola virus,Orbivirus,Reoviridae,1309,partial,RNA polymarase,Brazil: Ipixuna-PA,Hylaeamys megacephalus,,1961-03-29
-AGX00987.1,Wallal virus,Orbivirus,Reoviridae,1306,complete,RNA-dependent RNA polymerase,"Australia: Griffith, New South Wales",Anopheles annulipes,,2010
-AFH41509.1,Eubenangee virus,Orbivirus,Reoviridae,1307,complete,VP1,Australia,Culicidae,,1963
-AEE98368.1,Umatilla virus,Orbivirus,Reoviridae,1299,complete,RNA-dependent RNA polymerase,USA,Aves,pooled insects,1969-07
-ADM88592.1,Great Island virus,Orbivirus,Reoviridae,1285,complete,RNA-dependent RNA polymerase,Canada,,,
-ACJ06234.1,Equine encephalosis virus,Orbivirus,Reoviridae,1307,partial,VP1,South Africa,,,
-ACA53380.1,Cypovirus 16,Cypovirus,Reoviridae,1225,complete,RdRP,Canada,Choristoneura occidentalis,,
-BAF49639.1,Rice gall dwarf virus,Phytoreovirus,Reoviridae,1458,partial,putative RNA dependent RNA polymerase,,,,
-ABB72770.1,Peruvian horse sickness virus,Orbivirus,Reoviridae,1311,partial,VP1,Peru,,,1997
-AAW29084.1,Liao ning virus,Seadornavirus,Reoviridae,1222,complete,RNA-dependent RNA polymerase,China,,,
-AAW28767.1,Yunnan orbivirus,Orbivirus,Reoviridae,1315,complete,VP1,China,,,
-AAZ94068.1,Aedes pseudoscutellaris reovirus,Dinovernavirus,Reoviridae,1189,partial,VP1,France,,,
-AAO73182.1,Mal de Rio Cuarto virus,Fijivirus,Reoviridae,1464,complete,RNA-dependent RNA polymerase,Argentina,Zea mays,,
-AAK40249.1,Fiji disease virus,Fijivirus,Reoviridae,1470,partial,RNA-dependent RNA polymerase,,,,
-AAK73521.1,Cypovirus 1,Cypovirus,Reoviridae,1225,complete,RNA-dependent RNA polymerase,,,,
-AAK73087.1,Cypovirus 14,Cypovirus,Reoviridae,1228,complete,RNA dependent RNA polymerase,,,,
-AAG34362.1,Colorado tick fever coltivirus,Coltivirus,Reoviridae,1435,partial,putative RNA-dependent RNA polymerase VP1,,,,
-AAG34363.1,St Croix River virus,Orbivirus,Reoviridae,1345,partial,putative RNA-dependent RNA polymerase VP1,,,,
-AAF78848.1,Kadipiro virus,Seadornavirus,Reoviridae,1223,partial,putative RNA-dependent RNA polymerase VP1,,,,
-AAF78849.1,Banna virus,Seadornavirus,Reoviridae,1214,partial,putative RNA-dependent RNA polymerase VP1,,,,
-AAC40586.1,African horse sickness virus,Orbivirus,Reoviridae,1305,partial,RNA-dependent RNA polymerase,,,,
-AAB18743.1,Rice dwarf virus,Phytoreovirus,Reoviridae,1444,partial,RNA-dependent RNA polymerase,,,,
-BAA08542.1,Nilaparvata lugens reovirus,Fijivirus,Reoviridae,1442,partial,RNA Polymerase,,,,
+AXG65493.1,Kundal coltivirus,Coltivirus,Spinareoviridae,1433,complete,RNA-dependent RNA polymerase,India: Kundal village, Ahmedabad state,,,2013
+ATG88075.1,Tai Forest coltivirus,Coltivirus,Spinareoviridae,1433,partial,RNA-directed RNA polymerase,Cote d'Ivoire,Chaerephon aloysiisabaudiae,blood,2009
+BBA54735.1,Tarumizu coltivirus,Coltivirus,Spinareoviridae,1433,partial,RNA-dependent RNA polymerase,Japan: Tottori,,,12/10/2013
+AKP24073.1,Wad Medani virus,Orbivirus,Sedoreoviridae,1303,partial,RNA-dependent RNA polymerase,Sudan,Rhipicephalus,,1952
+AKP24085.1,Chenuda virus,Orbivirus,Sedoreoviridae,1285,partial,RNA-dependent RNA polymerase,Egypt,,,1954
+AKP24097.1,Chobar Gorge virus,Orbivirus,Sedoreoviridae,1284,partial,RNA-dependent RNA polymerase,Nepal,Ornithodoros,,1970
+AKC01920.1,Eriocheir sinensis reovirus,Cardoreovirus,Sedoreoviridae,1403,partial,VP1,China: Jiangsu,Eriocheir sinensis,,2012-09
+AIT55713.1,Warrego virus,Orbivirus,Sedoreoviridae,1308,complete,VP1,Australia,,,1969
+AHJ14791.1,Cypovirus 2,Cypovirus,Spinareoviridae,1225,complete,VP1,United Kingdom,,,
+AFX73376.1,Lebombo virus,Orbivirus,Sedoreoviridae,1298,partial,VP1,South Africa,Homo sapiens,,1956-01
+AFX73387.1,Orungo virus,Orbivirus,Sedoreoviridae,1302,partial,VP1,Uganda,Homo sapiens,,1959-09
+AGY34642.1,Changuinola virus,Orbivirus,Sedoreoviridae,1309,partial,RNA polymarase,Brazil: Ipixuna-PA,Hylaeamys megacephalus,,29/03/1961
+AGX00987.1,Wallal virus,Orbivirus,Sedoreoviridae,1306,complete,RNA-dependent RNA polymerase,Australia: Griffith, New South Wales,Anopheles annulipes,,2010
+AFH41509.1,Eubenangee virus,Orbivirus,Sedoreoviridae,1307,complete,VP1,Australia,Culicidae,,1963
+AEE98368.1,Umatilla virus,Orbivirus,Sedoreoviridae,1299,complete,RNA-dependent RNA polymerase,USA,Aves,pooled insects,1969-07
+ADM88592.1,Great Island virus,Orbivirus,Sedoreoviridae,1285,complete,RNA-dependent RNA polymerase,Canada,,,
+ACJ06234.1,Equine encephalosis virus,Orbivirus,Sedoreoviridae,1307,partial,VP1,South Africa,,,
+ACA53380.1,Cypovirus 16,Cypovirus,Spinareoviridae,1225,complete,RdRP,Canada,Choristoneura occidentalis,,
+BAF49639.1,Rice gall dwarf virus,Phytoreovirus,Sedoreoviridae,1458,partial,putative RNA dependent RNA polymerase,,,,
+ABB72770.1,Peruvian horse sickness virus,Orbivirus,Sedoreoviridae,1311,partial,VP1,Peru,,,1997
+AAW29084.1,Liao ning virus,Seadornavirus,Sedoreoviridae,1222,complete,RNA-dependent RNA polymerase,China,,,
+AAW28767.1,Yunnan orbivirus,Orbivirus,Sedoreoviridae,1315,complete,VP1,China,,,
+AAZ94068.1,Aedes pseudoscutellaris reovirus,Dinovernavirus,Spinareoviridae,1189,partial,VP1,France,,,
+AAO73182.1,Mal de Rio Cuarto virus,Fijivirus,Spinareoviridae,1464,complete,RNA-dependent RNA polymerase,Argentina,Zea mays,,
+AAK40249.1,Fiji disease virus,Fijivirus,Spinareoviridae,1470,partial,RNA-dependent RNA polymerase,,,,
+AAK73521.1,Cypovirus 1,Cypovirus,Spinareoviridae,1225,complete,RNA-dependent RNA polymerase,,,,
+AAK73087.1,Cypovirus 14,Cypovirus,Spinareoviridae,1228,complete,RNA dependent RNA polymerase,,,,
+AAG34362.1,Colorado tick fever coltivirus,Coltivirus,Spinareoviridae,1435,partial,putative RNA-dependent RNA polymerase VP1,,,,
+AAG34363.1,St Croix River virus,Orbivirus,Sedoreoviridae,1345,partial,putative RNA-dependent RNA polymerase VP1,,,,
+AAF78848.1,Kadipiro virus,Seadornavirus,Sedoreoviridae,1223,partial,putative RNA-dependent RNA polymerase VP1,,,,
+AAF78849.1,Banna virus,Seadornavirus,Sedoreoviridae,1214,partial,putative RNA-dependent RNA polymerase VP1,,,,
+AAC40586.1,African horse sickness virus,Orbivirus,Sedoreoviridae,1305,partial,RNA-dependent RNA polymerase,,,,
+AAB18743.1,Rice dwarf virus,Phytoreovirus,Sedoreoviridae,1444,partial,RNA-dependent RNA polymerase,,,,
+BAA08542.1,Nilaparvata lugens reovirus,Fijivirus,Spinareoviridae,1442,partial,RNA Polymerase,,,,

@@ -144,7 +144,7 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
                            label=label, group="Family", align=T)
   {
   p <- ggtree(tree, ladderize = ladderize, size=branchwidth)+
-    geom_tippoint(aes(color=!!as.name(group), shape=!!as.name(group)), size=1)+
+    geom_tippoint(aes(color=!!as.name(group), shape=!!as.name("Classification")), size=.7)+
     geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) < 90), 
                  size=anno.size, hjust=-.01) +
     #geom_nodepoint(aes(fill=as.numeric(label), subset = !is.na(as.numeric(label))), 
@@ -155,9 +155,7 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
                        labels=toexpr(labels, 
                                      plain=plainlabels))+
     scale_shape_manual(values = shape, 
-                       name="",
-                       labels=toexpr(labels, 
-                                     plain=plainlabels))
+                       name="")
   if (!is.null(cladedf)) {
     p <- p + 
       geom_cladelab(data=cladedf, mapping=aes(node=node, label=id), color="black",
@@ -203,8 +201,8 @@ toexpr <- function(x, plain = NULL) {
 #' function to reduce legend size of plots
 addSmallLegend <- function(myPlot, pointSize = 1, textSize = 2, spaceLegend = 0.1) 
   {myPlot+
-    guides(shape = guide_legend(override.aes = list(size = pointSize)),
-           color = guide_legend(override.aes = list(size = pointSize-.5)))+#, shape=15))) +
+    guides(shape = "none",
+           color = guide_legend(override.aes = list(size = pointSize-.5, shape=15))) +
     theme(legend.title = element_text(size = textSize, face="bold"), 
           legend.text  = element_text(size = textSize),
           legend.key.size = unit(spaceLegend, "lines"),
