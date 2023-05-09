@@ -152,7 +152,8 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
     scale_color_manual(values = col, 
                        #name="NCBI classification",
                        name="",
-                       labels=toexpr(labels, 
+                       breaks = labels,
+                       labels=toexpr(c(labels[labels!="NODE"],"Belgian mosquitoes"), 
                                      plain=plainlabels))+
     scale_shape_manual(values = shape, 
                        name="")
@@ -163,7 +164,7 @@ plot_phylotree <- function(tree, col, shape, cladedf=NULL, labels, plainlabels=N
       #geom_nodepoint(aes(subset= node %in% cladedf$node), size=1, shape=18)
   }
    p + geom_treescale(linesize=branchwidth, width = scalewidth, fontsize = 2)+
-    geom_rootedge(.05, size=branchwidth)+
+    geom_rootedge(.05, linewidth=branchwidth)+
     theme(legend.position = c(.15,.3),
           legend.background = element_rect(fill='transparent', color=NA),
           legend.box.background = element_rect(fill='transparent', color=NA),
@@ -181,7 +182,7 @@ plot_minimal_phylotree <- function(tree, branchwidth=.25, scalewidth=0.5,
     geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) < 90), 
                  size=anno.size, hjust=-.01) +
     geom_treescale(linesize=branchwidth, width=scalewidth, fontsize=2)+
-    geom_rootedge(.05, size=branchwidth)+
+    geom_rootedge(.05, linewidth=branchwidth)+
     theme(legend.position = c(.15,.3),
           panel.background=element_blank(),
           plot.background=element_blank(),

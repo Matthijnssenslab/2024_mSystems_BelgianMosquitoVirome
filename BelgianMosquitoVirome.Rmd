@@ -1160,9 +1160,9 @@ names(col) <- famvec[famvec!="unclassified"]
 col <- c(col, unclassified="grey", NODE="#43BF71FF")
 
 bunya_tree@phylo$tip.label <- gsub(bunya_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-                   
+
 p <- plot_phylotree(bunya_tree, col=col, shape=shape, cladedf = bunyacladedf, 
-                    labels=c(famvec, "Belgian mosquitoes"),
+                    labels=c(famvec, "NODE"),
                plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
   #geom_nodepoint(aes(subset= node %in% bunyacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1218,7 +1218,7 @@ col <- c(col, unclassified="grey", NODE="#43BF71FF")
 
 endorna_tree@phylo$tip.label <- gsub(endorna_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
 
-p <- plot_phylotree(endorna_tree, col=col, shape=shape, cladedf = endornacladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(endorna_tree, col=col, shape=shape, cladedf = endornacladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
   #geom_nodepoint(aes(subset= node %in% endornacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1276,7 +1276,7 @@ col <- c(col, unclassified="grey", NODE="#43BF71FF")
 
 ghabri_tree@phylo$tip.label <- gsub(ghabri_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
 
-p <- plot_phylotree(ghabri_tree, col=col, shape=shape, cladedf = ghabricladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(ghabri_tree, col=col, shape=shape, cladedf = ghabricladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
   #geom_nodepoint(aes(subset= node %in% ghabricladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1330,7 +1330,7 @@ col <- c(col, unclassified="grey", NODE="#43BF71FF")
 
 noda_tree@phylo$tip.label <- gsub(noda_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
 
-p <- plot_phylotree(noda_tree, col=col, shape=shape, cladedf = nodacladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(noda_tree, col=col, shape=shape, cladedf = nodacladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
   #geom_nodepoint(aes(subset= node %in% nodacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1388,7 +1388,7 @@ col <- c(col, unclassified="grey", NODE="#43BF71FF")
 
 orthomyxo_tree@phylo$tip.label <- gsub(orthomyxo_tree@phylo$tip.label, pattern = "lcl [ORF]*[0-9]* *", replacement="", perl = T)
 
-p <- plot_phylotree(orthomyxo_tree, col=col, shape=shape, cladedf = orthocladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(orthomyxo_tree, col=col, shape=shape, cladedf = orthocladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
   #geom_nodepoint(aes(subset= node %in% orthocladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1442,7 +1442,7 @@ col <- c(col, unclassified="grey", NODE="#43BF71FF")
 picorna_tree@phylo$tip.label <- gsub(picorna_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
 
 
-p <- plot_phylotree(picorna_tree, col=col, shape=shape, cladedf = picornacladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(picorna_tree, col=col, shape=shape, cladedf = picornacladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
   #geom_nodepoint(aes(subset= node %in% picornacladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1514,7 +1514,7 @@ reo_tree@phylo$tip.label <- gsub(reo_tree@phylo$tip.label, pattern = "lcl ORF[0-
 reo_tree@phylo$tip.label <- gsub(reo_tree@phylo$tip.label, pattern = " pasted", replacement="", perl = T)
 ```
 ```{r echo=TRUE}
-p <- plot_phylotree(reo_tree, col=col, shape=shape, cladedf = reocladedf, labels=c(famvec, "Belgian mosquitoes"), 
+p <- plot_phylotree(reo_tree, col=col, shape=shape, cladedf = reocladedf, labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Family")+
   #geom_nodepoint(aes(subset = node %in% reocladedf$node), size=1, shape=18)+
   scale_y_reverse()+
@@ -1575,7 +1575,7 @@ tombus_tree@phylo$tip.label <- gsub(tombus_tree@phylo$tip.label, pattern = "lcl 
 tombus_tree
 
 p <- plot_phylotree(tombus_tree, col=col, shape=shape, cladedf = tombuscladedf,
-                    labels=c(famvec, "Belgian mosquitoes"),
+                    labels=c(famvec, "NODE"),
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F,
                     group="Genus")+
   #geom_nodepoint(aes(subset= node %in% tombuscladedf$node), size=1, shape=18)+
@@ -1637,7 +1637,7 @@ negev_tree@phylo$tip.label <- gsub(negev_tree@phylo$tip.label, pattern = "lcl OR
 negev_tree
 
 p <- plot_phylotree(negev_tree, col=col, shape=shape,
-                    labels=c(famvec, "Belgian mosquitoes"), 
+                    labels=c(famvec, "NODE"), 
                     plainlabels = c("unclassified", "Belgian mosquitoes"), align=F,
                     group="Genus")+
   #geom_nodepoint(aes(subset= node %in% negevcladedf$node), size=1, shape=18)+
@@ -1922,16 +1922,6 @@ patch2 + plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(face = "bold"))
 
 ggsave("figures/combined_wolbachia_2.pdf", dpi=300, width = 12)
-
-#remove
-prevalencep<-ggarrange(p+theme(legend.position="none"),
-wviolin+theme(legend.position = "top")+xlab("Mosquito species"), common.legend = T, align = 'hv')
-prevalencep
-ggsave("figures/prevalence.pdf", prevalencep, dpi=300, width=8.4, height = 5.25)
-
-# View(left_join(vdf, wdf) %>% 
-#   #select(SKA_Subspecies,total,freq,wolbachia_freq) %>% 
-#   rename(viral_freq=freq))
 ```
 
 barplot
@@ -2074,15 +2064,38 @@ left_join(wPip, pWCP_cov, by="Sample") %>%
   geom_smooth(method = "lm", se=F, col="lightgrey")+
   geom_point(aes(col=SKA_Subspecies, shape=completeness))+
   scale_color_manual(values = myColors)+
+  scale_shape_manual(values=c(3, 17, 15, 19))+
   scale_y_continuous(trans = pseudo_log_trans())+
   scale_x_continuous(trans =  pseudo_log_trans())+
   labs(color="Mosquito species",
-       x="Wolbachia coverage",
-       y="pWCP plasmid coverage")+
+       x="Wolbachia sequencing depth",
+       y="pWCP plasmid sequencing depth")+
   theme_bw()+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
                             label.theme = element_text(size=10, face="italic")))
+
 ggsave("figures/pWCP_coverage.pdf", dpi=300)
+
+left_join(wPip, pWCP_cov, by="Sample") %>% 
+  left_join(meta[meta$Sample!="NEMO39",]) %>% 
+  mutate(meandepth.x=case_when(coverage.x<5 ~ 0,
+                               TRUE ~ meandepth.x),
+         meandepth.y=case_when(coverage.x<5 ~ 0,
+                               TRUE ~ meandepth.y),
+         completeness=cut(pWCP_cov$coverage, breaks = c(0, 25, 50, 75, 100), include.lowest = T)) %>% 
+  ggplot(aes(x=meandepth.x, y=meandepth.y))+
+  geom_smooth(method = "lm", se=F, col="lightgrey")+
+  geom_point(aes(col=coverage.y, shape=SKA_Subspecies))+
+  scale_color_gradientn(colours = viridis(10), guide = guide_colourbar(direction = "horizontal", title.position="top"))+
+  scale_y_continuous(trans = pseudo_log_trans())+
+  scale_x_continuous(trans =  pseudo_log_trans())+
+  labs(color="pWCP completeness (%)",
+       shape="Mosquito species",
+       x="Wolbachia sequencing depth",
+       y="pWCP plasmid sequencing depth")+
+  theme_bw()
+
+#ggsave("figures/pWCP_coverage.pdf", dpi=300)
 
 ```
 ```{r include=FALSE}
