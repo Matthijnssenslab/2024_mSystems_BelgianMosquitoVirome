@@ -59,6 +59,7 @@ clean_phylometa <- function(tree, metadata){
    strname <- str_split_n(tree@phylo$tip.label[i], "\\|", 1)
    namesvector[i] <- strname
   }
+  #print(namesvector)
   metadata <- metadata[is.element(metadata$Accession, namesvector),] #changed %in%
 
   metadata <- metadata %>% 
@@ -202,7 +203,7 @@ toexpr <- function(x, plain = NULL) {
 #' function to reduce legend size of plots
 addSmallLegend <- function(myPlot, pointSize = 1, textSize = 2, spaceLegend = 0.1) 
   {myPlot+
-    guides(shape = "none",
+    guides(shape = "none",#guide_legend(override.aes = list(size = pointSize-.5)),
            color = guide_legend(override.aes = list(size = pointSize-.5, shape=15))) +
     theme(legend.title = element_text(size = textSize, face="bold"), 
           legend.text  = element_text(size = textSize),
@@ -212,4 +213,21 @@ addSmallLegend <- function(myPlot, pointSize = 1, textSize = 2, spaceLegend = 0.
           plot.background=element_blank(),
           legend.background = element_blank(),
           legend.box.background = element_blank())
+}
+
+
+alpha_rarefied <- function(ab_table, sequencing_depth) {
+  df = ab_table %>%
+    t() %>%
+    rrarefy(., sample=sequencing_depth) %>% # rrafefy samples from rows, not from columns!
+    as_tibble(rownames="sample") %>%
+    group_by(sample) %>%
+    pivot_longer(-sample) %>%
+    summarize(Observed = specnumber(value),
+              Shannon = diversity(value, index="shannon"),
+              Simpson = diversity(value, index="simpson")
+    ) %>%
+    as.data.frame() %>%
+    column_to_rownames("sample")
+  df
 }

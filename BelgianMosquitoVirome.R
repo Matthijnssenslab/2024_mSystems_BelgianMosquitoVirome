@@ -189,7 +189,6 @@ p
 #+ eval=FALSE,echo=FALSE
 ggarrange(ggarrange(NULL, p+theme(legend.position = "none"), ncol = 1, labels = c("A", "C")), NULL, ncol=2, 
           labels = c("", "B"), widths = c(.4,.6))
-ggsave("figures/figure1.pdf", dpi=300)
 
 # library(grImport)
 # PostScriptTrace("figures/species_assignment_clustermap.pdf", charpath = F)
@@ -341,9 +340,10 @@ heatmapCols <- colorRampPalette(brewer.pal(9, "YlOrRd"))(200)
 pal.bands(heatmapCols, main="Heatmap colors for abundance")
 
 #' **Calculate average BLASTx values:**
-blastx <- read.table("data/BEmosquitoes.tsv", header=T, row.names=1, dec=".", sep="\t")
+#blastx <- read.table("data/BEmosquitoes.tsv", header=T, row.names=1, dec=".", sep="\t")
+blastx <- read.table("data/BMV_2023.pid.tsv", header=T, row.names=1, dec=".", sep="\t")
 blastx <- dplyr::select(blastx, 2)
-blastx.UF <- otu_table(as.matrix(blastx), taxa_are_rows=T)
+blastx.UF <- phyloseq::otu_table(as.matrix(blastx), taxa_are_rows=T)
 blastx.ps <- phyloseq(blastx.UF, tax_table(prune_taxa(taxa_sums(BMV.V2) >= 1, BMV.V2)))
 blastx_metaseq <- phyloseq_to_metagenomeSeq(blastx.ps)
 blastx_metaseq
@@ -400,31 +400,102 @@ gcanno$Family <- factor(gcanno$Family, levels = FamLevel)
 datatable(gcanno)
 
 #' ## Alpha diversity
-alpha <- plot_richness(BMV_final, measures=c("Observed", "Shannon", "Simpson"), x="SKA_Subspecies", color = "SKA_Subspecies")+
-  geom_boxplot()+
-  geom_jitter(width=0)+
+df <- as_tibble(sample_data(BMV_final))
+df$LibrarySize <- sample_sums(BMV_final)
+df<- df[order(df$LibrarySize),]
+
+threshold <- quantile(df$LibrarySize, 0.05)
+
+min_depth <- df %>% 
+  dplyr::filter(LibrarySize >= 100) %>% 
+  select(LibrarySize) %>% 
+  min()
+
+ggplot(data=df, aes(x=LibrarySize, y="samples", color=SKA_Subspecies)) + 
+  geom_jitter(height = 0.02)+
+  ggtitle("Library sizes")+
+  geom_vline(xintercept = min_depth, linetype="dashed", color="grey")+
+  labs(y="")+
+  scale_x_log10()+
+  scale_color_manual(values = myColors, name="Mosquito species")+
+  theme_bw()
+
+set.seed(1234)
+alpha_df_list <- purrr::map(1:1000, ~alpha_rarefied(ab_table=as_tibble(otu_table(BMV_final)), sequencing_depth=min_depth))
+alpha_average_df <- Reduce(`+`, alpha_df_list) / length(alpha_df_list)
+alpha_average_df %<>% 
+  mutate(Observed=round(Observed))
+
+labels <- c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
+            expression(paste(italic("Culex pipiens molestus"), " (n=23)")),
+            expression(paste(italic("Culex pipiens pipiens"), " (n=48)")),
+            expression(paste(italic("Culex torrentium"), " (n=3)")))
+
+alpha <- alpha_average_df %>% 
+  rownames_to_column("Sample") %>% 
+  left_join(meta %>% select(Sample, SKA_Subspecies)) %>% 
+  pivot_longer(c(-SKA_Subspecies, -Sample), names_to = "Metric", values_to = "Diversity") %>% 
+  ggplot(aes(x=SKA_Subspecies, y=Diversity, color=SKA_Subspecies))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_jitter(width=0.2)+
+  facet_wrap(~Metric, nrow=1, scales="free_y")+
   theme_bw()+
-  scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
-                                                               expression(paste(italic("Culex pipiens molestus"), " (n=23)")),
-                                                               expression(paste(italic("Culex pipiens pipiens"), " (n=48)")),
-                                                               expression(paste(italic("Culex torrentium"), " (n=3)"))))+
+  scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
+  #scale_fill_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
   theme(strip.text.x = element_text(size = 10),
         axis.title.x = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),
         legend.text.align = 0)+
   scale_y_continuous(limits = c(0, NA))+
-  stat_compare_means(method = "wilcox.test", aes_string(x="SKA_Subspecies", y="value",
-                                                        group="SKA_Subspecies"), 
-                     label = "p.format", hide.ns=TRUE, size=3, show.legend = F, tip.length = 0.01,
-                     comparisons = list(c(1, 2),c(1, 3)))
+  stat_pwc(method = "wilcox.test", aes(x=SKA_Subspecies, y=Diversity,
+                                              group=SKA_Subspecies), p.adjust.method="BH",
+           label = "p.adj", hide.ns="p.adj", show.legend = F, tip.length = 0.01)
 alpha
+
+# Without rarefaction
+#alpha <- plot_richness(BMV_final, measures=c("Observed", "Shannon", "Simpson"), x="SKA_Subspecies", color = "SKA_Subspecies")+
+#  geom_boxplot()+
+#  geom_jitter(width=0)+
+#  theme_bw()+
+#  scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
+#                                                               expression(paste(italic("Culex pipiens molestus"), " (n=23)")),
+#                                                               expression(paste(italic("Culex pipiens pipiens"), " (n=48)")),
+#                                                               expression(paste(italic("Culex torrentium"), " (n=3)"))))+
+#  theme(strip.text.x = element_text(size = 10),
+#        axis.title.x = element_blank(),
+#        axis.text.x = element_blank(),
+#        axis.ticks.x = element_blank(),
+#        legend.text.align = 0)+
+#  scale_y_continuous(limits = c(0, NA))+
+#  stat_pwc(method = "wilcox.test", aes_string(x="SKA_Subspecies", y="value",
+#                                              group="SKA_Subspecies"), p.adjust.method="BH",
+#           label = "p.adj", hide.ns="p.adj", show.legend = F, tip.length = 0.01)
+#alpha
+
 ggsave("figures/alpha-diversity-species.pdf", alpha, dpi=300)
 
 #' ## Ordination
 #' ### PCoA
-v.ord <- ordinate(BMV_final, method = "PCoA")
-pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
+# Without rarefaction
+#v.ord <- ordinate(BMV_final, method = "PCoA")
+#pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
+#  scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
+#  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+#  stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
+#  theme_bw()+
+#  theme(panel.grid.minor = element_blank())+
+#  guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
+#                            label.theme = element_text(size=10, face="italic")))
+#
+#pcoa
+
+vegan_avgdist <- avgdist(as.data.frame(t(otu_table(BMV_final))), 
+                         sample=min_depth, iterations = 1000)
+
+v.ord <- ape::pcoa(vegan_avgdist)
+
+pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality", axes = c(1, 2))+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
   scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
   stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
@@ -432,24 +503,32 @@ pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies"
   theme(panel.grid.minor = element_blank())+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
                             label.theme = element_text(size=10, face="italic")))
-
+pcoa
 #' Permanova test
-metadata_vegan <- as(sample_data(BMV_final), "data.frame")
-perm <- adonis2(distance(BMV_final, method="bray") ~ SKA_Subspecies*Municipality,
+samples_vegan <- row.names(as.matrix(vegan_avgdist))
+
+metadata_vegan <- meta %>% 
+  filter(Sample %in% samples_vegan)
+
+perm <- adonis2(vegan_avgdist ~ SKA_Subspecies+Municipality,
                data = metadata_vegan)
 perm
 pval<-perm$`Pr(>F)`[1]
 Rsq <- perm$R2[1]
 
 pcoa<-pcoa+
-  ggplot2::annotate(geom="text",x=-.9, y=c(.57,.51,.45), size=c(4,3,3),hjust=0, label =c("Adonis test", 
+  ggplot2::annotate(geom="text",x=-.9, y=c(.7,.63,.57), size=c(4,3,3), hjust=0, label =c("Adonis test", 
                                                                           as.expression(bquote(italic(R^2) ~ "=" ~ .(round(Rsq, 2)))), 
                                                                           as.expression(bquote(italic(p) ~ "=" ~ .(pval)))))
 pcoa
 ggsave("figures/PCoA-eukaryotic-virome.pdf", dpi=300)
 
 #' ### NMDS full dataset
-v.ord <- ordinate(BMV_final, method = "NMDS", k=2)
+
+#v.ord <- ordinate(BMV_final, method = "NMDS", k=2)
+
+v.ord <- metaMDS(vegan_avgdist, k=2)
+
 nmds <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
   scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
@@ -469,8 +548,14 @@ for (i in c("MEMO014","MEMO078","MEMO145","MEMO146","MEMO149","MEMO084","MEMO018
 }
 BMV_no_singletons
 
-v.ord <- ordinate(BMV_no_singletons, method = "NMDS", k=2)
-nmds_ns <- plot_ordination(BMV_no_singletons, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
+#v.ord <- ordinate(BMV_no_singletons, method = "NMDS", k=2)
+vegan_avgdist_no_single <- avgdist(as.data.frame(t(otu_table(BMV_no_singletons))), 
+                         sample=min_depth, iterations = 1000)
+
+
+v.ord_no_single <- metaMDS(vegan_avgdist_no_single, k=2)
+
+nmds_ns <- plot_ordination(BMV_no_singletons, v.ord_no_single, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
   scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
   #stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
@@ -509,7 +594,7 @@ bottom<-cowplot::plot_grid(plots[[2]],
 cowplot::plot_grid(plots[[1]], alpha.legend, bottom, ord.legend, labels = c('A', ''), ncol=2, rel_widths = c(1, .3))
 
 #ggarrange(alpha, ggarrange(pcoa, nmds, labels=c("B","C"), common.legend = T, legend = "right"), labels="A", ncol=1)
-ggsave("figures/combined-alpha-ordination.pdf", dpi=300)
+ggsave("figures/combined-alpha-ordination.pdf", dpi=300, width = 11.2, height = 8)
 
 #' ## Relative abundance
 #' ### Relative abundance per location
@@ -684,7 +769,7 @@ datatable(qPCR)
 qPCR_noNA <- qPCR %>% mutate_all(~replace(., is.na(.), 0))
 
 #' **Replace abbreviations for full names:**
-qPCR_noNA <- qPCR_noNA %>% mutate(Target, Target= case_when(Target=="CPV"~"Culex phasmavirus (CPV)", 
+qPCR_noNA <- qPCR_noNA %>% mutate(Target, Target= case_when(Target=="CPV"~"Culex orthophasmavirus 2 (CPV)", 
                                                             Target=="XCV"~"Xanthi chryso-like virus (XCV)", 
                                                             Target=="WMV6"~"Wuhan Mosquito Virus 6 (WMV6)",
                                                             Target=="WMV4"~"Wuhan Mosquito Virus 4 (WMV4)",
@@ -735,7 +820,7 @@ qPCRviolin <- ggplot(metaqPCR, aes(x=SKA_Subspecies, y=Quantity))+
                         labels=legendlabels)+ 
   guides(fill = guide_legend(override.aes = list(alpha = 1)))+
   facet_wrap(~Target, nrow=2, ncol=3)
-ggsave("figures/qPCR-violin.pdf", dpi=300)
+ggsave("figures/qPCR-violin.pdf", dpi=300, width=11)
 #+ echo=FALSE
 qPCRviolin
 
@@ -841,7 +926,8 @@ p1 <- points %>%
   ggplot(aes(x=viral_count))+
   geom_histogram(binwidth = 1, fill='grey', colour="white")+
   stat_bin(binwidth=1, geom="text", aes(label=after_stat(count)), vjust=-.5)+
-  ylim(c(0,140))+
+  #ylim(c(0,140))+
+  coord_cartesian(ylim = c(0,140))+
   scale_x_continuous(expand=c(0,0))+
   theme_void()+
   theme(plot.margin = unit(c(0,0,0,0), "lines"))
@@ -850,7 +936,8 @@ p2 <- points %>%
   ggplot(aes(x=qPCR_count))+
   geom_histogram(binwidth = 1, fill='grey', colour="white")+
   stat_bin(binwidth=1, geom="text", aes(label=after_stat(count)), angle=-90, vjust=-.1)+
-  ylim(c(0,110))+
+  #ylim(c(0,110))+
+  coord_cartesian(ylim = c(0,110))+
   scale_x_continuous(expand=c(0,0))+
   coord_flip()+
   theme_void()+
@@ -866,629 +953,11 @@ ggsave("figures/viral_count_barplot.pdf", dpi=300, width=8, height=4)
 #' ***
 #' # Phylogenetics
 #+ results="hide"
-phylo_path <- here("phylogenetics")
-phylo_packages <- c('phytools', 'ggtree', 'treeio', 'rphylopic',
-                    'ggimage', 'aplot', 'rcartocolor')
-lapply(phylo_packages, library, character.only = TRUE)
-
-#' Determine shape based on which classification was used
-shape <- c(ICTV=16, NCBI=15, NODE=17)
-shape
-#+ include=FALSE
-# full_genomes <- c("Culex Iflavi-like virus 4", #Iflaviridae
-#                   "Xanthi chryso-like virus", #Chrysoviridae
-#                   "Daeseongdong virus 2", "Culex mosquito virus 1", #Nodaviridae
-#                   "Wuhan Mosquito Virus 6", "Wuhan Mosquito Virus 4", "Guadeloupe mosquito quaranja-like virus 1", #Orthomyxo
-#                   "Culex orthophasmavirus sp.", "Aedes orthophasmavirus sp.", #Phasmaviridae
-#                   "Orbivirus sp.", "Valmbacken virus", #Reoviridae
-#                   "Hubei mosquito virus 4", #Tymoviridae
-#                   "Yongsan picorna-like virus 2", #Picorna
-#                   "Culex-associated Tombus-like virus",
-#                   "Culex negev-like virus 1", "Negev-like virus 174", "Rinkaby virus") #Negeviridae
-# fg <- list()
-# for (i in full_genomes) {
-#   print(i)
-#   print(taxa_names(phyloseq::subset_taxa(BMV.V2, Species == i)))
-#   fg[[i]] <- taxa_names(phyloseq::subset_taxa(BMV.V2, Species == i))
-# }
-# 
-# taxa_names(phyloseq::subset_taxa(BMV.V2, Order=="Picornavirales"))
-# taxa_names(phyloseq::subset_taxa(BMV.V2, Species=="Hubei odonate virus 15"))
-# 
-# BMV_taxtable <- psmelt(BMV_final) %>% 
-#   select(OTU, Phylum, Class, Order, Family, Genus, Species) %>% 
-#   distinct()
-# virfam <- BMV_taxtable %>% 
-#   select(Family, Species)
-# for (i in BMV_taxtable$Species) {
-#   print(i)
-#   print(taxa_names(phyloseq::subset_taxa(BMV.V2, Species == i)))
-#   fg[[i]] <- taxa_names(phyloseq::subset_taxa(BMV.V2, Species == i))
-# }
-# fg$`Culex Iflavi-like virus 4`
-# segments <- stack(fg) %>% 
-#   mutate(Length=gsub(x=gsub(x=values, pattern = ".*_length_", replacement = "", perl = T), 
-#                      pattern = "_cov.*", replacement = "", perl = T)) %>% 
-#   rename(Species=ind, OTU=values) 
-# 
-# seg_count <- segments %>% group_by(Species) %>% count()
-# 
-# seg_max <- segments%>% 
-#   select(OTU, Species, Length) %>% 
-#   group_by(Species) %>% 
-#   slice(which.max(Length)) %>% 
-#   arrange(Species)
-#BMV_taxtable <- as.data.frame(tax_table(BMV_final))
-
-#setwd("~/OneDrive - KU Leuven/Documents/Manuscripts/Belgian mosquitoes (2021)/analysis/phylogenetics/")
-
-
-# pal.safe(stepped(n=24))
-# pal.safe(viridis::plasma(n = 5, begin=0.2, end=0.9))
-# pal.safe(viridis::viridis(n = 5, begin=0.2, end=0.9))
-# pal.safe(viridis::mako(n = 5, begin=0.2, end=0.9))
-# pal.safe(viridis::cividis(n = 5, begin=0, end=1))
-# pal.safe(viridis::rocket(n = 5, begin=0.3, end=0.9))
-# pal.safe(viridis::turbo(n = 5, begin=0.6, end=0.9))
-
-#' ## Bunyavirales
-
-meta.bunya <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Bunyavirales/"), pattern = "*.csv", full.names = T), read_csv))
-bunya.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Bunyavirales/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-bunya <- read.iqtree(here(phylo_path, "Bunyavirales/bunyavirales.treefile"))
-bunya@phylo <- phytools::midpoint.root(bunya@phylo)
-
-meta.bunya <- meta.bunya %>% 
-  mutate(Classification = case_when(Accession %in% bunya.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-bunya@phylo$tip.label <- gsub(bunya@phylo$tip.label, pattern = "_", replacement=" ")
-bunya@phylo$tip.label <- gsub(bunya@phylo$tip.label, pattern = "P ", replacement="P_")
-bunya@phylo$tip.label <- gsub(bunya@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-bunya_clean <- clean_phylometa(bunya, metadata = meta.bunya)
-bunya_ictv_clean <- clean_phylometa(bunya, metadata = bunya.ictv)
-
-bunya_tree <- group_phylotaxa(bunya, bunya_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-bunya_tree
-
-#' Give clean metadata ictv!
-bunyacladedf <- mrca_ictv(tree = bunya_tree, meta = bunya_ictv_clean, 
-                          group="Genus")
-
-famvec <- sort(unique(bunya_clean$Family))
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.4, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-bunya_tree@phylo$tip.label <- gsub(bunya_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-
-p <- plot_phylotree(bunya_tree, col=col, shape=shape, cladedf = bunyacladedf, 
-                    labels=c(famvec, "NODE"),
-               plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  #geom_nodepoint(aes(subset= node %in% bunyacladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,6)
-
-bunyaplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4))
-bunyaplot
-
-ggsave(filename = here(phylo_path, "Bunyavirales/bunyaviridae.pdf"), bunyaplot, dpi=1200, width=6.875)
-
-bunyaplot_minimal <- plot_minimal_phylotree(bunya_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,6.5)
-bunyaplot_minimal
-
-ggsave(filename = here(phylo_path, "Bunyavirales/bunyaviridae_minimal.pdf"), bunyaplot_minimal, dpi=1200, width=6.875)
-
-#' ## Endornaviridae
-
-meta.endorna <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Endornaviridae/"), pattern = "*.csv", full.names = T), read_csv))
-endorna.ictv <- read_csv(here(phylo_path, "Endornaviridae/endornaviridae_ictv.csv"))
-endorna <- read.iqtree(here(phylo_path, "Endornaviridae/endornaviridae.treefile"))
-endorna@phylo <- phytools::midpoint.root(endorna@phylo)
-
-meta.endorna <- meta.endorna %>% 
-  mutate(Classification = case_when(Accession %in% endorna.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-endorna@phylo$tip.label <- gsub(endorna@phylo$tip.label, pattern = "_", replacement=" ")
-endorna@phylo$tip.label <- gsub(endorna@phylo$tip.label, pattern = "P ", replacement="P_")
-endorna@phylo$tip.label <- gsub(endorna@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-endorna_clean <- clean_phylometa(endorna, metadata = meta.endorna)
-endorna_ictv_clean <- clean_phylometa(endorna, metadata = endorna.ictv)
-
-endorna_tree <- group_phylotaxa(endorna, endorna_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-endorna_tree
-
-#' Give clean metadata ictv!
-endornacladedf <- mrca_ictv(tree= endorna_tree, meta = endorna_ictv_clean,
-                            group = "Genus")
-
-famvec <- sort(unique(endorna_clean$Genus))
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.7, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-endorna_tree@phylo$tip.label <- gsub(endorna_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-
-p <- plot_phylotree(endorna_tree, col=col, shape=shape, cladedf = endornacladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
-  #geom_nodepoint(aes(subset= node %in% endornacladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,4)
-
-endornaplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.1,0.15))
-endornaplot
-
-ggsave(filename = here(phylo_path, "Endornaviridae/endornaviridae.pdf"), endornaplot, dpi=1200, width=6.875)
-
-endornaplot_minimal <- plot_minimal_phylotree(endorna_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,4.5)
-endornaplot_minimal
-
-ggsave(filename = here(phylo_path, "Endornaviridae/endornaviridae_minimal.pdf"), endornaplot_minimal, dpi=1200, width=6.875)
-
-#' ## Ghabrivirales
-meta.ghabri <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Toti_Chryso/"), pattern = "*.csv", full.names = T), read_csv))
-ghabri.ictv <- read_csv(here(phylo_path, "Toti_Chryso/ghabrivirales_ictv.csv"))
-ghabri <- read.iqtree(here(phylo_path, "Toti_Chryso/ghabrivirales.treefile"))
-ghabri@phylo <- phytools::midpoint.root(ghabri@phylo)
-
-meta.ghabri <- meta.ghabri %>% 
-  mutate(Classification = case_when(Accession %in% ghabri.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-ghabri@phylo$tip.label <- gsub(ghabri@phylo$tip.label, pattern = "_", replacement=" ")
-ghabri@phylo$tip.label <- gsub(ghabri@phylo$tip.label, pattern = "P ", replacement="P_")
-ghabri@phylo$tip.label <- gsub(ghabri@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-ghabri_clean <- clean_phylometa(ghabri, metadata = meta.ghabri)
-ghabri_ictv_clean <- clean_phylometa(ghabri, metadata = ghabri.ictv)
-
-ghabri_tree <- group_phylotaxa(ghabri, ghabri_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-ghabri_tree
-
-#' Give clean metadata ictv!
-ghabricladedf <- mrca_ictv(tree=ghabri_tree, meta =ghabri_ictv_clean, 
-                          group="Genus", subset = c("unclassified", "Chrysovirus"))
-
-famvec <- sort(unique(ghabri_clean$Family))
-famvec
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.2, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-ghabri_tree@phylo$tip.label <- gsub(ghabri_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-
-p <- plot_phylotree(ghabri_tree, col=col, shape=shape, cladedf = ghabricladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  #geom_nodepoint(aes(subset= node %in% ghabricladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,4)
-ghabriplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.15,0.15))
-ghabriplot
-ggsave(filename = here(phylo_path, "Toti_Chryso/ghabrivirales.pdf"), ghabriplot, dpi=1200, width=6.875)
-
-ghabriplot_minimal <- plot_minimal_phylotree(ghabri_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,4.5)
-ghabriplot_minimal
-
-ggsave(filename = here(phylo_path, "Toti_Chryso/ghabrivirales_minimal.pdf"), ghabriplot_minimal, dpi=1200, width=6.875)
-
-#' ## Nodamuvirales
-meta.noda <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Nodaviridae/"), pattern = "*.csv", full.names = T), read_csv))
-noda.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Nodaviridae/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-noda <- read.iqtree(here(phylo_path, "Nodaviridae/nodamuvirales.treefile"))
-noda@phylo <- phytools::midpoint.root(noda@phylo)
-
-meta.noda <- meta.noda %>% 
-  mutate(Classification = case_when(Accession %in% noda.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-noda@phylo$tip.label <- gsub(noda@phylo$tip.label, pattern = "_", replacement=" ")
-noda@phylo$tip.label <- gsub(noda@phylo$tip.label, pattern = "P ", replacement="P_")
-noda@phylo$tip.label <- gsub(noda@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-noda_clean <- clean_phylometa(noda, metadata = meta.noda)
-noda_ictv_clean <- clean_phylometa(noda, metadata = noda.ictv)
-
-noda_tree <- group_phylotaxa(noda, noda_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-noda_tree
-
-#' Give clean metadata ictv!
-nodacladedf <- mrca_ictv(tree = noda_tree, meta = noda_ictv_clean, group = "Genus")
-
-famvec <- sort(unique(noda_clean$Family))
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.4, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-noda_tree@phylo$tip.label <- gsub(noda_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-
-p <- plot_phylotree(noda_tree, col=col, shape=shape, cladedf = nodacladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  #geom_nodepoint(aes(subset= node %in% nodacladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,4.5)
-
-nodaplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.1,0.15))
-nodaplot
-ggsave(filename = here(phylo_path, "Nodaviridae/nodamuvirales.pdf"), nodaplot, dpi=1200, width=6.875)
-
-nodaplot_minimal <- plot_minimal_phylotree(noda_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,5)
-nodaplot_minimal
-
-ggsave(filename = here(phylo_path, "Nodaviridae/nodamuvirales_minimal.pdf"), nodaplot_minimal, dpi=1200, width=6.875)
-
-#' ## Orthomyxoviridae
-
-meta.orthomyxo <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Orthomyxoviridae/"), pattern = "*.csv", full.names = T), read_csv))
-orthomyxo.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Orthomyxoviridae/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-orthomyxo <- read.iqtree(here(phylo_path, "Orthomyxoviridae/orthomyxoviridae.treefile"))
-orthomyxo@phylo <- phytools::midpoint.root(orthomyxo@phylo)
-
-meta.orthomyxo <- meta.orthomyxo %>% 
-  mutate(Classification = case_when(Accession %in% orthomyxo.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-orthomyxo@phylo$tip.label <- gsub(orthomyxo@phylo$tip.label, pattern = "_", replacement=" ")
-orthomyxo@phylo$tip.label <- gsub(orthomyxo@phylo$tip.label, pattern = "P ", replacement="P_")
-orthomyxo@phylo$tip.label <- gsub(orthomyxo@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-orthomyxo_clean <- clean_phylometa(orthomyxo, metadata = meta.orthomyxo)
-orthomyxo_ictv_clean <- clean_phylometa(orthomyxo, metadata = orthomyxo.ictv)
-
-orthomyxo_tree <- group_phylotaxa(orthomyxo, orthomyxo_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-orthomyxo_tree
-
-#' Give clean metadata ictv!
-orthocladedf <- mrca_ictv(tree=orthomyxo_tree, meta = orthomyxo_ictv_clean, 
-                          group="Genus")
-
-famvec <- sort(unique(orthomyxo_clean$Genus))
-#col <- c(viridis::plasma(n = length(famvec)-1, begin=0.1, end=0.9))
-col <- c(rcartocolor::carto_pal(n = length(famvec), "Vivid"))
-col <- rev(col)[-1]
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-orthomyxo_tree@phylo$tip.label <- gsub(orthomyxo_tree@phylo$tip.label, pattern = "lcl [ORF]*[0-9]* *", replacement="", perl = T)
-
-p <- plot_phylotree(orthomyxo_tree, col=col, shape=shape, cladedf = orthocladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Genus")+
-  #geom_nodepoint(aes(subset= node %in% orthocladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,4.5)
-
-orthoplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4))
-orthoplot
-ggsave(filename = here(phylo_path, "Orthomyxoviridae/orthomyxoviridae.pdf"), orthoplot, dpi=1200, width=6.875)
-
-orthoplot_minimal <- plot_minimal_phylotree(orthomyxo_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,5)
-orthoplot_minimal
-
-ggsave(filename = here(phylo_path, "Orthomyxoviridae/orthomyxoviridae_minimal.pdf"), orthoplot_minimal, dpi=1200, width=6.875)
-
-#' ## Picornavirales
-
-meta.picorna <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Picorna/"), pattern = "*.csv", full.names = T), read_csv))
-picorna.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Picorna/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-picorna <- read.iqtree(here(phylo_path, "Picorna/picornavirales.treefile"))
-picorna@phylo <- phytools::midpoint.root(picorna@phylo)
-
-meta.picorna <- meta.picorna %>% 
-  mutate(Classification = case_when(Accession %in% picorna.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-picorna@phylo$tip.label <- gsub(picorna@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-picorna_clean <- clean_phylometa(picorna, metadata = meta.picorna)
-picorna_ictv_clean <- clean_phylometa(picorna, metadata = picorna.ictv)
-
-picorna_tree <- group_phylotaxa(picorna, picorna_clean, 
-                                group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-
-#' Give clean metadata ictv!
-picornacladedf <- mrca_ictv(tree=picorna_tree, meta = picorna_ictv_clean, 
-                          group="Genus", subset="unclassified")#, subset = "Cripavirus")
-
-famvec <- sort(unique(picorna_clean$Family))
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.2, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-picorna_tree@phylo$tip.label <- gsub(picorna_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-
-
-p <- plot_phylotree(picorna_tree, col=col, shape=shape, cladedf = picornacladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F)+
-  #geom_nodepoint(aes(subset= node %in% picornacladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,4)
-
-picornaplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(.8,.15))
-picornaplot
-#+ echo=FALSE
-# picplot <- picornaplot+
-#   geom_tiplab(data=picorna_tree, aes(subset=Genus == "Cripavirus", label="Cripavirus"), 
-#                size=2.5, color="red", offset = .05)+
-#   geom_nodelab(aes(label=as.numeric(label), subset = !is.na(as.numeric(label)) & as.numeric(label) > 0), 
-#                size=2, hjust=-.01)+
-#   theme(legend.position = c(.8,.15))
-# picplot
-
-ggsave(filename = here(phylo_path, "Picorna/picornavirales.pdf"), picornaplot, dpi=1200, width=6.875)
-
-#+ echo=TRUE
-picornaplot_minimal <- plot_minimal_phylotree(picorna_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,4.5)
-picornaplot_minimal
-
-ggsave(filename = here(phylo_path, "Picorna/picornavirales_minimal.pdf"), picornaplot_minimal, dpi=1200, width=6.875)
-
-#' ## Reoviridae
-
-meta.reo <- do.call(rbind, lapply(list.files(path=here::here(phylo_path, "Reoviridae/"), pattern = "*.csv", full.names = T), read_csv))
-reo.ictv <- do.call(rbind, lapply(list.files(path=here::here(phylo_path, "Reoviridae/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-reo <- read.iqtree(here(phylo_path, "Reoviridae/reoviridae.treefile"))
-reo@phylo <- phytools::midpoint.root(reo@phylo)
-
-meta.reo <- meta.reo %>% 
-  mutate(Classification = case_when(Accession %in% reo.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-reo@phylo$tip.label <- gsub(reo@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-reo_clean <- clean_phylometa(reo, metadata = meta.reo)
-reo_ictv_clean <- clean_phylometa(reo, metadata = reo.ictv)
-
-reo_tree <- group_phylotaxa(reo, reo_clean, group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-reo_tree@phylo$tip.label
-
-#' Give clean metadata ictv!
-reocladedf <- mrca_ictv(tree=reo_tree, meta =reo_ictv_clean, 
-                        group="Genus")
-
-famvec <- sort(unique(reo_clean$Family))
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.1, end=0.9))
-#col <- c(rcartocolor::carto_pal(n = length(famvec), "Vivid"))
-#col <- rev(col)[-1]
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-reo_tree@phylo$tip.label <- gsub(reo_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-#+echo=FALSE
-reo_tree@phylo$tip.label <- gsub(reo_tree@phylo$tip.label, pattern = " pasted", replacement="", perl = T)
-#+echo=TRUE
-p <- plot_phylotree(reo_tree, col=col, shape=shape, cladedf = reocladedf, labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F, group="Family")+
-  #geom_nodepoint(aes(subset = node %in% reocladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,7)
-reoplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.7,.3))
-reoplot
-
-ggsave(filename = here(phylo_path, "Reoviridae/reoviridae.pdf"), reoplot, dpi=1200, width=6.875)
-
-reoplot_minimal <- plot_minimal_phylotree(reo_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,9)
-reoplot_minimal
-
-ggsave(filename = here(phylo_path, "Reoviridae/reoviridae_minimal.pdf"), reoplot_minimal, dpi=1200, width=6.875)
-
-#' ## Tombusviridae
-#' Rerun tree with hmv4!
-meta.tombus <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Tombusviridae/"), pattern = "*.csv", full.names = T), read_csv))
-tombus.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Tombusviridae/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-tombus <- read.iqtree(here(phylo_path, "Tombusviridae/tombusviridae2.treefile"))
-tombus@phylo <- phytools::midpoint.root(tombus@phylo)
-
-tombus@phylo$tip.label <- gsub(tombus@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-
-meta.tombus <- meta.tombus %>% 
-  mutate(Classification = case_when(Accession %in% tombus.ictv$Accession ~ "ICTV",
-                                    TRUE ~ "NCBI"))
-
-tombus_clean <- clean_phylometa(tombus, metadata = meta.tombus)
-tombus_ictv_clean <- clean_phylometa(tombus, metadata = tombus.ictv)
-
-tombus_tree <- group_phylotaxa(tombus, tombus_clean, 
-                               group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-
-#' Give clean metadata ictv!
-tombuscladedf <- mrca_ictv(tree = tombus_tree, meta = tombus_ictv_clean, 
-                          group="Genus")
-
-famvec <- sort(unique(tombus_clean$Genus))
-
-#col <- c(viridis::plasma(n = length(famvec)-1, begin=0.1, end=0.9))
-col <- c(rcartocolor::carto_pal(n = length(famvec), "Prism"))
-col <- rev(col)[-1]
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-tombus_tree@phylo$tip.label <- gsub(tombus_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-tombus_tree
-
-p <- plot_phylotree(tombus_tree, col=col, shape=shape, cladedf = tombuscladedf,
-                    labels=c(famvec, "NODE"),
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F,
-                    group="Genus")+
-  #geom_nodepoint(aes(subset= node %in% tombuscladedf$node), size=1, shape=18)+
-  #geom_nodepoint(aes(fill=as.numeric(label), subset = !is.na(as.numeric(label))), shape=23, color="transparent", size=1)+
-  #scale_fill_gradientn(colours = c("red2","orange","gold1","forestgreen")) +
-  scale_y_reverse()+
-  xlim(-.05,4)
-tombusplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.1,.2))+
-  guides(shape="none")
-tombusplot
-
-ggsave(filename = here(phylo_path, "Tombusviridae/tombusviridae.pdf"), tombusplot, dpi=1200, width=6.875)
-#ggsave(filename = here(phylo_path, "Tombusviridae/tombusviridae_meeting.pdf"), tombusplot+theme(legend.position="left"), dpi=300, width=5.6, height=3.5)
-
-tombusplot_minimal <- plot_minimal_phylotree(tombus_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,5)
-tombusplot_minimal
-
-ggsave(filename = here(phylo_path, "Tombusviridae/tombusviridae_minimal.pdf"), tombusplot_minimal, dpi=1200, width=6.875)
-
-#' ## Negevirus
-
-meta.negev <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Negevirus/"), pattern = "*.csv", full.names = T), read_csv))
-#tombus.ictv <- do.call(rbind, lapply(list.files(path=here(phylo_path, "Tombusviridae/"), pattern = "*_ictv.csv", full.names = T), read_csv))
-negev <- read.iqtree(here(phylo_path, "Negevirus/negeviruses.treefile"))
-negev@phylo <- phytools::midpoint.root(negev@phylo)
-
-meta.negev <- meta.negev %>% 
-  mutate(Classification = "NCBI")
-
-negev@phylo$tip.label <- gsub(negev@phylo$tip.label, pattern = "lcl\\|", replacement="lcl_")
-
-negev_clean <- clean_phylometa_negev(negev, metadata = meta.negev)
-
-#negev_ictv_clean <- clean_phylometa(negev, metadata = negev.ictv)
-
-negev_tree <- group_phylotaxa(negev, negev_clean, 
-                               group = c("Family","Genus", "Host", "Geo_Location", "Classification"))
-
-#' Give clean metadata ictv!
-# negevcladedf <- mrca_ictv(tree = negev_tree, meta = negev_ictv_clean, 
-#                            group="Genus")
-
-famvec <- sort(unique(negev_clean$Genus))
-
-col <- c(viridis::plasma(n = length(famvec)-1, begin=0.1, end=0.9))
-names(col) <- famvec[famvec!="unclassified"]
-col <- c(col, unclassified="grey", NODE="#43BF71FF")
-
-negev_tree@phylo$tip.label <- gsub(negev_tree@phylo$tip.label, pattern = "lcl ORF[0-9]* ", replacement="", perl = T)
-negev_tree
-
-p <- plot_phylotree(negev_tree, col=col, shape=shape,
-                    labels=c(famvec, "NODE"), 
-                    plainlabels = c("unclassified", "Belgian mosquitoes"), align=F,
-                    group="Genus")+
-  #geom_nodepoint(aes(subset= node %in% negevcladedf$node), size=1, shape=18)+
-  scale_y_reverse()+
-  xlim(-.05,3.5)
-
-negevplot <- addSmallLegend(p, pointSize = 2.5, textSize = 5, spaceLegend = .5)+
-  theme(legend.text = element_text(vjust = .4),
-        legend.position = c(0.2,.2))
-negevplot
-
-ggsave(filename = here(phylo_path, "Negevirus/negeviruses.pdf"), negevplot, dpi=1200, width=6.875)
-
-negevplot_minimal <- plot_minimal_phylotree(negev_tree, align=T)+
-  scale_y_reverse()+
-  xlim(-.05,5)
-negevplot_minimal
-
-ggsave(filename = here(phylo_path, "Negevirus/negeviruses_minimal.pdf"), negevplot_minimal, dpi=1200, width=6.875)
-
-
-#' ## Combine phylogenetic trees
-# p1 <- ggarrange(endornaplot, orthoplot,
-#                 bunyaplot, picornaplot,
-#                 ghabriplot, reoplot,
-#                 ncol=2, nrow=3, labels="AUTO",
-#                 heights = c(.2,.4,.4))
-
-# p1 <- ggarrange(endornaplot, orthoplot,
-#                 bunyaplot, picornaplot,
-#                 ghabriplot, reoplot,
-#                 tombusplot, negevplot,
-#                 ncol=2, nrow=4, labels="AUTO",
-#                 heights = c(.15,.25,.25,.25))
-# p1
-
-p1 <- ggarrange(negevplot, endornaplot, orthoplot,
-                picornaplot, bunyaplot, ghabriplot, 
-                reoplot, tombusplot, nodaplot,
-                ncol=3, nrow=3, labels="AUTO",
-                heights = c(.25, .37, .37),
-                font.label = list(size=10))
-#p1
-
-#+ echo=TRUE, fig.width=20, fig.height=20
-# ggarrange(p1, 
-#           ggarrange(NULL, tombusplot+theme(legend.position = "right"), NULL, 
-#                     widths=c(0.1,0.8,0.1), labels=c("","G",""), ncol=3), 
-#           ncol=1, heights = c(.75, .25))
-# p1 <- ggarrange(p1, 
-#           ggarrange(reoplot, tombusplot, nodaplot,#+theme(legend.position = "right"), 
-#                     labels=c("G","H", "I"), ncol=3), 
-#           ncol=1, heights = c(.6, .4)) #0.6, 0.4, widths=c(0.4,0.4, 0.2)
-
-#ggsave("figures/treeplots.pdf", width=17, height = 28, units = "in", dpi=300)
-ggsave("figures/treeplots.pdf", width=20, height = 20, units = "in", dpi=600)
-ggsave("figures/treeplots_small.pdf", width=6.875, height = 9.0625, units = "in", dpi=1200)
-
-#' Minimal phylogenetic trees:
-# p2 <- ggarrange(endornaplot_minimal, orthoplot_minimal,
-#                 bunyaplot_minimal, picornaplot_minimal,
-#                 ghabriplot_minimal, reoplot_minimal,
-#                 ncol=2, nrow=3, labels="AUTO",
-#                 heights = c(.2,.4,.4))
-
-p2 <- ggarrange(endornaplot_minimal, orthoplot_minimal, negevplot_minimal,
-                bunyaplot_minimal, picornaplot_minimal, ghabriplot_minimal,
-                ncol=3, nrow=2, labels="AUTO",
-                heights = c(.4,.6))
-
-#+ echo=TRUE, fig.width=17, fig.height=28
-# ggarrange(p2, 
-#           ggarrange(NULL, tombusplot_minimal, NULL, 
-#                     widths=c(0.1,0.8,0.1), labels=c("","G",""), ncol=3), 
-#           ncol=1, heights = c(.75, .25))
-#ggarrange(p2, 
-#          ggarrange(reoplot_minimal, tombusplot_minimal, 
-#                    widths=c(0.5,0.5), labels=c("G","H"), ncol=2), 
-#          ncol=1, heights = c(.7, .3))
-
-p2 <- ggarrange(negevplot_minimal, endornaplot_minimal, orthoplot_minimal,
-                picornaplot_minimal, bunyaplot_minimal, ghabriplot_minimal, 
-                reoplot_minimal, tombusplot_minimal, nodaplot_minimal,
-                ncol=3, nrow=3, labels="AUTO",
-                heights = c(.25, .37, .37),
-                font.label = list(size=10))
-
-#ggsave("figures/treeplots_minimal.pdf", width=17, height = 28, units = "in", dpi=300)
-ggsave("figures/treeplots_minimal.pdf", width=20, height = 20, units = "in", dpi=600)
-ggsave(plot=p2,filename="figures/treeplots_minimal_small.pdf", width=6.875, height = 9.0625, units = "in", dpi=600)
+source("BMV_phylogenetics.R")
 
 #' ***
 #' # Phageome & Wolbachia bacteria
 #' ## Coverage plot
-#MEMO_wolb <- read.table("data/MEMO050.bowtie.depth", header = T)
-MEMO_wolb <- read.table("data/MEMO043.bowtie.depth", header = T)
 
 phageblast <- read.table("data/phage_blast.tsv", header=F, sep="\t")
 phageblast <- phageblast[phageblast$V4 > 2000,]
@@ -1504,14 +973,24 @@ prophage <- data.frame(
   end=c(266846, 337904, 360657, 483289, 1413160)
 )
 
-covplot <- ggplot(MEMO_wolb, aes_string(x = "pos", y=names(MEMO_wolb[3])))+
-  geom_line()+
-  geom_rect(data = phageblast, inherit.aes=FALSE, aes(xmin=V9, xmax=V10, ymin=-max(MEMO_wolb[3])*0.066, ymax=-max(MEMO_wolb[3])*0.043,
+chunk_size <- 2500
+
+MEMO_wolb <- read.table("data/depth_files/MEMO050.bowtie.depth", header = T)
+#MEMO_wolb <- read.table("data/depth_files/MEMO043.bowtie.depth", header = T)
+
+averages <- MEMO_wolb %>%
+  group_by(chunk = ceiling(row_number() / chunk_size)) %>%
+  summarize(across(starts_with("MEMO"), ~mean(.[!is.na(.)]), .names = "Average")) %>% 
+  mutate(pos=chunk*chunk_size)
+
+covplot <- ggplot(averages, aes(x = pos, y=Average))+
+  geom_area(color="black", fill="black", alpha=0.5)+
+  geom_rect(data = phageblast, inherit.aes=FALSE, aes(xmin=V9, xmax=V10, ymin=-max(averages$Average)*0.066, ymax=-max(averages$Average)*0.043,
                                                       fill="#3977AF", color="#3977AF"), alpha=1)+
-  geom_rect(data = rRNA, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(MEMO_wolb[3])*0.036, ymax=-max(MEMO_wolb[3])*0.012,
-                                                      fill="red", color="red"), alpha=1)+
-  geom_rect(data = prophage, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(MEMO_wolb[3])*0.036, ymax=-max(MEMO_wolb[3])*0.012,
-                                                      fill="limegreen", color="limegreen"), alpha=1)+
+  geom_rect(data = rRNA, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(averages$Average)*0.036, ymax=-max(averages$Average)*0.012,
+                                                fill="red", color="red"), alpha=1)+
+  geom_rect(data = prophage, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(averages$Average)*0.036, ymax=-max(averages$Average)*0.012,
+                                                    fill="limegreen", color="limegreen"), alpha=1)+
   labs(x="Nucleotide position", y="Read depth")+
   #ggtitle("Wolbachia coverage plot of sample MEMO050")+
   scale_fill_identity(name = "",
@@ -1519,12 +998,12 @@ covplot <- ggplot(MEMO_wolb, aes_string(x = "pos", y=names(MEMO_wolb[3])))+
                       labels = c("phageWO prophage region (BLASTn)", "prophage regions (Genbank)", "rRNA genes"),
                       guide = "legend")+
   scale_color_identity(name = "",
-                      #breaks = c("#3977AF", "red"),
-                      #labels = c("phageWO prophage region", "rRNA genes"),
-                      guide = "none",#"legend"
-                      )+
+                       #breaks = c("#3977AF", "red"),
+                       #labels = c("phageWO prophage region", "rRNA genes"),
+                       guide = "none",#"legend"
+  )+
   theme_bw()+
-  theme(legend.position = c(.3,.93), #"top" 
+  theme(legend.position = c(.2,.97),
         legend.background=element_rect(fill=NA, color=NA),
         legend.margin = margin(t = 0, r = 0, b = 0, l = 0, unit='cm'),
         legend.key.size = unit(3, 'mm'),
@@ -1534,7 +1013,114 @@ covplot <- ggplot(MEMO_wolb, aes_string(x = "pos", y=names(MEMO_wolb[3])))+
   guides(fill = guide_legend(override.aes = list(alpha = 1)))
 
 covplot
-ggsave("figures/wolbachia_coverageplot_MEMO043.pdf", dpi=300, width = 7.5, height=5)
+#ggsave("figures/wolbachia_coverageplot_MEMO043.pdf", dpi=300, width = 7.5, height=5)
+
+# Define the function
+process_file <- function(file_path, sample) {
+  MEMO_wolb <- read.table(file_path, header = TRUE)
+  
+  averages <- MEMO_wolb %>%
+    group_by(chunk = ceiling(row_number() / chunk_size)) %>%
+    summarize(across(starts_with(c("MEMO", "NEMO")), ~mean(.[!is.na(.)]), .names = "Average")) %>% 
+    mutate(pos = chunk * chunk_size)
+  
+  max_y <- max(averages$Average)
+  if (max_y > 200) {
+    max_y <- 200
+  }
+  
+  if (sample == "MEMO100" | sample == "MEMO139"){
+    max_y <- 15
+  }
+  
+  covplot <- ggplot(averages, aes(x = pos, y = Average)) +
+    geom_area(color = "black", fill = "black", alpha = 0.5) +
+    geom_rect(data = phageblast, inherit.aes = FALSE, aes(
+      xmin = V9, xmax = V10,
+      ymin = -max_y * 0.066, ymax = -max_y * 0.043,
+      fill = "#3977AF", color = "#3977AF"
+    ), alpha = 1) +
+    geom_rect(data = rRNA, inherit.aes = FALSE, aes(
+      xmin = start, xmax = end,
+      ymin = -max_y * 0.036, ymax = -max_y * 0.012,
+      fill = "red", color = "red"
+    ), alpha = 1) +
+    geom_rect(data = prophage, inherit.aes = FALSE, aes(
+      xmin = start, xmax = end,
+      ymin = -max_y * 0.036, ymax = -max_y * 0.012,
+      fill = "limegreen", color = "limegreen"
+    ), alpha = 1) +
+    labs(x = "Nucleotide position", y = "Read depth", title=sample) +
+    scale_fill_identity(
+      name = "",
+      breaks = c("#3977AF", "limegreen", "red"),
+      labels = c("phageWO prophage region (BLASTn)", "prophage regions (Genbank)", "rRNA genes"),
+      guide = "legend"
+    ) +
+    scale_color_identity(
+      name = "",
+      guide = "none"
+    ) +
+    theme_bw() +
+    theme(
+      legend.position = c(.15, .97),
+      legend.background = element_rect(fill = NA, color = NA),
+      legend.margin = margin(t = 0, r = 0, b = 0, l = 0, unit = 'cm'),
+      legend.key.size = unit(3, 'mm'),
+      plot.title = element_text(size = 9, face = "bold"),
+      panel.grid = element_blank()
+    ) +
+    guides(fill = guide_legend(override.aes = list(alpha = 1)))
+  
+  covplot <- covplot + coord_cartesian(ylim = c(NA, max_y))
+  
+  return(covplot)
+}
+
+
+samples <- c('MEMO005', 'MEMO078', 'NEMO46', 'MEMO141', 'NEMO42', 'MEMO085', 'MEMO073', 'NEMO35', 'MEMO108', 
+             'MEMO139', 'MEMO057', 'MEMO056', 'MEMO105', 'MEMO129', 
+             'MEMO100', 'MEMO043')
+
+# Apply the function to each file path using map
+covplots <- purrr::map2(paste0("data/depth_files/", samples, ".bowtie.depth"), samples, process_file)
+
+p <- ggarrange(plotlist = covplots, ncol = 4, nrow=4, common.legend=T)
+p
+
+ggsave(file="figures/wolbachia_coverageplots.pdf", plot=p, dpi=300, height=10, width=15)
+
+#covplot <- ggplot(MEMO_wolb, aes_string(x=pos, y=names(MEMO_wolb[3])))+
+#  geom_line()+
+#  geom_rect(data = phageblast, inherit.aes=FALSE, aes(xmin=V9, xmax=V10, ymin=-max(MEMO_wolb[3])*0.066, ymax=-max(MEMO_wolb[3])*0.043,
+#                                                      fill="#3977AF", color="#3977AF"), alpha=1)+
+#  geom_rect(data = rRNA, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(MEMO_wolb[3])*0.036, ymax=-max(MEMO_wolb[3])*0.012,
+#                                                      fill="red", color="red"), alpha=1)+
+#  geom_rect(data = prophage, inherit.aes=FALSE, aes(xmin=start, xmax=end, ymin=-max(MEMO_wolb[3])*0.036, ymax=-max(MEMO_wolb[3])*0.012,
+#                                                      fill="limegreen", color="limegreen"), alpha=1)+
+#  labs(x="Nucleotide position", y="Read depth")+
+#  #ggtitle("Wolbachia coverage plot of sample MEMO050")+
+#  scale_fill_identity(name = "",
+#                      breaks = c("#3977AF", "limegreen", "red"),
+#                      labels = c("phageWO prophage region (BLASTn)", "prophage regions (Genbank)", "rRNA genes"),
+#                      guide = "legend")+
+#  scale_color_identity(name = "",
+#                      #breaks = c("#3977AF", "red"),
+#                      #labels = c("phageWO prophage region", "rRNA genes"),
+#                      guide = "none",#"legend"
+#                      )+
+#  theme_bw()+
+#  theme(legend.position = c(.3,.93), #"top" 
+#        legend.background=element_rect(fill=NA, color=NA),
+#        legend.margin = margin(t = 0, r = 0, b = 0, l = 0, unit='cm'),
+#        legend.key.size = unit(3, 'mm'),
+#        plot.title = element_text(size=9, face="bold"),
+#        #panel.grid.major = element_line(size = .25),
+#        panel.grid=element_blank())+
+#  guides(fill = guide_legend(override.aes = list(alpha = 1)))
+#
+#covplot
+
 
 #' ## Swarmplot
 library(ggbeeswarm)
@@ -1552,9 +1138,13 @@ phage %>%
   filter(ratio>0) %>% 
   summarise(median(ratio))
 
-swarmplot <- ggplot(phage, aes(x = SKA_Subspecies, y= ratio, color=ifelse(ratio==0|nonphage<1, NA, ratio>3.5)))+
+phage <- phage %>% 
+  mutate(color=case_when(ratio==0 ~ "NA", 
+                         TRUE ~ color))
+
+swarmplot <- ggplot(phage, aes(x = SKA_Subspecies, y= ratio, color=color))+
   geom_quasirandom(width = .4)+
-  scale_color_manual(values = c("FALSE"="#3977AF", "TRUE"="darkorange", "NA"="#7F7F7F"),
+  scale_color_manual(values = c("<3.5"="#3977AF", ">3.5"="darkorange", "NA"="#7F7F7F"),
                      name="",
                      labels=c("Prophage", "Real phage particle?", "Average depth < 1"))+
   geom_text(aes(label=ifelse(ratio > 3.5&nonphage>1, Sample,"")), nudge_x=.5, size=3,
@@ -1651,7 +1241,7 @@ patch + plot_annotation(tag_levels = "A") &
 ggsave("figures/combined_wolbachia.pdf", dpi=300, width = 12)
 
 #' Second layout
-patch2 <-  covplot + swarmplot + plot_spacer() + p2 + plot_layout(widths = c(1, .01, 1.5),
+patch2 <-  covplot+theme(legend.position = c(0.3,0.97)) + swarmplot + plot_spacer() + p2 + plot_layout(widths = c(1, .01, 1.5),
                                                                  design = "
                                                 134
                                                 234")
@@ -1745,22 +1335,27 @@ fit<-lm(log10(viral_reads+1)~coverage, data=wol_virus_df)
 summary(fit)
 
 wol_virus_df %>% 
+  left_join(meta[meta$Sample!="NEMO39",]) %>% 
   #mutate(viral_reads=viral_reads+1) %>% 
   ggplot(aes(x=coverage, y=viral_reads))+
-  geom_point()+
+  geom_point(aes(col=SKA_Subspecies))+
   geom_smooth(method=lm)+
   geom_vline(xintercept = 5, linetype="dashed", 
              color = "red")+
   #scale_x_continuous(trans='log10')+
   scale_y_continuous(trans=scales::pseudo_log_trans(base = 10), breaks = c(0, 10^seq(2,8,2)))+
   #scale_y_continuous(trans='log10')+
+  scale_color_manual(values = myColors)+
   ylab("log10(viral reads+1)")+
   xlab("Wolbachia wPip genome coverage")+
-  labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+  labs(color="Mosquito species",
+       title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
                      "Intercept =",signif(fit$coef[[1]],5 ),
                      " Slope =",signif(fit$coef[[2]], 5),
                      " P =",signif(summary(fit)$coef[2,4], 5)))+
-  theme_bw()
+  theme_bw()+
+  guides(col = guide_legend(override.aes = list(shape = 15, size = 5),
+                            label.theme = element_text(size=10, face="italic")))
 
 ggsave("figures/wolbachia_virus_correlation.pdf", dpi = 300)
 
@@ -1776,7 +1371,7 @@ left_join(wPip, rownames_to_column(vcount, "Sample")) %>%
   geom_point()+
   geom_smooth(method = lm)
 
-#' ###pWCP coverage
+#' ### pWCP coverage
 pWCP_cov <- read.table("data/pWCP_stats.tsv", header=T)
 #names(pWCP_cov) <- c("Sample", "pWCP_cov")
 left_join(wPip, pWCP_cov, by="Sample") %>% 
