@@ -1,0 +1,198 @@
+accession	message	sample_name	sample_title	bioproject_accession	organism	host	isolation_source	collection_date	geo_loc_name	city	lat_lon	sample_number	ref_biomaterial	rel_to_oxygen	samp_collect_device	samp_mat_process	samp_size	source_material_id	description
+SAMN32890363	Successfully loaded	MEMO001		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO001							
+SAMN32890364	Successfully loaded	MEMO002		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO002							
+SAMN32890365	Successfully loaded	MEMO003		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO003							
+SAMN32890366	Successfully loaded	MEMO004		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO004							
+SAMN32890367	Successfully loaded	MEMO005		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO005							
+SAMN32890368	Successfully loaded	MEMO006		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO006							
+SAMN32890369	Successfully loaded	MEMO007		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO007							
+SAMN32890370	Successfully loaded	MEMO008		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO008							
+SAMN32890371	Successfully loaded	MEMO010		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-14	Belgium	Maasmechelen	50.995194 N  5.621833 E	MEMO010							
+SAMN32890372	Successfully loaded	MEMO011		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-13	Belgium	Eupen	50.632556 N  6.073283 E	MEMO011							
+SAMN32890373	Successfully loaded	MEMO012		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-13	Belgium	Eupen	50.632556 N  6.073283 E	MEMO012							
+SAMN32890374	Successfully loaded	MEMO013		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-13	Belgium	Eupen	50.632556 N  6.073283 E	MEMO013							
+SAMN32890375	Successfully loaded	MEMO014		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-13	Belgium	Eupen	50.632556 N  6.073283 E	MEMO014							
+SAMN32890376	Successfully loaded	MEMO015		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-13	Belgium	Eupen	50.632556 N  6.073283 E	MEMO015							
+SAMN32890377	Successfully loaded	MEMO016		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO016							
+SAMN32890378	Successfully loaded	MEMO017		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO017							
+SAMN32890379	Successfully loaded	MEMO018		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO018							
+SAMN32890380	Successfully loaded	MEMO019		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO019							
+SAMN32890381	Successfully loaded	MEMO021		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO021							
+SAMN32890382	Successfully loaded	MEMO022		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO022							
+SAMN32890383	Successfully loaded	MEMO023		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO023							
+SAMN32890384	Successfully loaded	MEMO024		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO024							
+SAMN32890385	Successfully loaded	MEMO025		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO025							
+SAMN32890386	Successfully loaded	MEMO026		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO026							
+SAMN32890387	Successfully loaded	MEMO027		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO027							
+SAMN32890388	Successfully loaded	MEMO028		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-27	Belgium	Eupen	50.632556 N  6.073283 E	MEMO028							
+SAMN32890389	Successfully loaded	MEMO029		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO029							
+SAMN32890390	Successfully loaded	MEMO030		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO030							
+SAMN32890391	Successfully loaded	MEMO031		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO031							
+SAMN32890392	Successfully loaded	MEMO032		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO032							
+SAMN32890393	Successfully loaded	MEMO033		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO033							
+SAMN32890394	Successfully loaded	MEMO034		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-29	Belgium	Vrasene	51.213653 N  4.193019 E	MEMO034							
+SAMN32890395	Successfully loaded	MEMO035		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO035							
+SAMN32890396	Successfully loaded	MEMO036		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO036							
+SAMN32890397	Successfully loaded	MEMO037		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO037							
+SAMN32890398	Successfully loaded	MEMO038		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO038							
+SAMN32890399	Successfully loaded	MEMO039		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO039							
+SAMN32890400	Successfully loaded	MEMO040		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO040							
+SAMN32890401	Successfully loaded	MEMO041		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO041							
+SAMN32890402	Successfully loaded	MEMO042		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO042							
+SAMN32890403	Successfully loaded	MEMO043		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO043							
+SAMN32890404	Successfully loaded	MEMO044		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO044							
+SAMN32890405	Successfully loaded	MEMO045		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO045							
+SAMN32890406	Successfully loaded	MEMO047		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO047							
+SAMN32890407	Successfully loaded	MEMO048		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO048							
+SAMN32890408	Successfully loaded	MEMO049		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO049							
+SAMN32890409	Successfully loaded	MEMO050		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO050							
+SAMN32890410	Successfully loaded	MEMO051		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO051							
+SAMN32890411	Successfully loaded	MEMO052		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO052							
+SAMN32890412	Successfully loaded	MEMO053		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO053							
+SAMN32890413	Successfully loaded	MEMO054		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO054							
+SAMN32890414	Successfully loaded	MEMO055		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-20	Belgium	Frameries	50.412581 N  3.923411 E	MEMO055							
+SAMN32890415	Successfully loaded	MEMO056		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Kallo	51.251278 N 4.217397 E	MEMO056							
+SAMN32890416	Successfully loaded	MEMO057		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-29	Belgium	Kallo	51.251278 N 4.217397 E	MEMO057							
+SAMN32890417	Successfully loaded	MEMO058		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO058							
+SAMN32890418	Successfully loaded	MEMO059		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO059							
+SAMN32890419	Successfully loaded	MEMO060		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO060							
+SAMN32890420	Successfully loaded	MEMO061		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO061							
+SAMN32890421	Successfully loaded	MEMO062		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO062							
+SAMN32890422	Successfully loaded	MEMO063		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO063							
+SAMN32890423	Successfully loaded	MEMO064		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO064							
+SAMN32890424	Successfully loaded	MEMO065		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO065							
+SAMN32890425	Successfully loaded	MEMO066		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO066							
+SAMN32890426	Successfully loaded	MEMO067		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO067							
+SAMN32890427	Successfully loaded	MEMO068		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO068							
+SAMN32890428	Successfully loaded	MEMO069		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO069							
+SAMN32890429	Successfully loaded	MEMO070		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO070							
+SAMN32890430	Successfully loaded	MEMO071		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO071							
+SAMN32890431	Successfully loaded	MEMO072		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO072							
+SAMN32890432	Successfully loaded	MEMO073		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO073							
+SAMN32890433	Successfully loaded	MEMO074		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO074							
+SAMN32890434	Successfully loaded	MEMO075		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO075							
+SAMN32890435	Successfully loaded	MEMO077		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO077							
+SAMN32890436	Successfully loaded	MEMO078		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO078							
+SAMN32890437	Successfully loaded	MEMO079		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO079							
+SAMN32890438	Successfully loaded	MEMO080		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-12	Belgium	Vrasene	51.213647 N  4.192997 E	MEMO080							
+SAMN32890439	Successfully loaded	MEMO081		PRJNA880624	mosquito metagenome	Culex torrentium		2019-09-10	Belgium	Eupen	50.632556 N  6.073283 E	MEMO081							
+SAMN32890440	Successfully loaded	MEMO082		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632556 N  6.073283 E	MEMO082							
+SAMN32890441	Successfully loaded	MEMO083		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO083							
+SAMN32890442	Successfully loaded	MEMO084		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO084							
+SAMN32890443	Successfully loaded	MEMO085		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO085							
+SAMN32890444	Successfully loaded	MEMO086		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO086							
+SAMN32890445	Successfully loaded	MEMO087		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO087							
+SAMN32890446	Successfully loaded	MEMO088		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO088							
+SAMN32890447	Successfully loaded	MEMO089		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO089							
+SAMN32890448	Successfully loaded	MEMO090		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO090							
+SAMN32890449	Successfully loaded	MEMO091		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO091							
+SAMN32890450	Successfully loaded	MEMO092		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO092							
+SAMN32890451	Successfully loaded	MEMO093		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO093							
+SAMN32890452	Successfully loaded	MEMO094		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO094							
+SAMN32890453	Successfully loaded	MEMO095		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO095							
+SAMN32890454	Successfully loaded	MEMO096		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO096							
+SAMN32890455	Successfully loaded	MEMO097		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Dilsen-Stokkem	51.016939 N  5.695658 E	MEMO097							
+SAMN32890456	Successfully loaded	MEMO098		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-11	Belgium	Dilsen-Stokkem	51.016939 N  5.695658 E	MEMO098							
+SAMN32890457	Successfully loaded	MEMO099		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-28	Belgium	Dilsen-Stokkem	51.016939 N  5.695658 E	MEMO099							
+SAMN32890458	Successfully loaded	MEMO100		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-28	Belgium	Dilsen-Stokkem	51.016939 N  5.695658 E	MEMO100							
+SAMN32890459	Successfully loaded	MEMO101		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-28	Belgium	Dilsen-Stokkem	51.016939 N  5.695658 E	MEMO101							
+SAMN32890460	Successfully loaded	MEMO102		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-09-04	Belgium	Natoye	50.338842 N  5.044572 E	MEMO102							
+SAMN32890461	Successfully loaded	MEMO103		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO103							
+SAMN32890462	Successfully loaded	MEMO104		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO104							
+SAMN32890463	Successfully loaded	MEMO105		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO105							
+SAMN32890464	Successfully loaded	MEMO106		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO106							
+SAMN32890465	Successfully loaded	MEMO107		PRJNA880624	mosquito metagenome	Culex torrentium		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO107							
+SAMN32890466	Successfully loaded	MEMO108		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632586 N  6.072753 E	MEMO108							
+SAMN32890467	Successfully loaded	MEMO109		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-10	Belgium	Eupen	50.632492 N  6.073183 E	MEMO109							
+SAMN32890468	Successfully loaded	MEMO110		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-10	Belgium	Eupen	50.632492 N  6.073183 E	MEMO110							
+SAMN32890469	Successfully loaded	MEMO111		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-08-21	Belgium	Natoye	50.338842 N  5.044572 E	MEMO111							
+SAMN32890470	Successfully loaded	MEMO112		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-08-21	Belgium	Natoye	50.338842 N  5.044572 E	MEMO112							
+SAMN32890471	Successfully loaded	MEMO113		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-08-21	Belgium	Natoye	50.338842 N  5.044572 E	MEMO113							
+SAMN32890472	Successfully loaded	MEMO115		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-09-04	Belgium	Natoye	50.338842 N  5.044572 E	MEMO115							
+SAMN32890473	Successfully loaded	MEMO116		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-09-04	Belgium	Natoye	50.338842 N  5.044572 E	MEMO116							
+SAMN32890474	Successfully loaded	MEMO117		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-08-21	Belgium	Natoye	50.338842 N  5.044572 E	MEMO117							
+SAMN32890475	Successfully loaded	MEMO118		PRJNA880624	mosquito metagenome	Aedes japonicus		2019-08-21	Belgium	Natoye	50.338842 N  5.044572 E	MEMO118							
+SAMN32890476	Successfully loaded	MEMO119		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO119							
+SAMN32890477	Successfully loaded	MEMO120		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO120							
+SAMN32890478	Successfully loaded	MEMO121		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO121							
+SAMN32890479	Successfully loaded	MEMO122		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO122							
+SAMN32890480	Successfully loaded	MEMO123		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO123							
+SAMN32890481	Successfully loaded	MEMO124		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO124							
+SAMN32890482	Successfully loaded	MEMO125		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO125							
+SAMN32890483	Successfully loaded	MEMO126		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO126							
+SAMN32890484	Successfully loaded	MEMO127		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-11	Belgium	Maasmechelen	50.995228 N 5.621878 E	MEMO127							
+SAMN32890485	Successfully loaded	MEMO128		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632586 N  6.072753 E	MEMO128							
+SAMN32890486	Successfully loaded	MEMO129		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632586 N  6.072753 E	MEMO129							
+SAMN32890487	Successfully loaded	MEMO130		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632586 N  6.072753 E	MEMO130							
+SAMN32890488	Successfully loaded	MEMO131		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-27	Belgium	Eupen	50.632492 N  6.073183 E	MEMO131							
+SAMN32890489	Successfully loaded	MEMO132		PRJNA880624	mosquito metagenome	Culex torrentium		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO132							
+SAMN32890490	Successfully loaded	MEMO133		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO133							
+SAMN32890491	Successfully loaded	MEMO134		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO134							
+SAMN32890492	Successfully loaded	MEMO135		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO135							
+SAMN32890493	Successfully loaded	MEMO136		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO136							
+SAMN32890494	Successfully loaded	MEMO137		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO137							
+SAMN32890495	Successfully loaded	MEMO138		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO138							
+SAMN32890496	Successfully loaded	MEMO139		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO139							
+SAMN32890497	Successfully loaded	MEMO140		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-08-28	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO140							
+SAMN32890498	Successfully loaded	MEMO141		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-03	Belgium	Kallo	51.250656 N  4.216222 E	MEMO141							
+SAMN32890499	Successfully loaded	MEMO142		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO142							
+SAMN32890500	Successfully loaded	MEMO143		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO143							
+SAMN32890501	Successfully loaded	MEMO144		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO144							
+SAMN32890502	Successfully loaded	MEMO145		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO145							
+SAMN32890503	Successfully loaded	MEMO146		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2019-09-24	Belgium	Eupen	50.632556 N  6.073283 E	MEMO146							
+SAMN32890504	Successfully loaded	MEMO147		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO147							
+SAMN32890505	Successfully loaded	MEMO148		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO148							
+SAMN32890506	Successfully loaded	MEMO149		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2019-09-25	Belgium	Villers-Le-Bouillet	50.585083 N  5.259636 E	MEMO149							
+SAMN32890507	Successfully loaded	NEMO01		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO01							
+SAMN32890508	Successfully loaded	NEMO02		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO02							
+SAMN32890509	Successfully loaded	NEMO03		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO03							
+SAMN32890510	Successfully loaded	NEMO04		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO04							
+SAMN32890511	Successfully loaded	NEMO05		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO05							
+SAMN32890512	Successfully loaded	NEMO06		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO06							
+SAMN32890513	Successfully loaded	NEMO07		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO07							
+SAMN32890514	Successfully loaded	NEMO08		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO08							
+SAMN32890515	Successfully loaded	NEMO09		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO09							
+SAMN32890516	Successfully loaded	NEMO10		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO10							
+SAMN32890517	Successfully loaded	NEMO11		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO11							
+SAMN32890518	Successfully loaded	NEMO12		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO12							
+SAMN32890519	Successfully loaded	NEMO13		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO13							
+SAMN32890520	Successfully loaded	NEMO14		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO14							
+SAMN32890521	Successfully loaded	NEMO15		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO15							
+SAMN32890522	Successfully loaded	NEMO16		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO16							
+SAMN32890523	Successfully loaded	NEMO17		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO17							
+SAMN32890524	Successfully loaded	NEMO18		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO18							
+SAMN32890525	Successfully loaded	NEMO19		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO19							
+SAMN32890526	Successfully loaded	NEMO20		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.8778918 N 4.6912021 E	NEMO20							
+SAMN32890527	Successfully loaded	NEMO21		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO21							
+SAMN32890528	Successfully loaded	NEMO22		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO22							
+SAMN32890529	Successfully loaded	NEMO23		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO23							
+SAMN32890530	Successfully loaded	NEMO24		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO24							
+SAMN32890531	Successfully loaded	NEMO25		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO25							
+SAMN32890532	Successfully loaded	NEMO26		PRJNA880624	mosquito metagenome	Culex torrentium		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO26							
+SAMN32890533	Successfully loaded	NEMO27		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO27							
+SAMN32890534	Successfully loaded	NEMO28		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO28							
+SAMN32890535	Successfully loaded	NEMO29		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO29							
+SAMN32890536	Successfully loaded	NEMO30		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO30							
+SAMN32890537	Successfully loaded	NEMO31		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO31							
+SAMN32890538	Successfully loaded	NEMO32		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO32							
+SAMN32890539	Successfully loaded	NEMO33		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO33							
+SAMN32890540	Successfully loaded	NEMO34		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO34							
+SAMN32890541	Successfully loaded	NEMO35		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO35							
+SAMN32890542	Successfully loaded	NEMO36		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO36							
+SAMN32890543	Successfully loaded	NEMO37		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO37							
+SAMN32890544	Successfully loaded	NEMO38		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865 N 4.669 E	NEMO38							
+SAMN32890545	Successfully loaded	NEMO40		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Leuven	50.865688 N 4.630034 E	NEMO40							
+SAMN32890546	Successfully loaded	NEMO41		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO41							
+SAMN32890547	Successfully loaded	NEMO42		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO42							
+SAMN32890548	Successfully loaded	NEMO43		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO43							
+SAMN32890549	Successfully loaded	NEMO44		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO44							
+SAMN32890550	Successfully loaded	NEMO45		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO45							
+SAMN32890551	Successfully loaded	NEMO46		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO46							
+SAMN32890552	Successfully loaded	NEMO47		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO47							
+SAMN32890553	Successfully loaded	NEMO48		PRJNA880624	mosquito metagenome	Culex pipiens molestus		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO48							
+SAMN32890554	Successfully loaded	NEMO49		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO49							
+SAMN32890555	Successfully loaded	NEMO50		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO50							
+SAMN32890556	Successfully loaded	NEMO51		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO51							
+SAMN32890557	Successfully loaded	NEMO52		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO52							
+SAMN32890558	Successfully loaded	NEMO53		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO53							
+SAMN32890559	Successfully loaded	NEMO54		PRJNA880624	mosquito metagenome	Culex pipiens pipiens		2020	Belgium	Bertem	50.865688 N 4.630034 E	NEMO54							

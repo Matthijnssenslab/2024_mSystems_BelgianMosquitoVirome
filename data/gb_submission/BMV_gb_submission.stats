@@ -1,0 +1,21 @@
+Total messages:		1141
+
+=================================================================
+228 INFO-level messages exist
+
+SEQ_DESCR.BadStrucCommInvalidFieldValue:	228
+
+=================================================================
+457 WARNING-level messages exist
+
+SEQ_INST.InternalNsInSeqRaw:	1
+SEQ_DESCR.EnvironSampleMissingQualifier:	228
+SEQ_DESCR.NonViralSegment:	228
+
+=================================================================
+456 ERROR-level messages exist
+
+SEQ_DESCR.BadStrucCommInvalidPrefix:	228
+SEQ_DESCR.BadStrucCommInvalidSuffix:	228
+
+=================================================================

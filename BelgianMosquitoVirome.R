@@ -25,7 +25,6 @@ necessary_packages <- c('tidyverse', 'data.table', 'scales', 'knitr', 'grid', 'm
 lapply(necessary_packages, library, character.only = TRUE)
 i_am("BelgianMosquitoVirome.R")
 setwd(here::here())
-#setwd("/Users/lander/OneDrive - KU Leuven/Documents/Manuscripts/Belgian mosquitoes (2022)/BMV-analysis/")
 source("BMV_functions.R")
 #+ echo=FALSE
 si <- sessioninfo::session_info()
@@ -154,25 +153,14 @@ names(vcount) <- "viral_count"
 
 vcount %>% 
   group_by(viral_count) %>% 
-  count() %>% 
+  summarise(n = n()) %>% 
   ggplot(aes(x=viral_count, y=n))+
   geom_col()+
   theme_bw()
 
 df <- merge(meta, vcount, by=0) %>% 
   group_by(viral_count, SKA_Subspecies) %>% 
-  count()
-
-#remove
-vdf<-df %>% 
-  filter(viral_count>0) %>% 
-  group_by(SKA_Subspecies) %>% 
-  mutate(count=sum(n)) %>% 
-  select(!viral_count & !n) %>% 
-  distinct() %>% 
-  left_join(df[df$viral_count==0,2:3]) %>% 
-  replace_na(list(n=0)) %>% 
-  mutate(total=count+n, freq=(count/(total))*100)
+  summarise(n = n())
 
 p <- ggplot(df, aes(x=viral_count, y=n, label=n, fill=SKA_Subspecies))+
   geom_col()+
@@ -189,22 +177,6 @@ p
 #+ eval=FALSE,echo=FALSE
 ggarrange(ggarrange(NULL, p+theme(legend.position = "none"), ncol = 1, labels = c("A", "C")), NULL, ncol=2, 
           labels = c("", "B"), widths = c(.4,.6))
-
-# library(grImport)
-# PostScriptTrace("figures/species_assignment_clustermap.pdf", charpath = F)
-# my_shape <- readPicture("species_assignment_clustermap.pdf.xml")
-# 
-# my_shape_grob <- pictureGrob(my_shape)
-# #my_shape_grob
-# ggsave("test.pdf", cowplot::plot_grid(my_shape_grob))
-# 
-# PostScriptTrace("figures/Belgium_subspecies.pdf", charpath = T)
-# my_shape <- readPicture("Belgium_subspecies.pdf.xml")
-# #grid.picture(my_shape)
-# 
-# my_shape_grob <- pictureGrob(my_shape)
-# cowplot::plot_grid(my_shape_grob)
-# ggsave("test.pdf", cowplot::plot_grid(my_shape_grob))
 
 #' **Only keep taxa with more than 0 reads:**
 BMV_species <- prune_taxa(taxa_sums(BMV_species) > 0, BMV_species)
@@ -306,12 +278,6 @@ fungi2 <- fungi %>%
 fungi2
 
 tax_table(BMV_fungi)
-
-# fungi.df <- pivot_longer(fungi, cols = 1:197, names_to="Sample", values_to = "fungi_reads")
-# fungi.df
-# meta <- left_join(meta, fungi.df, by="Sample")
-# rownames(meta) <- meta$Sample
-# sample_data(BMV_final) <- data.frame(meta)
 
 #' **Convert phyloseq object to metagenomeseq object to make heatmap:**
 BMV_metaseq <- phyloseq_to_metagenomeSeq(BMV_final)
@@ -477,6 +443,7 @@ ggsave("figures/alpha-diversity-species.pdf", alpha, dpi=300)
 
 #' ## Ordination
 #' ### PCoA
+
 # Without rarefaction
 #v.ord <- ordinate(BMV_final, method = "PCoA")
 #pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
@@ -522,6 +489,10 @@ pcoa<-pcoa+
                                                                           as.expression(bquote(italic(p) ~ "=" ~ .(pval)))))
 pcoa
 ggsave("figures/PCoA-eukaryotic-virome.pdf", dpi=300)
+
+#' Beta dispersion
+bd <- betadisper(as.dist(vegan_avgdist), metadata_vegan$SKA_Subspecies)
+permutest(bd)
 
 #' ### NMDS full dataset
 
@@ -578,8 +549,13 @@ pcoa_ns <- plot_ordination(BMV_no_singletons, v.ord, type="samples", color="SKA_
 pcoa_ns
 
 #' Permanova test
-metadata_vegan_ns <- as(sample_data(BMV_no_singletons), "data.frame")
-perm_ns <- adonis2(distance(BMV_no_singletons, method="bray") ~ SKA_Subspecies*Municipality,
+
+samples_vegan_ns <- row.names(as.matrix(vegan_avgdist_no_single))
+
+metadata_vegan_ns <- meta %>% 
+  filter(Sample %in% samples_vegan_ns)
+
+perm_ns <- adonis2(vegan_avgdist_no_single ~ SKA_Subspecies*Municipality,
                data = metadata_vegan_ns)
 perm_ns
 pval_ns<-perm_ns$`Pr(>F)`[1]
@@ -593,7 +569,6 @@ bottom<-cowplot::plot_grid(plots[[2]],
                            nmds+theme(legend.position = "none"), labels=c("B","C"))
 cowplot::plot_grid(plots[[1]], alpha.legend, bottom, ord.legend, labels = c('A', ''), ncol=2, rel_widths = c(1, .3))
 
-#ggarrange(alpha, ggarrange(pcoa, nmds, labels=c("B","C"), common.legend = T, legend = "right"), labels="A", ncol=1)
 ggsave("figures/combined-alpha-ordination.pdf", dpi=300, width = 11.2, height = 8)
 
 #' ## Relative abundance
@@ -791,7 +766,8 @@ datatable(metaqPCR)
 metaqPCR %>%
   select(Sample, SKA_Subspecies) %>% 
   distinct() %>% 
-  count(SKA_Subspecies)
+  group_by(SKA_Subspecies) %>% 
+  summarise(n= n())
 
 #' ## Plot data
 legendlabels <- c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
@@ -859,7 +835,7 @@ vcount_df <- left_join(qPCR_vcount, rownames_to_column(vcount), by=c("Sample"="r
 
 test <- vcount_df %>%
   group_by(SKA_Subspecies) %>% 
-  count(qPCR_count, viral_count)
+  dplyr::count(qPCR_count, viral_count)
 
 test$viral_count <- as.numeric(test$viral_count)
 test$qPCR_count <- as.numeric(test$qPCR_count)
@@ -1224,13 +1200,6 @@ p2 <- wviolin+
 p2
 
 library(patchwork)
-#patch <- covplot + swarmplot + plot_spacer() + p2 + plot_layout(widths = c(1, .01, 1.5),
-#                                                design = "
-#                                                134
-#                                                234")
-#patch + plot_annotation(tag_levels = "A") &
-#  theme(plot.tag = element_text(face = "bold"))
-
 patch <-  p2 + plot_spacer() + covplot + swarmplot + plot_layout(widths = c(1.5, .01, 1),
                                                                 design = "
                                                 123

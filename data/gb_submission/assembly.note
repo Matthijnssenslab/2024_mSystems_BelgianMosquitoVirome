@@ -1,0 +1,4 @@
+StructuredCommentPrefix	## Assembly-Data-START##
+Assembly Method	metaSPAdes v. 3.15.0
+Sequencing	Technology Illumina
+StructuredCommentSuffix	##Assembly-Data-END##
