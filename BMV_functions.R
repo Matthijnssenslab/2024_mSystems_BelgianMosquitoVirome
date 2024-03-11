@@ -217,7 +217,7 @@ addSmallLegend <- function(myPlot, pointSize = 1, textSize = 2, spaceLegend = 0.
 
 
 alpha_rarefied <- function(ab_table, sequencing_depth) {
-  df = ab_table %>%
+  df <- ab_table %>%
     t() %>%
     rrarefy(., sample=sequencing_depth) %>% # rrafefy samples from rows, not from columns!
     as_tibble(rownames="sample") %>%

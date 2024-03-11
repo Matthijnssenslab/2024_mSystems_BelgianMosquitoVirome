@@ -75,6 +75,14 @@ summary(colSums(OTU))
 tax <- read.table("data/BEmosq_classification-1000nt.tsv", header=TRUE, row.names=1, sep="\t", dec=".")
 meta <- read.table("data/BEmosq_metadata.csv", header=TRUE, row.names = 1, sep=";", dec=".")
 meta <- cbind(Sample=rownames(meta), meta)
+
+meta <- meta %>% 
+  mutate(Trap=case_when(substr(Original_name, 4, 4) == "G" ~ "Gravid",
+                        substr(Original_name, 4, 4) == "M" ~ "Mosquito Magnet",
+                        substr(Original_name, 4, 4) == "B" ~ "BG Sentinel",
+                        Location == "control" ~ NA,
+                        Municipality %in% c("Leuven", "Bertem") ~ "BG Sentinel"))
+
 #+ echo=FALSE
 datatable(meta)
 
@@ -477,7 +485,7 @@ samples_vegan <- row.names(as.matrix(vegan_avgdist))
 metadata_vegan <- meta %>% 
   filter(Sample %in% samples_vegan)
 
-perm <- adonis2(vegan_avgdist ~ SKA_Subspecies+Municipality,
+perm <- adonis2(vegan_avgdist ~ SKA_Subspecies*Municipality*Trap,
                data = metadata_vegan)
 perm
 pval<-perm$`Pr(>F)`[1]
