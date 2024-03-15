@@ -261,7 +261,8 @@ pal.bands(myFamCol, main = "Viral families")
 
 #+ echo=TRUE
 #' **Create colors for each mosquito species:**
-myColors <- viridis::viridis(4,1, begin=0.4, end = 0.9, direction = 1)
+#myColors <- viridis::viridis(4,1, begin=0.4, end = 0.9, direction = 1)
+myColors <- viridis::viridis(4,1, begin=0, end = .9, direction = 1)
 names(myColors) <- levels(as.factor(BMV_smelt$SKA_Subspecies))
 
 #+ echo=FALSE, fig.width=7, fig.height=4
@@ -414,8 +415,8 @@ alpha <- alpha_average_df %>%
   geom_jitter(width=0.2)+
   facet_wrap(~Metric, nrow=1, scales="free_y")+
   theme_bw()+
-  scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
-  #scale_fill_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
+  #scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
+  scale_color_viridis_d(begin=0, end =.9, name="", labels=labels)+
   theme(strip.text.x = element_text(size = 10),
         axis.title.x = element_blank(),
         axis.text.x = element_blank(),
@@ -472,7 +473,7 @@ v.ord <- ape::pcoa(vegan_avgdist)
 
 pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality", axes = c(1, 2))+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
-  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+  scale_color_viridis_d(begin=0, end =.9, name="Mosquito species")+
   stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
@@ -536,7 +537,7 @@ v.ord_no_single <- metaMDS(vegan_avgdist_no_single, k=2)
 
 nmds_ns <- plot_ordination(BMV_no_singletons, v.ord_no_single, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
-  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+  scale_color_viridis_d(begin=0, end =.9, name="Mosquito species")+
   #stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
@@ -777,6 +778,40 @@ metaqPCR %>%
   group_by(SKA_Subspecies) %>% 
   summarise(n= n())
 
+#' **Create infection rate table**
+
+inf_rate_loc <- metaqPCR %>% 
+  select(Sample, Target, Municipality, SKA_Subspecies, Quantity) %>% 
+  group_by(Target, Municipality, SKA_Subspecies) %>% 
+  summarise(positive= sum(Quantity > 0, na.rm = TRUE), total=n(),
+            perc=positive/total*100) %>% 
+  mutate(Municipality = case_when(Municipality == 'Fr' ~ 'Frameries',
+                                  Municipality == 'DS' ~ 'Dilsen-Stokkem',
+                                  Municipality == 'K' ~ 'Kallo',
+                                  TRUE ~ Municipality)) %>% 
+  filter(perc>0) %>% 
+  rename(Virus=Target, Species=SKA_Subspecies, 
+         "Positive mosquitoes"=positive,
+         "Total mosquitoes"=total,
+         "Infection rate"=perc)
+xlsx::write.xlsx(x=data.frame(inf_rate_loc), file = "tables/supplementary_table1.xlsx", 
+                 row.names = F, showNA = F)
+
+
+inf_rate <- metaqPCR %>% 
+  select(Sample, Target, SKA_Subspecies, Quantity) %>% 
+  group_by(Target, SKA_Subspecies) %>% 
+  summarise(positive= sum(Quantity > 0, na.rm = TRUE), total=n(),
+            perc=positive/total*100) %>% 
+  rename(Virus=Target, Species=SKA_Subspecies, 
+         "Positive mosquitoes"=positive,
+         "Total mosquitoes"=total,
+         "Infection rate"=perc)
+
+xlsx::write.xlsx(x=data.frame(inf_rate), file = "tables/supplementary_table2.xlsx", 
+                 row.names = F, showNA = F)
+
+
 #' ## Plot data
 legendlabels <- c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
   expression(paste(italic("Culex pipiens molestus"), " (n=47)")),
@@ -798,15 +833,27 @@ qPCRviolin <- ggplot(metaqPCR, aes(x=SKA_Subspecies, y=Quantity))+
                      labels = scientific_10(c(0, 10^seq(2,8,2))))+
   xlab(label = "")+
   ylab(label = "Viral copies per mosquito")+
-  scale_fill_viridis_d(begin=0.4, end =0.9, name="", alpha = 0.5,
+  scale_fill_viridis_d(begin=0, end =0.9, name="", alpha = 0.5,
                        labels=legendlabels)+
-  scale_color_viridis_d(begin=0.4, end =0.9, name="",
+  scale_color_viridis_d(begin=0, end =0.9, name="",
                         labels=legendlabels)+ 
   guides(fill = guide_legend(override.aes = list(alpha = 1)))+
   facet_wrap(~Target, nrow=2, ncol=3)
 ggsave("figures/qPCR-violin.pdf", dpi=300, width=11)
 #+ echo=FALSE
 qPCRviolin
+
+
+metaqPCR %>% 
+  select(Sample, SKA_Subspecies) %>% 
+  distinct() %>% 
+  left_join(data.frame(SKA_Subspecies = names(myColors), color = myColors))
+
+color_name <- metaqPCR %>% 
+  select(Sample, SKA_Subspecies) %>% 
+  distinct() %>% 
+  left_join(data.frame(SKA_Subspecies = names(myColors), color = myColors)) %>% 
+  pull(color, Sample)
 
 #' **Plot qPCR overview per sample:**
 qPCRoverview <- ggplot(metaqPCR, 
@@ -816,18 +863,21 @@ qPCRoverview <- ggplot(metaqPCR,
                scales = "free_x",
                labeller = labeller(Target = label_wrap_gen(10), Municipality=label_wrap_gen(5)))+
   geom_col(aes(fill=SKA_Subspecies), position="identity", alpha=1)+
-  theme_bw()+
-  theme(axis.text.x = element_blank(),
-        panel.grid.major = element_blank())+
+  geom_tile(aes(y=-.6, fill=SKA_Subspecies), height=.5)+
   scale_y_continuous(expand=expansion(mult = c(0, 0), add = c(0, 0.1)),
                      trans = scales::pseudo_log_trans(base = 10), 
                      breaks = c(0, 10^seq(2,8,2)),
                      labels = scientific_10(c(0, 10^seq(2,8,2))))+
   xlab(label = "Sample")+
   ylab(label = "Viral copies per mosquito")+
-  scale_fill_viridis_d(begin=0.4, end =0.9, name="")+ 
+  scale_fill_viridis_d(begin=0, end =0.9, name="")+ 
   guides(fill = guide_legend(override.aes = list(alpha = 1), 
-                             label.theme = element_text(size=10, angle = 0, face = "italic")))
+                             label.theme = element_text(size=10, angle = 0, face = "italic")))+
+  theme_bw()+
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        panel.grid.major = element_blank())
+  
 ggsave("figures/qPCR_overview.pdf", width = 18.7, height = 10.3, units = "in", dpi=300)
 #+ echo=FALSE, fig.width=18.7, fig.height=10.3, fig.cap="DS=Dilsen-Stokkem, Fr=Frameries, K=Kallo"
 qPCRoverview

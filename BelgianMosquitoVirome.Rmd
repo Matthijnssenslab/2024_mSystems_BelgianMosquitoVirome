@@ -44,7 +44,7 @@ print(pckgs)
 # Eukaryotic virome analysis
 ## General sequencing info
 
-```{r }
+```{r}
 seqnum_raw <- read.delim("data/sequencing-info.tsv", sep="\t", header=T)
 seqnum_raw_summarized <- seqnum_raw %>% group_by(sample) %>% 
   summarise(sumseqs = sum(num_seqs))
@@ -75,7 +75,7 @@ sum(seqnum_final$sumseqs_nonhost)
 ## Prepare the data
 ### Load the OTU table, taxonomy file and metadata into R
 
-```{r }
+```{r}
 OTU <- read.table("data/abundance-table.txt", header=TRUE, row.names=1, sep="\t", dec=".")
 names(OTU) <- gsub(x = names(OTU), pattern = "\\.", replacement = "-")
 summary(rowSums(OTU))
@@ -84,6 +84,14 @@ summary(colSums(OTU))
 tax <- read.table("data/BEmosq_classification-1000nt.tsv", header=TRUE, row.names=1, sep="\t", dec=".")
 meta <- read.table("data/BEmosq_metadata.csv", header=TRUE, row.names = 1, sep=";", dec=".")
 meta <- cbind(Sample=rownames(meta), meta)
+
+meta <- meta %>% 
+  mutate(Trap=case_when(substr(Original_name, 4, 4) == "G" ~ "Gravid",
+                        substr(Original_name, 4, 4) == "M" ~ "Mosquito Magnet",
+                        substr(Original_name, 4, 4) == "B" ~ "BG Sentinel",
+                        Location == "control" ~ NA,
+                        Municipality %in% c("Leuven", "Bertem") ~ "BG Sentinel"))
+
 ```
 ```{r echo=FALSE}
 datatable(meta)
@@ -91,7 +99,7 @@ datatable(meta)
 
 ### Make a phyloseq object
 
-```{r }
+```{r}
 OTU.UF <- otu_table(as.matrix(OTU), taxa_are_rows=T)
 tax.UF <- tax_table(as.matrix(tax))
 meta.UF <- sample_data(meta)
@@ -103,7 +111,7 @@ BMV
 ### Remove contamination
 #### Visualize library sizes of samples and negative controls
 
-```{r }
+```{r}
 decontam <- as.data.frame(sample_data(BMV))
 decontam$LibrarySize <- sample_sums(BMV)
 decontam <- decontam[order(decontam$LibrarySize),]
@@ -115,20 +123,20 @@ ggplot(data=decontam, aes(x=Index, y=LibrarySize, color=Control)) +
 
 #### Detect contaminants
 
-```{r }
+```{r}
 sample_data(BMV)$is.neg <- sample_data(BMV)$Control == "Yes"
 contamdf.prev <- isContaminant(BMV, method="prevalence", neg="is.neg")
 ```
 
 **Number of contaminating contigs:**
 
-```{r }
+```{r}
 table(contamdf.prev$contaminant)
 ```
 
 #### Visualize prevalence of contaminants in samples and negative controls
 
-```{r }
+```{r}
 ps.pa <- transform_sample_counts(BMV, function(abund) 1*(abund>0))
 ps.pa.neg <- prune_samples(sample_data(ps.pa)$Control == "Yes", ps.pa)
 ps.pa.pos <- prune_samples(sample_data(ps.pa)$Control == "No", ps.pa)
@@ -142,7 +150,7 @@ ggplot(data=df.pa, aes(x=pa.neg, y=pa.pos, color=contaminant)) + geom_point() +
 
 #### Remove negative controls and contaminants from phyloseq object
 
-```{r }
+```{r}
 ps.noncontam <- prune_taxa(!contamdf.prev$contaminant, BMV)
 ps.noncontam
 ps.noncontam <- prune_samples(sample_data(BMV)$Control!='Yes', ps.noncontam)
@@ -152,14 +160,14 @@ BMV
 
 Remove negative controls from metadata table
 
-```{r }
+```{r}
 meta <- meta[meta$SKA_Subspecies!="control",]
 ```
 
 ### Subset virome data
 #### Subset only viruses and remove prokaryotic viruses and EVEs
 
-```{r }
+```{r}
 BMV.V <- subset_taxa(BMV, Kingdom=="Viruses")
 BMV.V
 
@@ -175,14 +183,14 @@ BMV.V2
 
 **Info on sample variables and level of taxonomic ranks:**
 
-```{r }
+```{r}
 sample_variables(BMV.V2)
 rank_names(BMV.V2)
 ```
 
 #### Agglomerate taxa on viral species level
 
-```{r }
+```{r}
 BMV_species <- BMV.V2 %>%
   tax_glom(taxrank = "Species")
 BMV_species
@@ -222,14 +230,14 @@ ggarrange(ggarrange(NULL, p+theme(legend.position = "none"), ncol = 1, labels = 
 
 **Only keep taxa with more than 0 reads:**
 
-```{r }
+```{r}
 BMV_species <- prune_taxa(taxa_sums(BMV_species) > 0, BMV_species)
 BMV_species
 ```
 
 **Only keep samples with more than 0 viral reads:**
 
-```{r }
+```{r}
 BMV_final <- prune_samples(sample_sums(BMV_species) > 0, BMV_species)
 BMV_final
 ```
@@ -237,7 +245,7 @@ BMV_final
 ### Prepare relative abundance data
 **Agglomerate taxa on viral Family level:**
 
-```{r }
+```{r}
 BMV_family <- BMV_final %>%
   tax_glom(taxrank = "Family")
 BMV_family
@@ -245,7 +253,7 @@ BMV_family
 
 **Calculate relative abundance of viral families:**
 
-```{r }
+```{r}
 BMV_family_re.abund <- BMV_family %>%                   
   transform_sample_counts(function(x) {round(100*(x/sum(x)),5)} )
 BMV_family_re.abund
@@ -253,7 +261,7 @@ BMV_family_re.abund
 
 **Count mosquito species per location:**
 
-```{r }
+```{r}
 sp_count <- psmelt(BMV_family_re.abund) %>% 
   select(Sample,SKA_Subspecies,Municipality) %>% 
   distinct() %>% 
@@ -269,7 +277,7 @@ datatable(sp_count)
 
 **Create list of locations:**
 
-```{r }
+```{r}
 loc_order <- c("Natoye", "Vrasene", "Villers_Le_Bouillet", 
                "Frameries", "Maasmechelen", "Bertem",
                "Leuven", "Eupen")
@@ -277,7 +285,7 @@ loc_order <- c("Natoye", "Vrasene", "Villers_Le_Bouillet",
 
 **Create list of barplots with number of mosquitoes per location:**
 
-```{r }
+```{r}
 plist <- list(ggplot()+theme_void()+#ggtitle("Mosquito species")+
                 theme(title = element_text(size = 6)))
 for (i in loc_order){
@@ -306,7 +314,7 @@ ggarrange(plotlist = plist[2:9], labels = gsub("_","-",loc_order),
 
 **Create colorpalette for viral families:**
 
-```{r }
+```{r}
 BMV_smelt <- psmelt(BMV_final)
 FamLevel <- levels(as.factor(BMV_smelt[(BMV_smelt$Family!="unclassified"),]$Family))
 FamLevel <- c(FamLevel, "unclassified")
@@ -324,8 +332,9 @@ pal.bands(myFamCol, main = "Viral families")
 
 **Create colors for each mosquito species:**
 
-```{r }
-myColors <- viridis::viridis(4,1, begin=0.4, end = 0.9, direction = 1)
+```{r}
+#myColors <- viridis::viridis(4,1, begin=0.4, end = 0.9, direction = 1)
+myColors <- viridis::viridis(4,1, begin=0, end = .9, direction = 1)
 names(myColors) <- levels(as.factor(BMV_smelt$SKA_Subspecies))
 
 ```
@@ -336,7 +345,7 @@ pal.bands(myColors, main="Mosquito species")
 ### Prepare heatmap data
 **Make table with fungi reads**:
 
-```{r }
+```{r}
 BMV_fungi <- subset_taxa(BMV, Phylum %in% c("Ascomycota", "Basidiomycota", 
                                             "Chytridiomycota", "Glomeromycota",
                                             "Zygomycota","Neocallimastigomycota",
@@ -358,32 +367,32 @@ tax_table(BMV_fungi)
 
 **Convert phyloseq object to metagenomeseq object to make heatmap:**
 
-```{r }
+```{r}
 BMV_metaseq <- phyloseq_to_metagenomeSeq(BMV_final)
 ```
 
 **Aggregate by species:**
 
-```{r }
+```{r}
 BMV_metaseq_species <- aggregateByTaxonomy(BMV_metaseq, lvl = "Species", norm = F, 
                                            aggfun = colSums, out = "MRexperiment", alternate = T)
 ```
 
 **Count number of unique viral species:**
 
-```{r }
+```{r}
 n_species <- length(unique(featureData(BMV_metaseq_species)$Species))
 ```
 
 **Assign mosquito species for each sample:**
 
-```{r }
+```{r}
 mosquito_species <- pData(BMV_metaseq_species)$SKA_Subspecies
 ```
 
 **Assign colors to location:**
 
-```{r }
+```{r}
 location <- pData(BMV_metaseq_species)$Municipality
 unique_locations <- length(unique(pData(BMV_metaseq_species)$Municipality))
 locColors <- viridis::plasma(unique_locations, 1, begin=0, end = 0.9, direction = 1)
@@ -395,7 +404,7 @@ pal.bands(locColors, main="Location colors")
 
 **Set heatmap colors:**
 
-```{r }
+```{r}
 heatmapCols <- colorRampPalette(brewer.pal(9, "YlOrRd"))(200)
 ```
 ```{r echo=FALSE, fig.width=7, fig.height=4}
@@ -404,7 +413,7 @@ pal.bands(heatmapCols, main="Heatmap colors for abundance")
 
 **Calculate average BLASTx values:**
 
-```{r }
+```{r}
 #blastx <- read.table("data/BEmosquitoes.tsv", header=T, row.names=1, dec=".", sep="\t")
 blastx <- read.table("data/BMV_2023.pid.tsv", header=T, row.names=1, dec=".", sep="\t")
 blastx <- dplyr::select(blastx, 2)
@@ -420,7 +429,7 @@ blastx_mean
 
 **Store average BLASTx identities in dataframe:**
 
-```{r }
+```{r}
 rowanno <- as.data.frame(returnAppropriateObj(blastx_mean, log=F, norm=F))
 colnames(rowanno)[1] <- "blastx"
 ```
@@ -431,7 +440,7 @@ table(rowanno$blastx>95)
 
 **Create color function for BLASTx values:**
 
-```{r }
+```{r}
 col_fun=colorRamp2(c(0,100), c("white","deepskyblue4"))
 ```
 ```{r echo=FALSE, fig.width=7, fig.height=4}
@@ -440,7 +449,7 @@ pal.bands(col_fun(0:100), main="Blastx % identity colors")
 
 **Get Baltimore classification/genome composition for each viral species from ICTV:**
 
-```{r }
+```{r}
 taxV <- as.data.frame(tax_table(BMV_final))
 baltimore <- read.table("data/ICTV_classification_family.tsv", header=T, sep="\t")
 
@@ -479,7 +488,7 @@ datatable(gcanno)
 
 ## Alpha diversity
 
-```{r }
+```{r}
 df <- as_tibble(sample_data(BMV_final))
 df$LibrarySize <- sample_sums(BMV_final)
 df<- df[order(df$LibrarySize),]
@@ -520,8 +529,8 @@ alpha <- alpha_average_df %>%
   geom_jitter(width=0.2)+
   facet_wrap(~Metric, nrow=1, scales="free_y")+
   theme_bw()+
-  scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
-  #scale_fill_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
+  #scale_color_viridis_d(begin=0.4, end =0.9, name="", labels=labels)+
+  scale_color_viridis_d(begin=0, end =.9, name="", labels=labels)+
   theme(strip.text.x = element_text(size = 10),
         axis.title.x = element_blank(),
         axis.text.x = element_blank(),
@@ -559,7 +568,7 @@ ggsave("figures/alpha-diversity-species.pdf", alpha, dpi=300)
 ## Ordination
 ### PCoA
 
-```{r }
+```{r}
 # Without rarefaction
 #v.ord <- ordinate(BMV_final, method = "PCoA")
 #pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality")+
@@ -580,7 +589,7 @@ v.ord <- ape::pcoa(vegan_avgdist)
 
 pcoa <- plot_ordination(BMV_final, v.ord, type="samples", color="SKA_Subspecies", shape = "Municipality", axes = c(1, 2))+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
-  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+  scale_color_viridis_d(begin=0, end =.9, name="Mosquito species")+
   stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
@@ -591,13 +600,13 @@ pcoa
 
 Permanova test
 
-```{r }
+```{r}
 samples_vegan <- row.names(as.matrix(vegan_avgdist))
 
 metadata_vegan <- meta %>% 
   filter(Sample %in% samples_vegan)
 
-perm <- adonis2(vegan_avgdist ~ SKA_Subspecies+Municipality,
+perm <- adonis2(vegan_avgdist ~ SKA_Subspecies*Municipality*Trap,
                data = metadata_vegan)
 perm
 pval<-perm$`Pr(>F)`[1]
@@ -613,14 +622,14 @@ ggsave("figures/PCoA-eukaryotic-virome.pdf", dpi=300)
 
 Beta dispersion
 
-```{r }
+```{r}
 bd <- betadisper(as.dist(vegan_avgdist), metadata_vegan$SKA_Subspecies)
 permutest(bd)
 ```
 
 ### NMDS full dataset
 
-```{r }
+```{r}
 #v.ord <- ordinate(BMV_final, method = "NMDS", k=2)
 
 v.ord <- metaMDS(vegan_avgdist, k=2)
@@ -639,7 +648,7 @@ ggsave("figures/NMDS-eukaryotic-virome.pdf", nmds, dpi=300)
 
 ### NMDS singletons removed
 
-```{r }
+```{r}
 BMV_no_singletons <- BMV_final
 for (i in c("MEMO014","MEMO078","MEMO145","MEMO146","MEMO149","MEMO084","MEMO018","MEMO006",
             "NEMO27","NEMO30","NEMO07","NEMO46","NEMO51","MEMO127","MEMO008")) {
@@ -656,7 +665,7 @@ v.ord_no_single <- metaMDS(vegan_avgdist_no_single, k=2)
 
 nmds_ns <- plot_ordination(BMV_no_singletons, v.ord_no_single, type="samples", color="SKA_Subspecies", shape = "Municipality")+
   scale_shape_manual(values = c(15,16,17,3:8), guide =guide_legend(label.theme = element_text(size=10)), name="Location")+
-  scale_color_viridis_d(begin=0, end =1, name="Mosquito species")+
+  scale_color_viridis_d(begin=0, end =.9, name="Mosquito species")+
   #stat_ellipse(type = "norm", linetype = 2, aes_string(group="SKA_Subspecies"), show.legend = F)+
   theme_bw()+
   theme(panel.grid.minor = element_blank())+
@@ -679,7 +688,7 @@ pcoa_ns
 
 Permanova test
 
-```{r }
+```{r}
 samples_vegan_ns <- row.names(as.matrix(vegan_avgdist_no_single))
 
 metadata_vegan_ns <- meta %>% 
@@ -705,7 +714,7 @@ ggsave("figures/combined-alpha-ordination.pdf", dpi=300, width = 11.2, height = 
 ## Relative abundance
 ### Relative abundance per location
 
-```{r }
+```{r}
 phylobar_location <- merge_samples(BMV_family, "Municipality")
 phylobar_location_re.abund <- phylobar_location %>%                   
   transform_sample_counts(function(x) {round(100*(x/sum(x)),5)} )
@@ -736,7 +745,7 @@ lc
 
 **Combine viral family barplot with mosquito species barplots from each location:**
 
-```{r }
+```{r}
 lc2<-ggarrange(lc+theme(legend.position = "none"), ggarrange(plotlist=plist, nrow=10, heights = c(0.2, rep(1,8),0.6)), ncol=2, widths = c(1,0.1))
 ggsave("figures/viralfamily_barplot_loc.pdf", lc2, height = 6.92, width = 11.2, dpi=300)
 
@@ -747,7 +756,7 @@ lc2
 
 ### Relative abundance per mosquito species
 
-```{r }
+```{r}
 phylobar_species <- merge_samples(BMV_family, "SKA_Subspecies")
 phylobar_species_re.abund <- phylobar_species %>%                   
   transform_sample_counts(function(x) {round(100*(x/sum(x)),5)} )
@@ -802,7 +811,7 @@ ggsave("figures/viralfamily_barplot.pdf", width = 15, height=9, dpi=300)
 
 ## Eukaryotic virome heatmap
 
-```{r }
+```{r}
 #p.fungi<-log10(pData(BMV_metaseq_species)$fungi_reads+1)
 #p.fungi<-pData(BMV_metaseq_species)$fungi_reads
 #p.fungi<-as.matrix(fungi2[fungi2$Sample %in% pData(BMV_metaseq_species)$Sample,2:5])
@@ -860,7 +869,7 @@ hm <- plot_abundance(BMV_metaseq_species, n = n_species, log = T, norm = F, colc
 
 Legends
 
-```{r }
+```{r}
 lgd_list<-list(Legend(labels = colnames(p.fungi), title = "Fungi", type = "points", pch = 1:length(colnames(p.fungi)), 
             legend_gp = gpar(col = c(2:4,7)), background ="transparent"))
 ```
@@ -881,14 +890,14 @@ dev.off()
 # RT-qPCR analysis
 ## Prepare the data
 
-```{r }
+```{r}
 library(ggh4x)
 qPCR <- read_csv("data/BMV-RT-qPCR-analysis.csv", col_names = T)
 ```
 
 **Recalculate quantity based on mosquito dilutions:**
 
-```{r }
+```{r}
 qPCR <- qPCR %>%  
   mutate(Quantity = case_when(str_detect(Sample, "MEMO") ~ qPCR$"Quantity Mean" * 40,
                               str_detect(Sample, "NEMO") ~ qPCR$"Quantity Mean" * 100))
@@ -899,7 +908,7 @@ datatable(qPCR)
 
 **Divide quantity of *Xanthi chryso-like virus* by 2 because it is a dsRNA virus:**
 
-```{r }
+```{r}
 qPCR <- qPCR %>%  
   mutate(Quantity = case_when(str_detect(Target, "XCV") ~ qPCR$Quantity/2,
                               TRUE ~ Quantity))
@@ -910,13 +919,13 @@ datatable(qPCR)
 
 **Replace NA to 0:**
 
-```{r }
+```{r}
 qPCR_noNA <- qPCR %>% mutate_all(~replace(., is.na(.), 0))
 ```
 
 **Replace abbreviations for full names:**
 
-```{r }
+```{r}
 qPCR_noNA <- qPCR_noNA %>% mutate(Target, Target= case_when(Target=="CPV"~"Culex orthophasmavirus 2 (CPV)", 
                                                             Target=="XCV"~"Xanthi chryso-like virus (XCV)", 
                                                             Target=="WMV6"~"Wuhan Mosquito Virus 6 (WMV6)",
@@ -929,7 +938,7 @@ qPCR_noNA <- qPCR_noNA %>% mutate(Target, Target= case_when(Target=="CPV"~"Culex
 **Merge metadata with qPCR data:**
 Abrreviate locations to fit the names on the plots later on.
 
-```{r }
+```{r}
 metadata <- meta %>% mutate(Municipality = case_when(Municipality == 'Frameries' ~ 'Fr',
                                                          Municipality == 'Dilsen-Stokkem' ~ 'DS',
                                                          Municipality == 'Kallo' ~ 'K',
@@ -942,7 +951,7 @@ datatable(metaqPCR)
 
 **Count number of tested samples per mosquito species:**
 
-```{r }
+```{r}
 metaqPCR %>%
   select(Sample, SKA_Subspecies) %>% 
   distinct() %>% 
@@ -950,9 +959,44 @@ metaqPCR %>%
   summarise(n= n())
 ```
 
+**Create infection rate table**
+
+```{r}
+inf_rate_loc <- metaqPCR %>% 
+  select(Sample, Target, Municipality, SKA_Subspecies, Quantity) %>% 
+  group_by(Target, Municipality, SKA_Subspecies) %>% 
+  summarise(positive= sum(Quantity > 0, na.rm = TRUE), total=n(),
+            perc=positive/total*100) %>% 
+  mutate(Municipality = case_when(Municipality == 'Fr' ~ 'Frameries',
+                                  Municipality == 'DS' ~ 'Dilsen-Stokkem',
+                                  Municipality == 'K' ~ 'Kallo',
+                                  TRUE ~ Municipality)) %>% 
+  filter(perc>0) %>% 
+  rename(Virus=Target, Species=SKA_Subspecies, 
+         "Positive mosquitoes"=positive,
+         "Total mosquitoes"=total,
+         "Infection rate"=perc)
+xlsx::write.xlsx(x=data.frame(inf_rate_loc), file = "tables/supplementary_table1.xlsx", 
+                 row.names = F, showNA = F)
+
+
+inf_rate <- metaqPCR %>% 
+  select(Sample, Target, SKA_Subspecies, Quantity) %>% 
+  group_by(Target, SKA_Subspecies) %>% 
+  summarise(positive= sum(Quantity > 0, na.rm = TRUE), total=n(),
+            perc=positive/total*100) %>% 
+  rename(Virus=Target, Species=SKA_Subspecies, 
+         "Positive mosquitoes"=positive,
+         "Total mosquitoes"=total,
+         "Infection rate"=perc)
+
+xlsx::write.xlsx(x=data.frame(inf_rate), file = "tables/supplementary_table2.xlsx", 
+                 row.names = F, showNA = F)
+```
+
 ## Plot data
 
-```{r }
+```{r}
 legendlabels <- c(expression(paste(italic("Aedes japonicus"), " (n=8)")),
   expression(paste(italic("Culex pipiens molestus"), " (n=47)")),
   expression(paste(italic("Culex pipiens pipiens"), " (n=127)")),
@@ -973,9 +1017,9 @@ qPCRviolin <- ggplot(metaqPCR, aes(x=SKA_Subspecies, y=Quantity))+
                      labels = scientific_10(c(0, 10^seq(2,8,2))))+
   xlab(label = "")+
   ylab(label = "Viral copies per mosquito")+
-  scale_fill_viridis_d(begin=0.4, end =0.9, name="", alpha = 0.5,
+  scale_fill_viridis_d(begin=0, end =0.9, name="", alpha = 0.5,
                        labels=legendlabels)+
-  scale_color_viridis_d(begin=0.4, end =0.9, name="",
+  scale_color_viridis_d(begin=0, end =0.9, name="",
                         labels=legendlabels)+ 
   guides(fill = guide_legend(override.aes = list(alpha = 1)))+
   facet_wrap(~Target, nrow=2, ncol=3)
@@ -983,11 +1027,23 @@ ggsave("figures/qPCR-violin.pdf", dpi=300, width=11)
 ```
 ```{r echo=FALSE}
 qPCRviolin
+
+
+metaqPCR %>% 
+  select(Sample, SKA_Subspecies) %>% 
+  distinct() %>% 
+  left_join(data.frame(SKA_Subspecies = names(myColors), color = myColors))
+
+color_name <- metaqPCR %>% 
+  select(Sample, SKA_Subspecies) %>% 
+  distinct() %>% 
+  left_join(data.frame(SKA_Subspecies = names(myColors), color = myColors)) %>% 
+  pull(color, Sample)
 ```
 
 **Plot qPCR overview per sample:**
 
-```{r }
+```{r}
 qPCRoverview <- ggplot(metaqPCR, 
              aes(x=Sample, y=Quantity))+
   facet_nested(Target~Municipality,
@@ -995,18 +1051,21 @@ qPCRoverview <- ggplot(metaqPCR,
                scales = "free_x",
                labeller = labeller(Target = label_wrap_gen(10), Municipality=label_wrap_gen(5)))+
   geom_col(aes(fill=SKA_Subspecies), position="identity", alpha=1)+
-  theme_bw()+
-  theme(axis.text.x = element_blank(),
-        panel.grid.major = element_blank())+
+  geom_tile(aes(y=-.6, fill=SKA_Subspecies), height=.5)+
   scale_y_continuous(expand=expansion(mult = c(0, 0), add = c(0, 0.1)),
                      trans = scales::pseudo_log_trans(base = 10), 
                      breaks = c(0, 10^seq(2,8,2)),
                      labels = scientific_10(c(0, 10^seq(2,8,2))))+
   xlab(label = "Sample")+
   ylab(label = "Viral copies per mosquito")+
-  scale_fill_viridis_d(begin=0.4, end =0.9, name="")+ 
+  scale_fill_viridis_d(begin=0, end =0.9, name="")+ 
   guides(fill = guide_legend(override.aes = list(alpha = 1), 
-                             label.theme = element_text(size=10, angle = 0, face = "italic")))
+                             label.theme = element_text(size=10, angle = 0, face = "italic")))+
+  theme_bw()+
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        panel.grid.major = element_blank())
+  
 ggsave("figures/qPCR_overview.pdf", width = 18.7, height = 10.3, units = "in", dpi=300)
 ```
 ```{r echo=FALSE, fig.width=18.7, fig.height=10.3, fig.cap="DS=Dilsen-Stokkem, Fr=Frameries, K=Kallo"}
@@ -1126,7 +1185,7 @@ source("BMV_phylogenetics.R")
 # Phageome & Wolbachia bacteria
 ## Coverage plot
 
-```{r }
+```{r}
 phageblast <- read.table("data/phage_blast.tsv", header=F, sep="\t")
 phageblast <- phageblast[phageblast$V4 > 2000,]
 
@@ -1292,7 +1351,7 @@ ggsave(file="figures/wolbachia_coverageplots.pdf", plot=p, dpi=300, height=10, w
 
 ## Swarmplot
 
-```{r }
+```{r}
 library(ggbeeswarm)
 #phage <- read.table("data/wolbachia_phage_ratio.tsv", sep="\t", header = T)
 #phage <- read.table("data/wolbachia_phage_bowtieratio_no_rRNA.tsv", sep="\t", header = T)
@@ -1334,7 +1393,7 @@ swarmplot
 ## Wolbachia
 Wolbachia bwa-mem2 mapped
 
-```{r }
+```{r}
 wMel <- read.table("data/wMel.txt", header=F, dec=".", sep=" ")
 wPip <- read.table("data/wPip.txt", header=F, dec=".", sep=" ")
 phageWO <- read.table("data/phageWO.txt", header=F, dec=".", sep=" ")
@@ -1408,7 +1467,7 @@ ggsave("figures/combined_wolbachia.pdf", dpi=300, width = 12)
 
 Second layout
 
-```{r }
+```{r}
 patch2 <-  covplot+theme(legend.position = c(0.3,0.97)) + swarmplot + plot_spacer() + p2 + plot_layout(widths = c(1, .01, 1.5),
                                                                  design = "
                                                 134
@@ -1421,7 +1480,7 @@ ggsave("figures/combined_wolbachia_2.pdf", dpi=300, width = 12)
 
 barplot
 
-```{r }
+```{r}
 wb <-  pivot_wider(wolb, id_cols = "Sample", names_from = "supergroup", values_from = "numreads") %>% 
   ggplot(aes(x = Sample, y=wPip))+
   geom_col(aes(fill=meta[meta$Sample!="NEMO39",]$SKA_Subspecies))+
@@ -1442,7 +1501,7 @@ wb
 ## Phageome
 
 
-```{r }
+```{r}
 phageotu<-read.table("data/BEmosq_classification-85-taxfile-1000nt.tsv", sep="\t", header = T)
 phage<-phageotu[phageotu$Phylum == "Phage",]
 rownames(phage)<- phage$Contig
@@ -1500,7 +1559,7 @@ tax_table(p.merge) <- as.matrix(phage_tax)
 
 ### Wolbachia vs virus
 
-```{r }
+```{r}
 viral_reads <- as.data.frame(colSums(otu_table(BMV.V2)))
 viral_reads <- rownames_to_column(viral_reads, "Sample")
 colnames(viral_reads) <- c("Sample", "viral_reads")
@@ -1550,7 +1609,7 @@ left_join(wPip, rownames_to_column(vcount, "Sample")) %>%
 
 ### pWCP coverage
 
-```{r }
+```{r}
 pWCP_cov <- read.table("data/pWCP_stats.tsv", header=T)
 #names(pWCP_cov) <- c("Sample", "pWCP_cov")
 left_join(wPip, pWCP_cov, by="Sample") %>% 
