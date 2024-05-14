@@ -1,5 +1,5 @@
 # BelgianMosquitoVirome
-Scripts and data associated with [![DOI:10.1101/2023.12.21.572765](http://img.shields.io/badge/DOI-10.1101/2023.12.21.572765-B31B1B.svg)](https://doi.org/10.1101/2023.12.21.572765).
+Scripts and data associated with [![DOI:10.1101/2023.12.21.572765](http://img.shields.io/badge/DOI-10.1101/2023.12.21.572765-B31B1B.svg)](https://doi.org/10.1128/msystems.00012-24).
 
 
 ## Abstract
